@@ -1,0 +1,11 @@
+I:\RustServerGUI\batchgen\bin\Release\batchgen.exe
+I:\RustServerGUI\batchgen\bin\Release\batchgen.pdb
+I:\RustServerGUI\batchgen\bin\Release\DotNetZip.dll
+I:\RustServerGUI\batchgen\obj\x86\Release\batchgen.AddVarForm.resources
+I:\RustServerGUI\batchgen\obj\x86\Release\batchgen.Form1.resources
+I:\RustServerGUI\batchgen\obj\x86\Release\batchgen.csproj.GenerateResource.cache
+I:\RustServerGUI\batchgen\obj\x86\Release\batchgen.csproj.CoreCompileInputs.cache
+I:\RustServerGUI\batchgen\obj\x86\Release\batchgen.csproj.CopyComplete
+I:\RustServerGUI\batchgen\obj\x86\Release\batchgen.exe
+I:\RustServerGUI\batchgen\obj\x86\Release\batchgen.pdb
+I:\RustServerGUI\batchgen\obj\x86\Release\batchgen.csprojAssemblyReference.cache
