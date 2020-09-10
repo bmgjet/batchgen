@@ -6,18 +6,18 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Runtime.InteropServices;
+using System.Text;
 using System.Windows.Forms;
 using batchgen.Properties;
 using Ionic.Zip;
 
 namespace batchgen
 {
-	// Token: 0x02000002 RID: 2
 	public partial class Form1 : Form
 	{
-
+		public string lastModified;
 		string MyIP = "127.0.0.1";
-		// Token: 0x06000001 RID: 1 RVA: 0x00002050 File Offset: 0x00000250
 		public Form1()
 		{
 			this.InitializeComponent();
@@ -63,22 +63,7 @@ namespace batchgen
 			return result;
 		}
 
-		// Token: 0x06000002 RID: 2 RVA: 0x0000207E File Offset: 0x0000027E
-		private void textBox1_TextChanged(object sender, EventArgs e)
-		{
-		}
 
-		// Token: 0x06000003 RID: 3 RVA: 0x00002081 File Offset: 0x00000281
-		private void label3_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000004 RID: 4 RVA: 0x00002084 File Offset: 0x00000284
-		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000005 RID: 5 RVA: 0x00002088 File Offset: 0x00000288
 		private void genbtn_Click(object sender, EventArgs e)
 		{
 			Directory.CreateDirectory("RustServerFiles");
@@ -119,7 +104,6 @@ namespace batchgen
 			}
 		}
 
-		// Token: 0x06000006 RID: 6 RVA: 0x0000249C File Offset: 0x0000069C
 		private void DownloadFileAsync(string url, string downloadPath)
 		{
 			using (WebClient webClient = new WebClient())
@@ -132,8 +116,7 @@ namespace batchgen
 			}
 		}
 
-		// Token: 0x06000007 RID: 7 RVA: 0x0000250C File Offset: 0x0000070C
-		private void DownloadProgress(object sender, DownloadProgressChangedEventArgs downloadArgs, string downloadPath)
+			private void DownloadProgress(object sender, DownloadProgressChangedEventArgs downloadArgs, string downloadPath)
 		{
 			if (downloadPath != null)
 			{
@@ -156,7 +139,6 @@ namespace batchgen
 			}
 		}
 
-		// Token: 0x06000008 RID: 8 RVA: 0x00002580 File Offset: 0x00000780
 		private void OnDownloadFinished(string filePath)
 		{
 			if (filePath != null)
@@ -191,8 +173,6 @@ namespace batchgen
 				}
 			}
 		}
-
-		// Token: 0x06000009 RID: 9 RVA: 0x000026D4 File Offset: 0x000008D4
 		private static void UnZipFile(string zipPath, string extractFolder)
 		{
 			using (ZipFile zipFile = ZipFile.Read(zipPath))
@@ -204,28 +184,13 @@ namespace batchgen
 			}
 		}
 
-		// Token: 0x0600000A RID: 10 RVA: 0x00002748 File Offset: 0x00000948
-		private void button1_Click(object sender, EventArgs e)
-		{
-			File.WriteAllText(this.serverdirectorytext.Text, this.Finaltext.Text);
-		}
 
-		// Token: 0x0600000B RID: 11 RVA: 0x00002767 File Offset: 0x00000967
-		private void maintab_Click(object sender, EventArgs e)
-		{
-		}
+		//private void button1_Click(object sender, EventArgs e)
+		//{
+		//	File.WriteAllText(this.serverdirectorytext.Text, this.Finaltext.Text);
+		//}
 
-		// Token: 0x0600000C RID: 12 RVA: 0x0000276A File Offset: 0x0000096A
-		private void panel1_Paint(object sender, PaintEventArgs e)
-		{
-		}
-
-		// Token: 0x0600000D RID: 13 RVA: 0x0000276D File Offset: 0x0000096D
-		private void procgen_Click(object sender, EventArgs e)
-		{
-		}
-
-		private readonly Random _random = new Random();
+				private readonly Random _random = new Random();
 
 		// Generates a random number within a range.      
 		public int RandomNumber(int min, int max)
@@ -233,7 +198,6 @@ namespace batchgen
 			return _random.Next(min, max);
 		}
 
-		// Token: 0x0600000E RID: 14 RVA: 0x00002770 File Offset: 0x00000970
 		private void Form1_Load(object sender, EventArgs e)
 		{
 
@@ -326,127 +290,7 @@ namespace batchgen
 
 		}
 
-		// Token: 0x0600000F RID: 15 RVA: 0x00002A94 File Offset: 0x00000C94
-		private void label26_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000010 RID: 16 RVA: 0x00002A97 File Offset: 0x00000C97
-		private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000011 RID: 17 RVA: 0x00002A9A File Offset: 0x00000C9A
-		private void textBox1_TextChanged_1(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000012 RID: 18 RVA: 0x00002A9D File Offset: 0x00000C9D
-		private void textBox2_TextChanged(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000013 RID: 19 RVA: 0x00002AA0 File Offset: 0x00000CA0
-		private void textBox3_TextChanged(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000014 RID: 20 RVA: 0x00002AA3 File Offset: 0x00000CA3
-		private void textBox4_TextChanged(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000015 RID: 21 RVA: 0x00002AA6 File Offset: 0x00000CA6
-		private void textBox5_TextChanged(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000016 RID: 22 RVA: 0x00002AA9 File Offset: 0x00000CA9
-		private void textBox6_TextChanged(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000017 RID: 23 RVA: 0x00002AAC File Offset: 0x00000CAC
-		private void textBox7_TextChanged(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000018 RID: 24 RVA: 0x00002AAF File Offset: 0x00000CAF
-		private void textBox8_TextChanged(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000019 RID: 25 RVA: 0x00002AB2 File Offset: 0x00000CB2
-		private void textBox9_TextChanged(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x0600001A RID: 26 RVA: 0x00002AB5 File Offset: 0x00000CB5
-		private void textBox10_TextChanged(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x0600001B RID: 27 RVA: 0x00002AB8 File Offset: 0x00000CB8
-		private void textBox11_TextChanged(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x0600001C RID: 28 RVA: 0x00002ABB File Offset: 0x00000CBB
-		private void label15_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x0600001D RID: 29 RVA: 0x00002ABE File Offset: 0x00000CBE
-		private void label16_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x0600001E RID: 30 RVA: 0x00002AC1 File Offset: 0x00000CC1
-		private void label17_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x0600001F RID: 31 RVA: 0x00002AC4 File Offset: 0x00000CC4
-		private void label18_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000020 RID: 32 RVA: 0x00002AC7 File Offset: 0x00000CC7
-		private void label19_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000021 RID: 33 RVA: 0x00002ACA File Offset: 0x00000CCA
-		private void label20_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000022 RID: 34 RVA: 0x00002ACD File Offset: 0x00000CCD
-		private void label21_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000023 RID: 35 RVA: 0x00002AD0 File Offset: 0x00000CD0
-		private void label22_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000024 RID: 36 RVA: 0x00002AD3 File Offset: 0x00000CD3
-		private void label23_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000025 RID: 37 RVA: 0x00002AD6 File Offset: 0x00000CD6
-		private void label24_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000026 RID: 38 RVA: 0x00002AD9 File Offset: 0x00000CD9
-		private void label25_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000027 RID: 39 RVA: 0x00002ADC File Offset: 0x00000CDC
+		
 		private void button2_Click(object sender, EventArgs e)
 		{
 			bool flag = this.ServerVarsFinal.Text == "";
@@ -579,17 +423,7 @@ namespace batchgen
 			}
 		}
 
-		// Token: 0x06000028 RID: 40 RVA: 0x00003065 File Offset: 0x00001265
-		private void label27_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000029 RID: 41 RVA: 0x00003068 File Offset: 0x00001268
-		private void progressBar1_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x0600002A RID: 42 RVA: 0x0000306C File Offset: 0x0000126C
+	
 		private void DownloadSteamCMD_Click(object sender, EventArgs e)
 		{
 			bool flag = !Form1.downloadingSteamCMD;
@@ -601,7 +435,7 @@ namespace batchgen
 			}
 		}
 
-		// Token: 0x0600002B RID: 43 RVA: 0x000030B0 File Offset: 0x000012B0
+
 		private void DownloadOxide_Click(object sender, EventArgs e)
 		{
 			bool flag = !Form1.downloadingOxide;
@@ -613,7 +447,6 @@ namespace batchgen
 			}
 		}
 
-		// Token: 0x0600002C RID: 44 RVA: 0x000030F4 File Offset: 0x000012F4
 		private void downloadserverbtn_Click(object sender, EventArgs e)
 		{
 			string path = this.currentpath;
@@ -630,52 +463,7 @@ namespace batchgen
 			}
 		}
 
-		// Token: 0x0600002D RID: 45 RVA: 0x00003166 File Offset: 0x00001366
-		private void button1_Click_1(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x0600002E RID: 46 RVA: 0x00003169 File Offset: 0x00001369
-		private void identitytext_TextChanged(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x0600002F RID: 47 RVA: 0x0000316C File Offset: 0x0000136C
-		private void panel4_Paint(object sender, PaintEventArgs e)
-		{
-		}
-
-		// Token: 0x06000030 RID: 48 RVA: 0x0000316F File Offset: 0x0000136F
-		private void label36_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000031 RID: 49 RVA: 0x00003172 File Offset: 0x00001372
-		private void label37_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000032 RID: 50 RVA: 0x00003175 File Offset: 0x00001375
-		private void label38_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000033 RID: 51 RVA: 0x00003178 File Offset: 0x00001378
-		private void label39_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000034 RID: 52 RVA: 0x0000317B File Offset: 0x0000137B
-		private void label40_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000035 RID: 53 RVA: 0x0000317E File Offset: 0x0000137E
-		private void label41_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000036 RID: 54 RVA: 0x00003184 File Offset: 0x00001384
+		
 		private void checkrun_Tick(object sender, EventArgs e)
 		{
 			Process[] processesByName = Process.GetProcessesByName("steamcmd");
@@ -695,84 +483,19 @@ namespace batchgen
 			}
 		}
 
-		// Token: 0x06000037 RID: 55 RVA: 0x00003251 File Offset: 0x00001451
+		
 		private void timer1_Tick(object sender, EventArgs e)
 		{
+			updatelog();
 		}
 
-		// Token: 0x06000038 RID: 56 RVA: 0x00003254 File Offset: 0x00001454
-		private void panel9_Paint(object sender, PaintEventArgs e)
-		{
-		}
+		
+		//private void openinstallbtn_Click(object sender, EventArgs e)
+		//{
+		//	Process.Start(this.currentpath + this.slashbox.Text + "steamcmd");
+		//}
 
-		// Token: 0x06000039 RID: 57 RVA: 0x00003257 File Offset: 0x00001457
-		private void openinstallbtn_Click(object sender, EventArgs e)
-		{
-			Process.Start(this.currentpath + this.slashbox.Text + "steamcmd");
-		}
-
-		// Token: 0x0600003A RID: 58 RVA: 0x0000327B File Offset: 0x0000147B
-		private void openstartbtn_Click(object sender, EventArgs e)
-		{
-			Process.Start("Explorer.exe", this.servfilesdirectory.Text);
-		}
-
-		// Token: 0x0600003B RID: 59 RVA: 0x00003294 File Offset: 0x00001494
-		private void panel5_Paint(object sender, PaintEventArgs e)
-		{
-		}
-
-		// Token: 0x0600003C RID: 60 RVA: 0x00003297 File Offset: 0x00001497
-		private void socialMediaToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x0600003D RID: 61 RVA: 0x0000329A File Offset: 0x0000149A
-		private void panel10_Paint(object sender, PaintEventArgs e)
-		{
-		}
-
-		// Token: 0x0600003E RID: 62 RVA: 0x0000329D File Offset: 0x0000149D
-		private void infolabel_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x0600003F RID: 63 RVA: 0x000032A0 File Offset: 0x000014A0
-		private void mapsizebar_Scroll(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000040 RID: 64 RVA: 0x000032A3 File Offset: 0x000014A3
-		private void BTNaddvar_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000041 RID: 65 RVA: 0x000032A6 File Offset: 0x000014A6
-		private void label37_Click_1(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000042 RID: 66 RVA: 0x000032A9 File Offset: 0x000014A9
-		private void panel9_Paint_1(object sender, PaintEventArgs e)
-		{
-		}
-
-		// Token: 0x06000043 RID: 67 RVA: 0x000032AC File Offset: 0x000014AC
-		private void ServerVarView_SelectedIndexChanged(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000044 RID: 68 RVA: 0x000032AF File Offset: 0x000014AF
-		private void BTNremoveselect_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000045 RID: 69 RVA: 0x000032B2 File Offset: 0x000014B2
-		private void BTNCLEAR_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000046 RID: 70 RVA: 0x000032B8 File Offset: 0x000014B8
+		
 		private void button2_Click_1(object sender, EventArgs e)
 		{
 			Process process = Process.Start(new ProcessStartInfo("steamcmd")
@@ -787,7 +510,6 @@ namespace batchgen
 			this.test.Text = text;
 		}
 
-		// Token: 0x06000047 RID: 71 RVA: 0x00003328 File Offset: 0x00001528
 		private void button3_Click(object sender, EventArgs e)
 		{
 			bool flag = this.ServerVarsFinal.Text == "";
@@ -913,22 +635,6 @@ namespace batchgen
 				File.WriteAllText(this.serverdirectorytext.Text, this.Finaltext.Text);
 				this.infolabel.Text = "Start file generated - Start you server";
 			}
-		}
-
-		// Token: 0x06000048 RID: 72 RVA: 0x00003851 File Offset: 0x00001A51
-		private void panel3_Paint(object sender, PaintEventArgs e)
-		{
-		}
-
-		// Token: 0x06000049 RID: 73 RVA: 0x00003854 File Offset: 0x00001A54
-		private void Hapis_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x0600004A RID: 74 RVA: 0x00003858 File Offset: 0x00001A58
-		private void button4_Click(object sender, EventArgs e)
-		{
-
 		}
 
 		// Token: 0x0600004B RID: 75 RVA: 0x00003E74 File Offset: 0x00002074
@@ -1058,23 +764,13 @@ namespace batchgen
 			}
 		}
 
-		// Token: 0x0600004C RID: 76 RVA: 0x0000439D File Offset: 0x0000259D
+
 		private void playRustIOToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("http://playrust.io/");
 		}
 
-		// Token: 0x0600004D RID: 77 RVA: 0x000043AB File Offset: 0x000025AB
-		private void panel8_Paint(object sender, PaintEventArgs e)
-		{
-		}
 
-		// Token: 0x0600004E RID: 78 RVA: 0x000043AE File Offset: 0x000025AE
-		private void label17_Click_1(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x0600004F RID: 79 RVA: 0x000043B4 File Offset: 0x000025B4
 		private void button6_Click(object sender, EventArgs e)
 		{
 			Directory.CreateDirectory("RustServerFiles");
@@ -1093,12 +789,7 @@ namespace batchgen
 			}
 		}
 
-		// Token: 0x06000050 RID: 80 RVA: 0x00004482 File Offset: 0x00002682
-		private void label82_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000051 RID: 81 RVA: 0x00004488 File Offset: 0x00002688
+		
 		private void button7_Click(object sender, EventArgs e)
 		{
 			bool flag = this.ServerVarsFinal.Text == "";
@@ -1350,292 +1041,117 @@ namespace batchgen
 			}
 		}
 
-		// Token: 0x06000053 RID: 83 RVA: 0x00004EDD File Offset: 0x000030DD
-		private void label48_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000054 RID: 84 RVA: 0x00004EE0 File Offset: 0x000030E0
-		private void label35_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000055 RID: 85 RVA: 0x00004EE3 File Offset: 0x000030E3
 		private void fullHostingTutorialsPlaylistToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("http://bit.ly/2OIfNGi");
 		}
 
-		// Token: 0x06000056 RID: 86 RVA: 0x00004EF1 File Offset: 0x000030F1
 		private void rustAdminToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("http://bit.ly/2TjpsBV");
 		}
 
-		// Token: 0x06000057 RID: 87 RVA: 0x00004EFF File Offset: 0x000030FF
 		private void rustServerManagerToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("http://bit.ly/33igRnv");
 		}
 
-		// Token: 0x06000058 RID: 88 RVA: 0x00004F0D File Offset: 0x0000310D
+
 		private void rustEditToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("http://bit.ly/2ZJn5e2");
 		}
 
-		// Token: 0x06000059 RID: 89 RVA: 0x00004F1B File Offset: 0x0000311B
+
 		private void steamCMDToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("http://bit.ly/2KGuqVA");
 		}
 
-		// Token: 0x0600005A RID: 90 RVA: 0x00004F29 File Offset: 0x00003129
+
 		private void playRustcomToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("http://bit.ly/2MYacJJ");
 		}
 
-		// Token: 0x0600005B RID: 91 RVA: 0x00004F37 File Offset: 0x00003137
+
 		private void battleMetricsToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("http://bit.ly/2YSufvh");
 		}
 
-		// Token: 0x0600005C RID: 92 RVA: 0x00004F45 File Offset: 0x00003145
+
 		private void corrosionHourToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("http://bit.ly/2ZMdoM2");
 		}
 
-		// Token: 0x0600005D RID: 93 RVA: 0x00004F53 File Offset: 0x00003153
+
 		private void rustopiaToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("http://bit.ly/2OLylp4");
 		}
 
-		// Token: 0x0600005E RID: 94 RVA: 0x00004F61 File Offset: 0x00003161
+
 		private void umodToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("http://bit.ly/2M5CYZf");
 		}
 
-		// Token: 0x0600005F RID: 95 RVA: 0x00004F6F File Offset: 0x0000316F
+
 		private void chaoscodeToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("http://bit.ly/2Kp8ZJF");
 		}
 
-		// Token: 0x06000060 RID: 96 RVA: 0x00004F7D File Offset: 0x0000317D
-		private void pictureBox1_Click(object sender, EventArgs e)
-		{
-			Process.Start("http://bit.ly/2ONwost");
-		}
-
-		// Token: 0x06000061 RID: 97 RVA: 0x00004F8B File Offset: 0x0000318B
-		private void pictureBox2_Click(object sender, EventArgs e)
-		{
-			Process.Start("http://bit.ly/2MMQbpa");
-		}
-
-		// Token: 0x06000062 RID: 98 RVA: 0x00004F99 File Offset: 0x00003199
-		private void pictureBox3_Click(object sender, EventArgs e)
-		{
-			Process.Start("http://bit.ly/2OLySHA");
-		}
-
-		// Token: 0x06000063 RID: 99 RVA: 0x00004FA7 File Offset: 0x000031A7
-		private void pictureBox4_Click(object sender, EventArgs e)
-		{
-			Process.Start("http://bit.ly/2yMoAw5");
-		}
-
-		// Token: 0x06000064 RID: 100 RVA: 0x00004FB5 File Offset: 0x000031B5
-		private void serverIdentityToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			//this.//InfoLab.Text = "The identity determains the folder name for your server, use unique names when running multiple servers.";
-		}
-
-		// Token: 0x06000065 RID: 101 RVA: 0x00004FC9 File Offset: 0x000031C9
-		private void serverNameToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-		//	this.InfoLab.Text = "The Name is what shows up in the server browser.";
-		}
-
-		// Token: 0x06000066 RID: 102 RVA: 0x00004FDD File Offset: 0x000031DD
-		private void serverPortToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-		//	this.InfoLab.Text = "The default server port is 28015. Portforward this port ONLY with protocol UDP to show up in the server browser and allow others to join.";
-		}
-
-		// Token: 0x06000067 RID: 103 RVA: 0x00004FF1 File Offset: 0x000031F1
-		private void rconPortToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			//this./InfoLab.Text = "The defaul RCON port is 28016. Portforward this port ONLY with protocol TCP for RCON to work from outside of your home / local network.";
-		}
-
-		// Token: 0x06000068 RID: 104 RVA: 0x00005005 File Offset: 0x00003205
-		private void rconPasswordToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			//this.InfoLab.Text = "Using your IP, RCON Port And a strong password you can connect trough RCON to remotely control your server from outside of your home network.";
-		}
-
-		// Token: 0x06000069 RID: 105 RVA: 0x00005019 File Offset: 0x00003219
-		private void serverPictureToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-		//	this.InfoLab.Text = "This pisture shows up in the server browser, along with your title and discription. The size should be 512 x 256. Use a direct link to a picture.";
-		}
-
-		// Token: 0x0600006A RID: 106 RVA: 0x0000502D File Offset: 0x0000322D
-		private void serverWebsiteToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-		//	this.InfoLab.Text = "In the server browser players can click on  \"View Website\" a browser with your link will be opened";
-		}
-
-		// Token: 0x0600006B RID: 107 RVA: 0x00005041 File Offset: 0x00003241
-		private void serverDiscriptionToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			//this.InfoLab.Text = "Use this to give a short discription of your server. us \n to create a new line. ";
-		}
-
-		// Token: 0x0600006C RID: 108 RVA: 0x00005055 File Offset: 0x00003255
-		private void maxPlayersToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-		//	this.InfoLab.Text = "Setting the Max Players to a high numbers doesnt effect performace by default. Having a lot of people online at one time does.";
-		}
-
-		// Token: 0x0600006D RID: 109 RVA: 0x00005069 File Offset: 0x00003269
-		private void mapSizeToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			//this.InfoLab.Text = "The Minimum Size is 1000. The Maximum Size is 6000. Using a size and seed combo a map will be generated. Click Choose map at the top to choose one. ";
-		}
-
-		// Token: 0x0600006E RID: 110 RVA: 0x0000507D File Offset: 0x0000327D
-		private void mapSeedToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-		//	this.InfoLab.Text = "Using a map Seed and Size a map will be generated. You can choose a map from playrust.io/gallery or choose \"Choose Map\" at the top.";
-		}
-
-		// Token: 0x0600006F RID: 111 RVA: 0x00005091 File Offset: 0x00003291
-		private void levelURLToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-		//	this.InfoLab.Text = "For custom maps you will need to upload your .map file to a host that will allow a direct link. If u use dropbox change the 0 at the end of the link to a 1.";
-		}
-
-		// Token: 0x06000070 RID: 112 RVA: 0x000050A5 File Offset: 0x000032A5
 		private void howToHostYourOwnRustServerManuallyToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("http://bit.ly/2KyDUlp");
 		}
 
-		// Token: 0x06000071 RID: 113 RVA: 0x000050B3 File Offset: 0x000032B3
 		private void howToInstallOxideWorkWithPluginsToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("http://bit.ly/2OMn6wD");
 		}
 
-		// Token: 0x06000072 RID: 114 RVA: 0x000050C1 File Offset: 0x000032C1
 		private void howToPortForwardToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("http://bit.ly/31vlyZl");
 		}
 
-		// Token: 0x06000073 RID: 115 RVA: 0x000050CF File Offset: 0x000032CF
 		private void chooseAMapToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("http://bit.ly/2TkrxgP");
 		}
 
-		// Token: 0x06000074 RID: 116 RVA: 0x000050DD File Offset: 0x000032DD
-		private void rentAServerToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			Process.Start("http://bit.ly/2KpQsNo");
-		}
 
-		// Token: 0x06000075 RID: 117 RVA: 0x000050EB File Offset: 0x000032EB
-		private void loglog_TextChanged(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000076 RID: 118 RVA: 0x000050EE File Offset: 0x000032EE
-		private void youtubeToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			Process.Start("http://bit.ly/2yMoAw5");
-		}
-
-		// Token: 0x06000077 RID: 119 RVA: 0x000050FC File Offset: 0x000032FC
-		private void discordToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			Process.Start("http://bit.ly/2ONwost");
-		}
-
-		// Token: 0x06000078 RID: 120 RVA: 0x0000510A File Offset: 0x0000330A
-		private void twitterToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			Process.Start("http://bit.ly/2MMQbpa");
-		}
-
-		// Token: 0x06000079 RID: 121 RVA: 0x00005118 File Offset: 0x00003318
-		private void twitchToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			Process.Start("http://bit.ly/2OLySHA");
-		}
-
-		// Token: 0x0600007A RID: 122 RVA: 0x00005126 File Offset: 0x00003326
 		private void mainSiteToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("http://bit.ly/2OKbSc1");
 		}
 
-		// Token: 0x0600007B RID: 123 RVA: 0x00005134 File Offset: 0x00003334
+
 		private void browseFreePluginsToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("http://bit.ly/2KnC1sT");
 		}
 
-		// Token: 0x0600007C RID: 124 RVA: 0x00005142 File Offset: 0x00003342
-		private void instagramToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			Process.Start("http://bit.ly/2OP1Nuu");
-		}
-
-		// Token: 0x0600007D RID: 125 RVA: 0x00005150 File Offset: 0x00003350
 		private void downloadOxideToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("http://bit.ly/2M5CYZf");
 		}
 
-		// Token: 0x0600007E RID: 126 RVA: 0x0000515E File Offset: 0x0000335E
-		private void browserPaidPluginsToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			Process.Start("http://bit.ly/2YzV8sK");
-		}
-
-		// Token: 0x0600007F RID: 127 RVA: 0x0000516C File Offset: 0x0000336C
-		private void connectToLocalServerToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			Process.Start("steam://connect/localhost:28015");
-		}
-
-		// Token: 0x06000080 RID: 128 RVA: 0x0000517A File Offset: 0x0000337A
-		private void patreonToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			Process.Start("http://bit.ly/2TgudMA");
-		}
-
-		// Token: 0x06000081 RID: 129 RVA: 0x00005188 File Offset: 0x00003388
 		private void fortifyCreateAndDesignBaseCanBeCopiedFromOrPastedIntoRustToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("http://bit.ly/2Kouydc");
 		}
 
-		// Token: 0x06000082 RID: 130 RVA: 0x00005196 File Offset: 0x00003396
+
 		private void Form1_FormClosed(object sender, FormClosedEventArgs e)
 		{
 			Application.Exit();
 		}
 
-		// Token: 0x06000083 RID: 131 RVA: 0x000051A0 File Offset: 0x000033A0
 		private void button10_Click(object sender, EventArgs e)
 		{
 			Process.Start(new ProcessStartInfo(this.serverdirectorytext.Text)
@@ -1644,171 +1160,101 @@ namespace batchgen
 			});
 		}
 
-		// Token: 0x06000084 RID: 132 RVA: 0x000051DD File Offset: 0x000033DD
+
 		private void rustLabsToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("http://bit.ly/31tuHBT");
 		}
 
-		// Token: 0x06000085 RID: 133 RVA: 0x000051EB File Offset: 0x000033EB
+
 		private void howToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("http://bit.ly/2GVKEJ3");
 		}
 
-		// Token: 0x06000086 RID: 134 RVA: 0x000051F9 File Offset: 0x000033F9
+
 		private void httpswwwrustafiedcomhowtohostarustserverinlinuxToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("http://bit.ly/2ThAqrv");
 		}
 
-		// Token: 0x06000087 RID: 135 RVA: 0x00005207 File Offset: 0x00003407
+
 		private void hostARUSTDedicatedServerToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("http://bit.ly/2MNkMTC");
 		}
 
-		// Token: 0x06000088 RID: 136 RVA: 0x00005215 File Offset: 0x00003415
+
 		private void populateYourRUSTServerWithThese6TipsToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("http://bit.ly/2YUYqpD");
 		}
 
-		// Token: 0x06000089 RID: 137 RVA: 0x00005223 File Offset: 0x00003423
+
 		private void howToCreateAPrivateRUSTServerToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("http://bit.ly/33i6a4B");
 		}
 
-		// Token: 0x0600008A RID: 138 RVA: 0x00005231 File Offset: 0x00003431
+
 		private void howToInstallUModOxideToARUSTServerToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("http://bit.ly/2YSD9cj");
 		}
 
-		// Token: 0x0600008B RID: 139 RVA: 0x0000523F File Offset: 0x0000343F
 		private void rUSTServerPerformanceHintsAndTipsToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("http://bit.ly/2KlHJLX");
 		}
 
-		// Token: 0x0600008C RID: 140 RVA: 0x0000524D File Offset: 0x0000344D
-		private void tedPommesDiscordToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			Process.Start("http://bit.ly/2OLASje");
-		}
 
-		// Token: 0x0600008D RID: 141 RVA: 0x0000525B File Offset: 0x0000345B
-		private void officialMapMakersDiscordToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			Process.Start("http://bit.ly/2ML6HWN");
-		}
-
-		// Token: 0x0600008E RID: 142 RVA: 0x00005269 File Offset: 0x00003469
-		private void rustographyToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			Process.Start("http://bit.ly/2YCyHDd");
-		}
-
-		// Token: 0x0600008F RID: 143 RVA: 0x00005277 File Offset: 0x00003477
-		private void rustEditDiscordToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			Process.Start("http://bit.ly/2ML6HWN");
-		}
-
-		// Token: 0x06000090 RID: 144 RVA: 0x00005285 File Offset: 0x00003485
-		private void fortifyDiscordToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			Process.Start("https://discord.gg/dJXt3pD");
-		}
-
-		// Token: 0x06000091 RID: 145 RVA: 0x00005293 File Offset: 0x00003493
 		private void mostBeginnerMistakesQuestionsToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("http://bit.ly/2MNMxv9");
 		}
 
-		// Token: 0x06000092 RID: 146 RVA: 0x000052A1 File Offset: 0x000034A1
-		private void PreviewPic_Click(object sender, EventArgs e)
-		{
-		}
 
-		// Token: 0x06000093 RID: 147 RVA: 0x000052A4 File Offset: 0x000034A4
-		private void label38_Click_1(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000094 RID: 148 RVA: 0x000052A7 File Offset: 0x000034A7
-		private void panel9_Paint_2(object sender, PaintEventArgs e)
-		{
-		}
-
-		// Token: 0x06000095 RID: 149 RVA: 0x000052AA File Offset: 0x000034AA
 		private void servernametext_TextChanged(object sender, EventArgs e)
 		{
 			this.serverTitle.Text = this.servernametext.Text;
 		}
 
-		// Token: 0x06000096 RID: 150 RVA: 0x000052C4 File Offset: 0x000034C4
-		private void serverpicturetext_TextChanged(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000097 RID: 151 RVA: 0x000052C7 File Offset: 0x000034C7
-		private void maxplayertext_TextChanged(object sender, EventArgs e)
-		{
-
-			//this.MaxPlayersPrev.Text = this.maxplayertext.Text + "/" + this.maxplayertext.Text;
-		}
-
-		// Token: 0x06000098 RID: 152 RVA: 0x000052F6 File Offset: 0x000034F6
-		private void parametersbox_TextChanged(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x06000099 RID: 153 RVA: 0x000052F9 File Offset: 0x000034F9
-		private void progressBar2_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x0600009A RID: 154 RVA: 0x000052FC File Offset: 0x000034FC
-		private void label81_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x0600009B RID: 155 RVA: 0x000052FF File Offset: 0x000034FF
-		private void mapPic_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x0600009C RID: 156 RVA: 0x00005304 File Offset: 0x00003504
+		
 		private void BtnStart_Click(object sender, EventArgs e)
 		{
-			try
+
+			if (BtnStart.Text == "START")
 			{
-				string fileName = this.StartFileList.Items[this.StartFileList.SelectedIndex].ToString();
-				Process.Start(new ProcessStartInfo(fileName)
+				try
 				{
-					WorkingDirectory = this.currentpath + "\\RustServerFiles"
-				});
-				this.infolabel.Text = "Server Started";
+					string fileName = this.StartFileList.Items[this.StartFileList.SelectedIndex].ToString();
+					Process.Start(new ProcessStartInfo(fileName)
+					{
+						WorkingDirectory = this.currentpath + "\\RustServerFiles"
+					});
+					this.infolabel.Text = "Server Started";
+					StartFileList.Enabled = false;
+					serverup.Enabled = true;
+					BtnStart.Enabled = false;
+				}
+				catch
+				{
+				}
 			}
-			catch
-			{
+			else
+            {
+				try
+				{
+					BtnStart.Enabled = false;
+					Process[] proc = Process.GetProcessesByName("RustDedicated");
+					proc[0].Kill();
+				}
+				catch
+				{ }
 			}
-		}
+        }
 
-		// Token: 0x0600009D RID: 157 RVA: 0x00005384 File Offset: 0x00003584
-		private void BtnRefresh_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x0600009E RID: 158 RVA: 0x00005387 File Offset: 0x00003587
-		private void checkBox1_CheckedChanged(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x0600009F RID: 159 RVA: 0x0000538C File Offset: 0x0000358C
+		
 		private void BtnRefreshbrowser_Click(object sender, EventArgs e)
 		{
 			this.BannerServer.ImageLocation = this.serverpicturetext.Text;
@@ -1883,7 +1329,6 @@ namespace batchgen
 			}
 		}
 
-		// Token: 0x060000A0 RID: 160 RVA: 0x000056A8 File Offset: 0x000038A8
 		private void Button11_Click(object sender, EventArgs e)
 		{
 			Directory.CreateDirectory("RustServerFiles");
@@ -1907,7 +1352,7 @@ namespace batchgen
 			this.textBox1.Text = text;
 		}
 
-		// Token: 0x060000A1 RID: 161 RVA: 0x00005798 File Offset: 0x00003998
+		
 		private void RefreshSmall_Click(object sender, EventArgs e)
 		{
 			bool flag = this.da.SelectedTab == this.da.TabPages["procgen"];
@@ -1972,19 +1417,19 @@ namespace batchgen
 			}
 		}
 
-		// Token: 0x060000A2 RID: 162 RVA: 0x00005A10 File Offset: 0x00003C10
-		private void TryToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			bool flag = !Form1.downloadingOxide;
-			if (flag)
-			{
-				this.infolabel.Text = "Downloading Umod";
-				this.DownloadFileAsync("https://umod.org/games/rust/download", "oxide.zip");
-				Form1.downloadingOxide = true;
-			}
-		}
 
-		// Token: 0x060000A3 RID: 163 RVA: 0x00005A54 File Offset: 0x00003C54
+		//private void TryToolStripMenuItem_Click(object sender, EventArgs e)
+		//{
+		//	bool flag = !Form1.downloadingOxide;
+		//	if (flag)
+		//	{
+		//		this.infolabel.Text = "Downloading Umod";
+		//		this.DownloadFileAsync("https://umod.org/games/rust/download", "oxide.zip");
+		//		Form1.downloadingOxide = true;
+		//	}
+		//}
+
+		
 		private void DownloadInstallToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			bool flag = !Form1.downloadingOxide;
@@ -1996,52 +1441,19 @@ namespace batchgen
 			}
 		}
 
-		// Token: 0x060000A4 RID: 164 RVA: 0x00005A98 File Offset: 0x00003C98
-		private void MapMakingToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			Process.Start("https://www.patreon.com/RustMapMaking");
-		}
-
-		// Token: 0x060000A5 RID: 165 RVA: 0x00005AA6 File Offset: 0x00003CA6
-		private void TwitchDonationPageToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			Process.Start("http://bit.ly/2M7JrCQ");
-		}
-
-		// Token: 0x060000A6 RID: 166 RVA: 0x00005AB4 File Offset: 0x00003CB4
-		private void SkinsToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			Process.Start("http://bit.ly/2MKzA5g");
-		}
-
-		// Token: 0x060000A7 RID: 167 RVA: 0x00005AC2 File Offset: 0x00003CC2
-		private void Button12_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x060000A8 RID: 168 RVA: 0x00005AC5 File Offset: 0x00003CC5
-		private void ToolStripMenuItem33_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x060000A9 RID: 169 RVA: 0x00005AC8 File Offset: 0x00003CC8
-		private void ToolStripMenuItem20_Click(object sender, EventArgs e)
-		{
-		}
-
-		// Token: 0x060000AA RID: 170 RVA: 0x00005ACB File Offset: 0x00003CCB
+		
 		private void UpdateFIleToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start(this.currentpath + this.slashbox.Text + "steamcmd");
 		}
 
-		// Token: 0x060000AB RID: 171 RVA: 0x00005AEF File Offset: 0x00003CEF
+		
 		private void StartFileToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("Explorer.exe", this.servfilesdirectory.Text);
 		}
 
-		// Token: 0x060000AC RID: 172 RVA: 0x00005B08 File Offset: 0x00003D08
+
 		private void UpdateServerToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Directory.CreateDirectory("RustServerFiles");
@@ -2060,7 +1472,7 @@ namespace batchgen
 			}
 		}
 
-		// Token: 0x060000AD RID: 173 RVA: 0x00005BD8 File Offset: 0x00003DD8
+		
 		private void Button6_Click_1(object sender, EventArgs e)
 		{
 			bool flag = this.SearchVar.Text == "aithinkmanager.framebudgetms";
@@ -4988,7 +4400,7 @@ namespace batchgen
 			this.SearchVar.Clear();
 		}
 
-		// Token: 0x060000AE RID: 174 RVA: 0x0000B468 File Offset: 0x00009668
+
 		private void BTNadd_Click(object sender, EventArgs e)
 		{
 			this.LockedLbl2.Visible = false;
@@ -5003,14 +4415,14 @@ namespace batchgen
 			this.varvalue.Clear();
 		}
 
-		// Token: 0x060000AF RID: 175 RVA: 0x0000B4EC File Offset: 0x000096EC
+
 		private void Btnclear_Click_1(object sender, EventArgs e)
 		{
 			this.varvar.Clear();
 			this.varvalue.Clear();
 		}
 
-		// Token: 0x060000B0 RID: 176 RVA: 0x0000B507 File Offset: 0x00009707
+
 		private void BtnCLLearVars_Click(object sender, EventArgs e)
 		{
 			this.ServerVars.Rows.Clear();
@@ -5018,13 +4430,13 @@ namespace batchgen
 			this.LockedLbl.Visible = false;
 		}
 
-		// Token: 0x060000B1 RID: 177 RVA: 0x0000B535 File Offset: 0x00009735
+
 		private void Button12_Click_1(object sender, EventArgs e)
 		{
 			Process.Start("http://bit.ly/2TflLgq");
 		}
 
-		// Token: 0x060000B2 RID: 178 RVA: 0x0000B544 File Offset: 0x00009744
+
 		private void BtnCompleteVars_Click(object sender, EventArgs e)
 		{
 			this.ServerVarsFinal.Text = "";
@@ -5055,7 +4467,7 @@ namespace batchgen
 			this.ServerVars.Enabled = false;
 		}
 
-		// Token: 0x060000B3 RID: 179 RVA: 0x0000B6B4 File Offset: 0x000098B4
+
 		private void StartFileList_MouseClick(object sender, MouseEventArgs e)
 		{
 			this.StartFileList.Items.Clear();
@@ -5076,19 +4488,19 @@ namespace batchgen
             }
 		}
 
-		// Token: 0x060000B4 RID: 180 RVA: 0x0000B721 File Offset: 0x00009921
+
 		private void ServerFolderToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("Explorer.exe", this.currentpath);
 		}
 
-		// Token: 0x060000B5 RID: 181 RVA: 0x0000B735 File Offset: 0x00009935
+
 		private void ServerFilesFolderToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("Explorer.exe", this.servfilesdirectory.Text);
 		}
 
-		// Token: 0x060000B6 RID: 182 RVA: 0x0000B74E File Offset: 0x0000994E
+
 		private void SteamCMDToolStripMenuItem1_Click(object sender, EventArgs e)
 		{
 			Process.Start("Explorer.exe", this.currentpath + this.steamcmdbox.Text);
@@ -5098,11 +4510,11 @@ namespace batchgen
         {
 			data = data.Replace(@"""", "");
 			data = data.Replace(@"\", "");
-			data = data.Replace(@" ", "");
+			data = data.TrimEnd().TrimStart();
 			return data;
         }
 
-		// Token: 0x060000B7 RID: 183 RVA: 0x0000B772 File Offset: 0x00009972
+
 		private void StartFileList_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			try
@@ -5172,8 +4584,8 @@ namespace batchgen
 							if (ps.Contains("+maxplayers "))
 							{
 								Maxplayers = ps.Replace("+maxplayers ", "");
-								Maxplayers = Maxplayers.Substring(1, Maxplayers.Length - 2);
 								Maxplayers = Maxplayers.TrimEnd();
+								Maxplayers = Maxplayers.Substring(1, Maxplayers.Length - 2);
 
 							}
 							else if (ps.Contains("ip "))
@@ -5354,41 +4766,21 @@ namespace batchgen
             }
 		}
 
-		// Token: 0x060000B8 RID: 184 RVA: 0x0000B775 File Offset: 0x00009975
+
 		private void BtnViewPage_Click(object sender, EventArgs e)
 		{
 			Process.Start(this.serverurltext.Text);
 		}
 
-		// Token: 0x04000001 RID: 1
+
 		private const string steamCMDUrl = "https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip";
-
-		// Token: 0x04000002 RID: 2
 		private const string oxideUrl = "https://umod.org/games/rust/download";
-
-		// Token: 0x04000003 RID: 3
 		private static bool downloadingSteamCMD = false;
-
-		// Token: 0x04000004 RID: 4
 		private static bool downloadingOxide = false;
-
-		// Token: 0x04000005 RID: 5
 		private string currentpath = Directory.GetCurrentDirectory();
-
-		// Token: 0x04000006 RID: 6
 		public string SetValueForVar = "";
 
-        private void LockedLbl2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void editVarListToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-			AddVarForm f2 = new AddVarForm();
-			f2.ShowDialog(); 
-		}
-
+        
         private void addAdminToolStripMenuItem_Click(object sender, EventArgs e)
         {
 				try
@@ -5437,10 +4829,6 @@ namespace batchgen
 				}
         }
 
-        private void BARREN_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button4_Click_1(object sender, EventArgs e)
         {
@@ -5629,10 +5017,6 @@ namespace batchgen
 			}
 		}
 
-        private void BAmapsizebox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void BAmapsizebox_Validating(object sender, CancelEventArgs e)
         {
@@ -5804,7 +5188,108 @@ namespace batchgen
         {
 			Form2 plugins = new Form2(); 
 			plugins.StartPosition = FormStartPosition.CenterScreen;
-			plugins.Show(); 
+			plugins.ShowDialog(); 
+		}
+
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+			try
+			{
+				File.Delete("RustServerFiles\\logs.log");
+			}
+			catch { }
+			textBox2.Text = "";
+		}
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+			if (tabControl1.SelectedIndex == 1)
+            {
+				this.delay.Enabled = true;
+			}
+			else
+            {
+				this.delay.Enabled = false;
+			}
+		}
+
+        private void button13_Click_1(object sender, EventArgs e)
+        {
+			updatelog();
+		}
+
+		const int EM_LINESCROLL = 0x00B6;
+		[DllImport("user32.dll")]
+		static extern int SetScrollPos(IntPtr hWnd, int nBar,
+							   int nPos, bool bRedraw);
+		[DllImport("user32.dll")]
+		static extern int SendMessage(IntPtr hWnd, int wMsg,
+									   int wParam, int lParam);
+
+		[DllImport("user32.dll")]
+		static extern int GetScrollPos(IntPtr hWnd, int nBar);
+
+		private void updatelog()
+        {
+			//try
+			//{
+			if (GetScrollPos(textBox2.Handle, 1) == 0)
+			{
+				var checkchange = System.IO.File.GetLastWriteTime("RustServerFiles\\logs.log");
+				if (lastModified != checkchange.ToString())
+				{
+					lastModified = checkchange.ToString();
+					string temp = "";
+					using (FileStream stream = File.Open("RustServerFiles\\logs.log", FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+					{
+						using (StreamReader reader = new StreamReader(stream))
+						{
+							temp = reader.ReadToEnd();
+						}
+					}
+					string[] lines = temp.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
+
+					textBox2.Text = "";
+					for (int i = lines.Length - 1; i > 0; i--)
+					{
+						textBox2.Text += lines[i].ToString() + Environment.NewLine;
+					}
+				}
+			}
+			//}
+
+			//         catch { }
+		}
+
+		private void serverup_Tick(object sender, EventArgs e)
+        {
+
+			if (BtnStart.Enabled == false)
+            {
+				BtnStart.Enabled = true;
+			}
+
+			Process[] pname = Process.GetProcessesByName("RustDedicated");
+			if (pname.Length == 0)
+			{
+				BtnStart.Text = "START";
+				StartFileList.Enabled = true;
+				serverup.Enabled = false;
+				label68.Text = "START YOUR SERVER";
+				infolabel.Text = "Server not running.";
+			}
+			else
+			{
+				if (BtnStart.Text != "STOP")
+				{
+					BtnStart.Text = "STOP";
+					StartFileList.Enabled = false;
+					label68.Text = "SERVER RUNNING";
+				}
+			}
+
+
 		}
     }
 }

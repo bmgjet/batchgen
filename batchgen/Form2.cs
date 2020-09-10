@@ -15,6 +15,7 @@ namespace batchgen
     {
 
         public string pluginsfol = "RustServerFiles\\oxide\\plugins\\";
+        public string pluginscfg = "RustServerFiles\\oxide\\config\\";
         public Form2()
         {
             InitializeComponent();
@@ -173,10 +174,37 @@ namespace batchgen
                 }
                 catch (Exception er)
                 {
-                    MessageBox.Show("Error: " + er.ToString().Split(new[] { "at" }, StringSplitOptions.None)[0]);
+                    MessageBox.Show("Error: " + er.ToString().Split(new[] { " at " }, StringSplitOptions.None)[0]);
                 }
             }
 
+        }
+
+        private void ServerVars_DoubleClick(object sender, EventArgs e)
+        {
+            string pluginname = (string)ServerVars.CurrentRow.Cells[0].Value;
+            string pluginversion = (string)ServerVars.CurrentRow.Cells[2].Value;
+            string pluginpath = (string)ServerVars.CurrentRow.Cells[4].Value;
+            string[] plugint = (pluginpath).Split('\\');
+            string newpluginname = plugint[plugint.Length - 1];
+            pluginpath = pluginscfg + newpluginname.Substring(0, newpluginname.Length - 3) + ".json";
+
+
+            DialogResult dialogResult = MessageBox.Show("Do you want to edit this plugin config?" + Environment.NewLine + "Plugin name: " + pluginname + Environment.NewLine + "Plugin version: " + pluginversion + Environment.NewLine + pluginpath, "Config Plugin:", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                try
+                {
+                    string[] tempdata = File.ReadAllLines(pluginpath);
+                    Form3 plugins = new Form3(tempdata, pluginpath, newpluginname);
+                    plugins.StartPosition = FormStartPosition.CenterScreen;
+                    plugins.ShowDialog();
+                }
+                catch (Exception er)
+                {
+                    MessageBox.Show("Error: " + er.ToString().Split(new[] { " at " }, StringSplitOptions.None)[0]);
+                }
+            }
         }
     }
 }

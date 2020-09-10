@@ -32,12 +32,25 @@
             this.howToPortForwardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem28 = new System.Windows.Forms.ToolStripSeparator();
             this.mostBeginnerMistakesQuestionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem13 = new System.Windows.Forms.ToolStripSeparator();
+            this.browseMapsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serverOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addAdminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setRconIPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.wipeServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wipeMapOnlyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
+            this.wipeServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripSeparator();
+            this.fILELOCATIONSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.startFileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateFileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripSeparator();
+            this.serverFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uSSRFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripSeparator();
+            this.steamCMDFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.socialMediaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.programsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rustAdminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,6 +89,9 @@
             this.toolStripMenuItem18 = new System.Windows.Forms.ToolStripSeparator();
             this.browseFreePluginsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem29 = new System.Windows.Forms.ToolStripSeparator();
+            this.installUmodToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripSeparator();
+            this.pluginManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.maintab = new System.Windows.Forms.TabPage();
             this.CheckDll = new System.Windows.Forms.TextBox();
             this.hasspace = new System.Windows.Forms.TextBox();
@@ -322,22 +338,13 @@
             this.label34 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripSeparator();
-            this.fILELOCATIONSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.startFileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateFileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripSeparator();
-            this.serverFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.uSSRFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripSeparator();
-            this.steamCMDFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.installUmodToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripSeparator();
-            this.pluginManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem13 = new System.Windows.Forms.ToolStripSeparator();
-            this.browseMapsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.setRconIPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.serverup = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.maintab.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -363,6 +370,9 @@
             this.KOTH.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // imageList1
@@ -378,7 +388,7 @@
             // 
             // delay
             // 
-            this.delay.Interval = 500;
+            this.delay.Interval = 2000;
             this.delay.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // menuStrip1
@@ -465,6 +475,18 @@
             this.mostBeginnerMistakesQuestionsToolStripMenuItem.Text = "15 Most Mistakes / Questions";
             this.mostBeginnerMistakesQuestionsToolStripMenuItem.Click += new System.EventHandler(this.mostBeginnerMistakesQuestionsToolStripMenuItem_Click);
             // 
+            // toolStripMenuItem13
+            // 
+            this.toolStripMenuItem13.Name = "toolStripMenuItem13";
+            this.toolStripMenuItem13.Size = new System.Drawing.Size(149, 6);
+            // 
+            // browseMapsToolStripMenuItem
+            // 
+            this.browseMapsToolStripMenuItem.Name = "browseMapsToolStripMenuItem";
+            this.browseMapsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.browseMapsToolStripMenuItem.Text = "Browse Maps";
+            this.browseMapsToolStripMenuItem.Click += new System.EventHandler(this.chooseAMapToolStripMenuItem_Click);
+            // 
             // serverOptionsToolStripMenuItem
             // 
             this.serverOptionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -484,35 +506,111 @@
             // addAdminToolStripMenuItem
             // 
             this.addAdminToolStripMenuItem.Name = "addAdminToolStripMenuItem";
-            this.addAdminToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addAdminToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.addAdminToolStripMenuItem.Text = "Add Admin";
             this.addAdminToolStripMenuItem.Click += new System.EventHandler(this.addAdminToolStripMenuItem_Click);
+            // 
+            // setRconIPToolStripMenuItem
+            // 
+            this.setRconIPToolStripMenuItem.Name = "setRconIPToolStripMenuItem";
+            this.setRconIPToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.setRconIPToolStripMenuItem.Text = "Set Rcon IP";
+            this.setRconIPToolStripMenuItem.Click += new System.EventHandler(this.setRconIPToolStripMenuItem_Click);
             // 
             // updateServerToolStripMenuItem
             // 
             this.updateServerToolStripMenuItem.Name = "updateServerToolStripMenuItem";
-            this.updateServerToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.updateServerToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.updateServerToolStripMenuItem.Text = "Update Server";
             this.updateServerToolStripMenuItem.Click += new System.EventHandler(this.UpdateServerToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 6);
-            // 
-            // wipeServerToolStripMenuItem
-            // 
-            this.wipeServerToolStripMenuItem.Name = "wipeServerToolStripMenuItem";
-            this.wipeServerToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.wipeServerToolStripMenuItem.Text = "Full Wipe Server";
-            this.wipeServerToolStripMenuItem.Click += new System.EventHandler(this.wipeServerToolStripMenuItem_Click);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(158, 6);
             // 
             // wipeMapOnlyToolStripMenuItem
             // 
             this.wipeMapOnlyToolStripMenuItem.Name = "wipeMapOnlyToolStripMenuItem";
-            this.wipeMapOnlyToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.wipeMapOnlyToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.wipeMapOnlyToolStripMenuItem.Text = "Wipe Map Only";
             this.wipeMapOnlyToolStripMenuItem.Click += new System.EventHandler(this.wipeMapOnlyToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem6
+            // 
+            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(158, 6);
+            // 
+            // wipeServerToolStripMenuItem
+            // 
+            this.wipeServerToolStripMenuItem.Name = "wipeServerToolStripMenuItem";
+            this.wipeServerToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.wipeServerToolStripMenuItem.Text = "Full Wipe Server";
+            this.wipeServerToolStripMenuItem.Click += new System.EventHandler(this.wipeServerToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem7
+            // 
+            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(158, 6);
+            // 
+            // fILELOCATIONSToolStripMenuItem
+            // 
+            this.fILELOCATIONSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.startFileToolStripMenuItem1,
+            this.updateFileToolStripMenuItem1,
+            this.toolStripMenuItem8,
+            this.serverFilesToolStripMenuItem,
+            this.uSSRFolderToolStripMenuItem,
+            this.toolStripMenuItem9,
+            this.steamCMDFolderToolStripMenuItem});
+            this.fILELOCATIONSToolStripMenuItem.Name = "fILELOCATIONSToolStripMenuItem";
+            this.fILELOCATIONSToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.fILELOCATIONSToolStripMenuItem.Text = "FILE LOCATIONS";
+            // 
+            // startFileToolStripMenuItem1
+            // 
+            this.startFileToolStripMenuItem1.Name = "startFileToolStripMenuItem1";
+            this.startFileToolStripMenuItem1.Size = new System.Drawing.Size(173, 22);
+            this.startFileToolStripMenuItem1.Text = "Start File";
+            this.startFileToolStripMenuItem1.Click += new System.EventHandler(this.StartFileToolStripMenuItem_Click);
+            // 
+            // updateFileToolStripMenuItem1
+            // 
+            this.updateFileToolStripMenuItem1.Name = "updateFileToolStripMenuItem1";
+            this.updateFileToolStripMenuItem1.Size = new System.Drawing.Size(173, 22);
+            this.updateFileToolStripMenuItem1.Text = "Update File";
+            this.updateFileToolStripMenuItem1.Click += new System.EventHandler(this.UpdateFIleToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem8
+            // 
+            this.toolStripMenuItem8.Name = "toolStripMenuItem8";
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(170, 6);
+            // 
+            // serverFilesToolStripMenuItem
+            // 
+            this.serverFilesToolStripMenuItem.Name = "serverFilesToolStripMenuItem";
+            this.serverFilesToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.serverFilesToolStripMenuItem.Text = "Server Files";
+            this.serverFilesToolStripMenuItem.Click += new System.EventHandler(this.ServerFilesFolderToolStripMenuItem_Click);
+            // 
+            // uSSRFolderToolStripMenuItem
+            // 
+            this.uSSRFolderToolStripMenuItem.Name = "uSSRFolderToolStripMenuItem";
+            this.uSSRFolderToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.uSSRFolderToolStripMenuItem.Text = "USSR Folder";
+            this.uSSRFolderToolStripMenuItem.Click += new System.EventHandler(this.ServerFolderToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem9
+            // 
+            this.toolStripMenuItem9.Name = "toolStripMenuItem9";
+            this.toolStripMenuItem9.Size = new System.Drawing.Size(170, 6);
+            // 
+            // steamCMDFolderToolStripMenuItem
+            // 
+            this.steamCMDFolderToolStripMenuItem.Name = "steamCMDFolderToolStripMenuItem";
+            this.steamCMDFolderToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.steamCMDFolderToolStripMenuItem.Text = "Steam CMD Folder";
+            this.steamCMDFolderToolStripMenuItem.Click += new System.EventHandler(this.SteamCMDToolStripMenuItem1_Click);
             // 
             // socialMediaToolStripMenuItem
             // 
@@ -525,7 +623,6 @@
             this.socialMediaToolStripMenuItem.Name = "socialMediaToolStripMenuItem";
             this.socialMediaToolStripMenuItem.Size = new System.Drawing.Size(52, 22);
             this.socialMediaToolStripMenuItem.Text = "Useful";
-            this.socialMediaToolStripMenuItem.Click += new System.EventHandler(this.socialMediaToolStripMenuItem_Click);
             // 
             // programsToolStripMenuItem
             // 
@@ -802,6 +899,25 @@
             this.toolStripMenuItem29.Name = "toolStripMenuItem29";
             this.toolStripMenuItem29.Size = new System.Drawing.Size(188, 6);
             // 
+            // installUmodToolStripMenuItem1
+            // 
+            this.installUmodToolStripMenuItem1.Name = "installUmodToolStripMenuItem1";
+            this.installUmodToolStripMenuItem1.Size = new System.Drawing.Size(191, 22);
+            this.installUmodToolStripMenuItem1.Text = "Install Umod";
+            this.installUmodToolStripMenuItem1.Click += new System.EventHandler(this.DownloadInstallToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem10
+            // 
+            this.toolStripMenuItem10.Name = "toolStripMenuItem10";
+            this.toolStripMenuItem10.Size = new System.Drawing.Size(188, 6);
+            // 
+            // pluginManagerToolStripMenuItem
+            // 
+            this.pluginManagerToolStripMenuItem.Name = "pluginManagerToolStripMenuItem";
+            this.pluginManagerToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.pluginManagerToolStripMenuItem.Text = "Plugin Manager";
+            this.pluginManagerToolStripMenuItem.Click += new System.EventHandler(this.pluginManagerToolStripMenuItem_Click);
+            // 
             // maintab
             // 
             this.maintab.AccessibleName = "";
@@ -843,7 +959,6 @@
             this.maintab.Size = new System.Drawing.Size(1721, 957);
             this.maintab.TabIndex = 0;
             this.maintab.Text = "Server Setup";
-            this.maintab.Click += new System.EventHandler(this.maintab_Click);
             // 
             // CheckDll
             // 
@@ -886,7 +1001,6 @@
             this.LockedLbl2.Size = new System.Drawing.Size(319, 25);
             this.LockedLbl2.TabIndex = 34;
             this.LockedLbl2.Text = "ADD OR CLEAR TO UNLOCK";
-            this.LockedLbl2.Click += new System.EventHandler(this.LockedLbl2_Click);
             // 
             // LockedLbl
             // 
@@ -1413,7 +1527,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(456, 94);
             this.panel5.TabIndex = 17;
-            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // infolabel
             // 
@@ -1425,9 +1538,7 @@
             this.infolabel.Name = "infolabel";
             this.infolabel.Size = new System.Drawing.Size(456, 51);
             this.infolabel.TabIndex = 1;
-            this.infolabel.Text = "Start by downloading SteamCMD";
             this.infolabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.infolabel.Click += new System.EventHandler(this.infolabel_Click);
             // 
             // label47
             // 
@@ -1511,7 +1622,6 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(544, 800);
             this.panel9.TabIndex = 27;
-            this.panel9.Paint += new System.Windows.Forms.PaintEventHandler(this.panel9_Paint_2);
             // 
             // PreviewDesc
             // 
@@ -1604,7 +1714,6 @@
             this.label42.TabIndex = 0;
             this.label42.Text = "-";
             this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label42.Click += new System.EventHandler(this.label38_Click_1);
             // 
             // FakeMS
             // 
@@ -1617,7 +1726,6 @@
             this.FakeMS.TabIndex = 0;
             this.FakeMS.Text = "10ms";
             this.FakeMS.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.FakeMS.Click += new System.EventHandler(this.label38_Click_1);
             // 
             // MaxPlayersPrev
             // 
@@ -1630,7 +1738,6 @@
             this.MaxPlayersPrev.TabIndex = 0;
             this.MaxPlayersPrev.Text = "50/50";
             this.MaxPlayersPrev.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.MaxPlayersPrev.Click += new System.EventHandler(this.label38_Click_1);
             // 
             // mapTypeprev
             // 
@@ -1643,7 +1750,6 @@
             this.mapTypeprev.TabIndex = 0;
             this.mapTypeprev.Text = "Procedural Map";
             this.mapTypeprev.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.mapTypeprev.Click += new System.EventHandler(this.label38_Click_1);
             // 
             // label38
             // 
@@ -1656,7 +1762,6 @@
             this.label38.TabIndex = 0;
             this.label38.Text = "-";
             this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label38.Click += new System.EventHandler(this.label38_Click_1);
             // 
             // serverTitle
             // 
@@ -1669,7 +1774,6 @@
             this.serverTitle.TabIndex = 0;
             this.serverTitle.Text = "Snitzel";
             this.serverTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.serverTitle.Click += new System.EventHandler(this.label38_Click_1);
             // 
             // BannerServer
             // 
@@ -1688,7 +1792,6 @@
             this.PreviewPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.PreviewPic.TabIndex = 0;
             this.PreviewPic.TabStop = false;
-            this.PreviewPic.Click += new System.EventHandler(this.PreviewPic_Click);
             // 
             // button10
             // 
@@ -1706,7 +1809,6 @@
             this.progressBar2.Name = "progressBar2";
             this.progressBar2.Size = new System.Drawing.Size(101, 23);
             this.progressBar2.TabIndex = 25;
-            this.progressBar2.Click += new System.EventHandler(this.progressBar2_Click);
             // 
             // label43
             // 
@@ -1718,7 +1820,6 @@
             this.label43.TabIndex = 0;
             this.label43.Text = "TWITCH";
             this.label43.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label43.Click += new System.EventHandler(this.label81_Click);
             // 
             // label81
             // 
@@ -1730,7 +1831,6 @@
             this.label81.TabIndex = 0;
             this.label81.Text = "YOUTUBE";
             this.label81.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label81.Click += new System.EventHandler(this.label81_Click);
             // 
             // button9
             // 
@@ -1776,7 +1876,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(357, 296);
             this.panel4.TabIndex = 16;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // RefreshSmall
             // 
@@ -1809,7 +1908,6 @@
             this.mapPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.mapPic.TabIndex = 0;
             this.mapPic.TabStop = false;
-            this.mapPic.Click += new System.EventHandler(this.mapPic_Click);
             // 
             // test
             // 
@@ -1825,7 +1923,6 @@
             this.parametersbox.Name = "parametersbox";
             this.parametersbox.Size = new System.Drawing.Size(107, 20);
             this.parametersbox.TabIndex = 21;
-            this.parametersbox.TextChanged += new System.EventHandler(this.parametersbox_TextChanged);
             // 
             // deditextbox
             // 
@@ -1842,7 +1939,6 @@
             this.loglog.Size = new System.Drawing.Size(100, 20);
             this.loglog.TabIndex = 9;
             this.loglog.Text = "\\logs";
-            this.loglog.TextChanged += new System.EventHandler(this.loglog_TextChanged);
             // 
             // quibox
             // 
@@ -1902,7 +1998,6 @@
             this.button1.TabIndex = 14;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // panel3
             // 
@@ -1917,7 +2012,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(457, 121);
             this.panel3.TabIndex = 13;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // RdioStaging
             // 
@@ -1957,7 +2051,6 @@
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(449, 23);
             this.progressBar1.TabIndex = 11;
-            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
             // 
             // label29
             // 
@@ -2018,7 +2111,6 @@
             this.procgen.Size = new System.Drawing.Size(449, 381);
             this.procgen.TabIndex = 0;
             this.procgen.Text = "PROCGEN";
-            this.procgen.Click += new System.EventHandler(this.procgen_Click);
             // 
             // genbtn
             // 
@@ -2058,7 +2150,6 @@
             this.maxplayertext.Size = new System.Drawing.Size(294, 20);
             this.maxplayertext.TabIndex = 2;
             this.maxplayertext.Text = "10";
-            this.maxplayertext.TextChanged += new System.EventHandler(this.maxplayertext_TextChanged);
             this.maxplayertext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.maxplayertext_KeyPress);
             // 
             // serverdisctext
@@ -2084,7 +2175,6 @@
             this.serverpicturetext.Size = new System.Drawing.Size(294, 20);
             this.serverpicturetext.TabIndex = 2;
             this.serverpicturetext.Text = "https://i.imgur.com/sqGFVW9.png";
-            this.serverpicturetext.TextChanged += new System.EventHandler(this.serverpicturetext_TextChanged);
             // 
             // rconpasstext
             // 
@@ -2130,7 +2220,6 @@
             this.identitytext.Size = new System.Drawing.Size(294, 20);
             this.identitytext.TabIndex = 1;
             this.identitytext.Text = "ProcGen";
-            this.identitytext.TextChanged += new System.EventHandler(this.identitytext_TextChanged);
             // 
             // label13
             // 
@@ -2141,7 +2230,6 @@
             this.label13.Size = new System.Drawing.Size(71, 13);
             this.label13.TabIndex = 1;
             this.label13.Text = "MAP SEED";
-            this.label13.Click += new System.EventHandler(this.label3_Click);
             // 
             // label12
             // 
@@ -2152,7 +2240,6 @@
             this.label12.Size = new System.Drawing.Size(68, 13);
             this.label12.TabIndex = 1;
             this.label12.Text = "MAP SIZE";
-            this.label12.Click += new System.EventHandler(this.label3_Click);
             // 
             // label11
             // 
@@ -2163,7 +2250,6 @@
             this.label11.Size = new System.Drawing.Size(94, 13);
             this.label11.TabIndex = 1;
             this.label11.Text = "MAX PLAYERS";
-            this.label11.Click += new System.EventHandler(this.label3_Click);
             // 
             // label10
             // 
@@ -2174,7 +2260,6 @@
             this.label10.Size = new System.Drawing.Size(144, 13);
             this.label10.TabIndex = 1;
             this.label10.Text = "SERVER DISCRIPTION";
-            this.label10.Click += new System.EventHandler(this.label3_Click);
             // 
             // label9
             // 
@@ -2185,7 +2270,6 @@
             this.label9.Size = new System.Drawing.Size(117, 13);
             this.label9.TabIndex = 1;
             this.label9.Text = "SERVER WEBSITE";
-            this.label9.Click += new System.EventHandler(this.label3_Click);
             // 
             // label8
             // 
@@ -2196,7 +2280,6 @@
             this.label8.Size = new System.Drawing.Size(114, 13);
             this.label8.TabIndex = 1;
             this.label8.Text = "SERVER PICTURE";
-            this.label8.Click += new System.EventHandler(this.label3_Click);
             // 
             // label6
             // 
@@ -2207,7 +2290,6 @@
             this.label6.Size = new System.Drawing.Size(116, 13);
             this.label6.TabIndex = 1;
             this.label6.Text = "RCON PASSWORD";
-            this.label6.Click += new System.EventHandler(this.label3_Click);
             // 
             // label5
             // 
@@ -2218,7 +2300,6 @@
             this.label5.Size = new System.Drawing.Size(78, 13);
             this.label5.TabIndex = 1;
             this.label5.Text = "RCON PORT";
-            this.label5.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -2229,7 +2310,6 @@
             this.label4.Size = new System.Drawing.Size(92, 13);
             this.label4.TabIndex = 1;
             this.label4.Text = "SERVER PORT";
-            this.label4.Click += new System.EventHandler(this.label3_Click);
             // 
             // label3
             // 
@@ -2240,7 +2320,6 @@
             this.label3.Size = new System.Drawing.Size(95, 13);
             this.label3.TabIndex = 1;
             this.label3.Text = "SERVER NAME";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -2294,7 +2373,6 @@
             this.BARREN.Size = new System.Drawing.Size(449, 381);
             this.BARREN.TabIndex = 3;
             this.BARREN.Text = "BARREN";
-            this.BARREN.Click += new System.EventHandler(this.BARREN_Click);
             // 
             // button4
             // 
@@ -2341,7 +2419,6 @@
             this.BAmapsizebox.Size = new System.Drawing.Size(294, 20);
             this.BAmapsizebox.TabIndex = 62;
             this.BAmapsizebox.Text = "3000";
-            this.BAmapsizebox.TextChanged += new System.EventHandler(this.BAmapsizebox_TextChanged);
             this.BAmapsizebox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mapsizebox_KeyPress);
             this.BAmapsizebox.Validating += new System.ComponentModel.CancelEventHandler(this.BAmapsizebox_Validating);
             // 
@@ -2573,7 +2650,6 @@
             this.mapurlbox.Size = new System.Drawing.Size(296, 20);
             this.mapurlbox.TabIndex = 27;
             this.mapurlbox.Text = "https://www.dropbox.com/s/vvl3nynh9vzhthn/1kbuildprac2019.map?dl=1";
-            this.mapurlbox.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // CMmaxplayertext
             // 
@@ -2583,7 +2659,6 @@
             this.CMmaxplayertext.Size = new System.Drawing.Size(296, 20);
             this.CMmaxplayertext.TabIndex = 25;
             this.CMmaxplayertext.Text = "10";
-            this.CMmaxplayertext.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             this.CMmaxplayertext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.maxplayertext_KeyPress);
             // 
             // CMserverdisctext
@@ -2593,7 +2668,6 @@
             this.CMserverdisctext.Size = new System.Drawing.Size(296, 20);
             this.CMserverdisctext.TabIndex = 24;
             this.CMserverdisctext.Text = "Ted Pommes is.... \\namazing";
-            this.CMserverdisctext.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // CMserverurltext
             // 
@@ -2602,7 +2676,6 @@
             this.CMserverurltext.Size = new System.Drawing.Size(296, 20);
             this.CMserverurltext.TabIndex = 23;
             this.CMserverurltext.Text = "https://discord.gg/DPKWPr4";
-            this.CMserverurltext.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // CMserverpicturetext
             // 
@@ -2611,7 +2684,6 @@
             this.CMserverpicturetext.Size = new System.Drawing.Size(296, 20);
             this.CMserverpicturetext.TabIndex = 22;
             this.CMserverpicturetext.Text = "https://i.imgur.com/sqGFVW9.png";
-            this.CMserverpicturetext.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // CMrconpasstext
             // 
@@ -2620,7 +2692,6 @@
             this.CMrconpasstext.Size = new System.Drawing.Size(296, 20);
             this.CMrconpasstext.TabIndex = 21;
             this.CMrconpasstext.Text = "123456seven";
-            this.CMrconpasstext.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // CMrconporttext
             // 
@@ -2630,7 +2701,6 @@
             this.CMrconporttext.Size = new System.Drawing.Size(296, 20);
             this.CMrconporttext.TabIndex = 20;
             this.CMrconporttext.Text = "28016";
-            this.CMrconporttext.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             this.CMrconporttext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rconporttext_KeyPress);
             // 
             // CMserverportext
@@ -2641,7 +2711,6 @@
             this.CMserverportext.Size = new System.Drawing.Size(296, 20);
             this.CMserverportext.TabIndex = 19;
             this.CMserverportext.Text = "28015";
-            this.CMserverportext.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
             this.CMserverportext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.serverporttext_KeyPress);
             // 
             // CMservernametext
@@ -2651,7 +2720,6 @@
             this.CMservernametext.Size = new System.Drawing.Size(296, 20);
             this.CMservernametext.TabIndex = 28;
             this.CMservernametext.Text = "Snitzel";
-            this.CMservernametext.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
             // 
             // CMidentitytext
             // 
@@ -2660,7 +2728,6 @@
             this.CMidentitytext.Size = new System.Drawing.Size(296, 20);
             this.CMidentitytext.TabIndex = 18;
             this.CMidentitytext.Text = "CustomMap";
-            this.CMidentitytext.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // label16
             // 
@@ -2671,7 +2738,6 @@
             this.label16.Size = new System.Drawing.Size(62, 13);
             this.label16.TabIndex = 15;
             this.label16.Text = "MAP URL";
-            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // label18
             // 
@@ -2682,7 +2748,6 @@
             this.label18.Size = new System.Drawing.Size(94, 13);
             this.label18.TabIndex = 13;
             this.label18.Text = "MAX PLAYERS";
-            this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
             // label19
             // 
@@ -2693,7 +2758,6 @@
             this.label19.Size = new System.Drawing.Size(144, 13);
             this.label19.TabIndex = 12;
             this.label19.Text = "SERVER DISCRIPTION";
-            this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // label20
             // 
@@ -2704,7 +2768,6 @@
             this.label20.Size = new System.Drawing.Size(117, 13);
             this.label20.TabIndex = 11;
             this.label20.Text = "SERVER WEBSITE";
-            this.label20.Click += new System.EventHandler(this.label20_Click);
             // 
             // label21
             // 
@@ -2715,7 +2778,6 @@
             this.label21.Size = new System.Drawing.Size(114, 13);
             this.label21.TabIndex = 10;
             this.label21.Text = "SERVER PICTURE";
-            this.label21.Click += new System.EventHandler(this.label21_Click);
             // 
             // label22
             // 
@@ -2726,7 +2788,6 @@
             this.label22.Size = new System.Drawing.Size(116, 13);
             this.label22.TabIndex = 9;
             this.label22.Text = "RCON PASSWORD";
-            this.label22.Click += new System.EventHandler(this.label22_Click);
             // 
             // label23
             // 
@@ -2737,7 +2798,6 @@
             this.label23.Size = new System.Drawing.Size(78, 13);
             this.label23.TabIndex = 8;
             this.label23.Text = "RCON PORT";
-            this.label23.Click += new System.EventHandler(this.label23_Click);
             // 
             // label24
             // 
@@ -2748,7 +2808,6 @@
             this.label24.Size = new System.Drawing.Size(92, 13);
             this.label24.TabIndex = 7;
             this.label24.Text = "SERVER PORT";
-            this.label24.Click += new System.EventHandler(this.label24_Click);
             // 
             // label25
             // 
@@ -2759,7 +2818,6 @@
             this.label25.Size = new System.Drawing.Size(95, 13);
             this.label25.TabIndex = 6;
             this.label25.Text = "SERVER NAME";
-            this.label25.Click += new System.EventHandler(this.label25_Click);
             // 
             // label26
             // 
@@ -2770,7 +2828,6 @@
             this.label26.Size = new System.Drawing.Size(121, 13);
             this.label26.TabIndex = 17;
             this.label26.Text = "SERVER IDENTITY";
-            this.label26.Click += new System.EventHandler(this.label26_Click);
             // 
             // label27
             // 
@@ -2781,7 +2838,6 @@
             this.label27.TabIndex = 5;
             this.label27.Text = "CUSTOM MAP";
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label27.Click += new System.EventHandler(this.label27_Click);
             // 
             // Hapis
             // 
@@ -2811,7 +2867,6 @@
             this.Hapis.Size = new System.Drawing.Size(449, 381);
             this.Hapis.TabIndex = 2;
             this.Hapis.Text = "HAPIS";
-            this.Hapis.Click += new System.EventHandler(this.Hapis_Click);
             // 
             // HAidentitytext
             // 
@@ -3669,7 +3724,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(334, 245);
             this.panel1.TabIndex = 7;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label14
             // 
@@ -3681,7 +3735,6 @@
             this.label14.Size = new System.Drawing.Size(141, 13);
             this.label14.TabIndex = 1;
             this.label14.Text = "BAT FILE DIRECTORY";
-            this.label14.Click += new System.EventHandler(this.label3_Click);
             // 
             // LogLocation
             // 
@@ -3742,7 +3795,6 @@
             this.label34.Size = new System.Drawing.Size(132, 13);
             this.label34.TabIndex = 1;
             this.label34.Text = "serv files directory";
-            this.label34.Click += new System.EventHandler(this.label3_Click);
             // 
             // label33
             // 
@@ -3754,124 +3806,102 @@
             this.label33.Size = new System.Drawing.Size(98, 13);
             this.label33.TabIndex = 1;
             this.label33.Text = "cmd directory";
-            this.label33.Click += new System.EventHandler(this.label3_Click);
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.maintab);
+            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Location = new System.Drawing.Point(-4, 22);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1729, 983);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
-            // toolStripMenuItem6
+            // tabPage1
             // 
-            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(180, 6);
+            this.tabPage1.BackColor = System.Drawing.Color.CadetBlue;
+            this.tabPage1.Controls.Add(this.tableLayoutPanel1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1721, 957);
+            this.tabPage1.TabIndex = 1;
+            this.tabPage1.Text = "Server Log";
             // 
-            // toolStripMenuItem7
+            // tableLayoutPanel1
             // 
-            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(180, 6);
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.textBox2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
+            this.tableLayoutPanel1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 6);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 95.12535F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.874652F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(837, 718);
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // fILELOCATIONSToolStripMenuItem
+            // textBox2
             // 
-            this.fILELOCATIONSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.startFileToolStripMenuItem1,
-            this.updateFileToolStripMenuItem1,
-            this.toolStripMenuItem8,
-            this.serverFilesToolStripMenuItem,
-            this.uSSRFolderToolStripMenuItem,
-            this.toolStripMenuItem9,
-            this.steamCMDFolderToolStripMenuItem});
-            this.fILELOCATIONSToolStripMenuItem.Name = "fILELOCATIONSToolStripMenuItem";
-            this.fILELOCATIONSToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.fILELOCATIONSToolStripMenuItem.Text = "FILE LOCATIONS";
+            this.textBox2.BackColor = System.Drawing.SystemColors.MenuText;
+            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox2.ForeColor = System.Drawing.SystemColors.Window;
+            this.textBox2.Location = new System.Drawing.Point(3, 3);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox2.Size = new System.Drawing.Size(831, 677);
+            this.textBox2.TabIndex = 0;
             // 
-            // startFileToolStripMenuItem1
+            // tableLayoutPanel2
             // 
-            this.startFileToolStripMenuItem1.Name = "startFileToolStripMenuItem1";
-            this.startFileToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.startFileToolStripMenuItem1.Text = "Start File";
-            this.startFileToolStripMenuItem1.Click += new System.EventHandler(this.StartFileToolStripMenuItem_Click);
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.button14, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.button13, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 686);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(831, 29);
+            this.tableLayoutPanel2.TabIndex = 1;
             // 
-            // updateFileToolStripMenuItem1
+            // button14
             // 
-            this.updateFileToolStripMenuItem1.Name = "updateFileToolStripMenuItem1";
-            this.updateFileToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.updateFileToolStripMenuItem1.Text = "Update File";
-            this.updateFileToolStripMenuItem1.Click += new System.EventHandler(this.UpdateFIleToolStripMenuItem_Click);
+            this.button14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button14.Location = new System.Drawing.Point(768, 3);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(60, 23);
+            this.button14.TabIndex = 3;
+            this.button14.Text = "Clear";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
-            // toolStripMenuItem8
+            // button13
             // 
-            this.toolStripMenuItem8.Name = "toolStripMenuItem8";
-            this.toolStripMenuItem8.Size = new System.Drawing.Size(177, 6);
+            this.button13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button13.Location = new System.Drawing.Point(3, 3);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(60, 23);
+            this.button13.TabIndex = 2;
+            this.button13.Text = "Refresh";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click_1);
             // 
-            // serverFilesToolStripMenuItem
+            // serverup
             // 
-            this.serverFilesToolStripMenuItem.Name = "serverFilesToolStripMenuItem";
-            this.serverFilesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.serverFilesToolStripMenuItem.Text = "Server Files";
-            this.serverFilesToolStripMenuItem.Click += new System.EventHandler(this.ServerFilesFolderToolStripMenuItem_Click);
-            // 
-            // uSSRFolderToolStripMenuItem
-            // 
-            this.uSSRFolderToolStripMenuItem.Name = "uSSRFolderToolStripMenuItem";
-            this.uSSRFolderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.uSSRFolderToolStripMenuItem.Text = "USSR Folder";
-            this.uSSRFolderToolStripMenuItem.Click += new System.EventHandler(this.ServerFolderToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem9
-            // 
-            this.toolStripMenuItem9.Name = "toolStripMenuItem9";
-            this.toolStripMenuItem9.Size = new System.Drawing.Size(177, 6);
-            // 
-            // steamCMDFolderToolStripMenuItem
-            // 
-            this.steamCMDFolderToolStripMenuItem.Name = "steamCMDFolderToolStripMenuItem";
-            this.steamCMDFolderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.steamCMDFolderToolStripMenuItem.Text = "Steam CMD Folder";
-            this.steamCMDFolderToolStripMenuItem.Click += new System.EventHandler(this.SteamCMDToolStripMenuItem1_Click);
-            // 
-            // installUmodToolStripMenuItem1
-            // 
-            this.installUmodToolStripMenuItem1.Name = "installUmodToolStripMenuItem1";
-            this.installUmodToolStripMenuItem1.Size = new System.Drawing.Size(191, 22);
-            this.installUmodToolStripMenuItem1.Text = "Install Umod";
-            this.installUmodToolStripMenuItem1.Click += new System.EventHandler(this.DownloadInstallToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem10
-            // 
-            this.toolStripMenuItem10.Name = "toolStripMenuItem10";
-            this.toolStripMenuItem10.Size = new System.Drawing.Size(188, 6);
-            // 
-            // pluginManagerToolStripMenuItem
-            // 
-            this.pluginManagerToolStripMenuItem.Name = "pluginManagerToolStripMenuItem";
-            this.pluginManagerToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.pluginManagerToolStripMenuItem.Text = "Plugin Manager";
-            this.pluginManagerToolStripMenuItem.Click += new System.EventHandler(this.pluginManagerToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem13
-            // 
-            this.toolStripMenuItem13.Name = "toolStripMenuItem13";
-            this.toolStripMenuItem13.Size = new System.Drawing.Size(177, 6);
-            // 
-            // browseMapsToolStripMenuItem
-            // 
-            this.browseMapsToolStripMenuItem.Name = "browseMapsToolStripMenuItem";
-            this.browseMapsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.browseMapsToolStripMenuItem.Text = "Browse Maps";
-            this.browseMapsToolStripMenuItem.Click += new System.EventHandler(this.chooseAMapToolStripMenuItem_Click);
-            // 
-            // setRconIPToolStripMenuItem
-            // 
-            this.setRconIPToolStripMenuItem.Name = "setRconIPToolStripMenuItem";
-            this.setRconIPToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.setRconIPToolStripMenuItem.Text = "Set Rcon IP";
-            this.setRconIPToolStripMenuItem.Click += new System.EventHandler(this.setRconIPToolStripMenuItem_Click);
+            this.serverup.Enabled = true;
+            this.serverup.Interval = 5000;
+            this.serverup.Tick += new System.EventHandler(this.serverup_Tick);
             // 
             // Form1
             // 
@@ -3885,7 +3915,7 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ultimate Server Setup Rust - USSR! V1.0 Fixed by BMGJET";
+            this.Text = "Ultimate Server Setup Rust - USSR! V1.0 Enhanced by BMGJET";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -3929,6 +3959,10 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4851,5 +4885,12 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem10;
         private System.Windows.Forms.ToolStripMenuItem pluginManagerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem setRconIPToolStripMenuItem;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Timer serverup;
     }
 }

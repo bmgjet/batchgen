@@ -20,3 +20,4 @@ I:\batchgen\batchgen\obj\x86\Debug\batchgen.csproj.CopyComplete
 I:\batchgen\batchgen\obj\x86\Debug\batchgen.exe
 I:\batchgen\batchgen\obj\x86\Debug\batchgen.pdb
 I:\batchgen\batchgen\obj\x86\Debug\batchgen.Form2.resources
+I:\batchgen\batchgen\obj\x86\Debug\batchgen.Form3.resources
