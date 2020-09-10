@@ -33,7 +33,11 @@
             this.toolStripMenuItem28 = new System.Windows.Forms.ToolStripSeparator();
             this.mostBeginnerMistakesQuestionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serverOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addAdminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.wipeServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.wipeMapOnlyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.socialMediaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.programsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rustAdminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,16 +76,6 @@
             this.toolStripMenuItem18 = new System.Windows.Forms.ToolStripSeparator();
             this.browseFreePluginsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem29 = new System.Windows.Forms.ToolStripSeparator();
-            this.chooseAMapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem20 = new System.Windows.Forms.ToolStripMenuItem();
-            this.startFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateFIleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripSeparator();
-            this.serverFilesFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.serverFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.steamCMDToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.installUmodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.downloadInstallToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.maintab = new System.Windows.Forms.TabPage();
             this.CheckDll = new System.Windows.Forms.TextBox();
             this.hasspace = new System.Windows.Forms.TextBox();
@@ -184,6 +178,31 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.BARREN = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
+            this.BAidentitytext = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.BAmapseedtext = new System.Windows.Forms.TextBox();
+            this.BAmapsizebox = new System.Windows.Forms.TextBox();
+            this.BAmaxplayertext = new System.Windows.Forms.TextBox();
+            this.BAserverdisctext = new System.Windows.Forms.TextBox();
+            this.BAserverurltext = new System.Windows.Forms.TextBox();
+            this.BAserverpicturetext = new System.Windows.Forms.TextBox();
+            this.BArconpasstext = new System.Windows.Forms.TextBox();
+            this.BArconporttext = new System.Windows.Forms.TextBox();
+            this.BAserverportext = new System.Windows.Forms.TextBox();
+            this.BAservernametext = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.label59 = new System.Windows.Forms.Label();
+            this.label60 = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
+            this.label63 = new System.Windows.Forms.Label();
+            this.label64 = new System.Windows.Forms.Label();
+            this.label65 = new System.Windows.Forms.Label();
+            this.label67 = new System.Windows.Forms.Label();
             this.custom = new System.Windows.Forms.TabPage();
             this.BTNbatchCustom = new System.Windows.Forms.Button();
             this.mapurlbox = new System.Windows.Forms.TextBox();
@@ -228,31 +247,6 @@
             this.label53 = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
-            this.BARREN = new System.Windows.Forms.TabPage();
-            this.BAidentitytext = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.BAmapseedtext = new System.Windows.Forms.TextBox();
-            this.BAmapsizebox = new System.Windows.Forms.TextBox();
-            this.BAmaxplayertext = new System.Windows.Forms.TextBox();
-            this.BAserverdisctext = new System.Windows.Forms.TextBox();
-            this.BAserverurltext = new System.Windows.Forms.TextBox();
-            this.BAserverpicturetext = new System.Windows.Forms.TextBox();
-            this.BArconpasstext = new System.Windows.Forms.TextBox();
-            this.BArconporttext = new System.Windows.Forms.TextBox();
-            this.BAserverportext = new System.Windows.Forms.TextBox();
-            this.BAservernametext = new System.Windows.Forms.TextBox();
-            this.label44 = new System.Windows.Forms.Label();
-            this.label55 = new System.Windows.Forms.Label();
-            this.label58 = new System.Windows.Forms.Label();
-            this.label59 = new System.Windows.Forms.Label();
-            this.label60 = new System.Windows.Forms.Label();
-            this.label61 = new System.Windows.Forms.Label();
-            this.label62 = new System.Windows.Forms.Label();
-            this.label63 = new System.Windows.Forms.Label();
-            this.label64 = new System.Windows.Forms.Label();
-            this.label65 = new System.Windows.Forms.Label();
-            this.label67 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.CRAGGY = new System.Windows.Forms.TabPage();
             this.CRidentitytext = new System.Windows.Forms.TextBox();
             this.label36 = new System.Windows.Forms.Label();
@@ -328,6 +322,22 @@
             this.label34 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripSeparator();
+            this.fILELOCATIONSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.startFileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateFileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripSeparator();
+            this.serverFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uSSRFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripSeparator();
+            this.steamCMDFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.installUmodToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripSeparator();
+            this.pluginManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem13 = new System.Windows.Forms.ToolStripSeparator();
+            this.browseMapsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setRconIPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.maintab.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -345,9 +355,9 @@
             this.panel3.SuspendLayout();
             this.da.SuspendLayout();
             this.procgen.SuspendLayout();
+            this.BARREN.SuspendLayout();
             this.custom.SuspendLayout();
             this.Hapis.SuspendLayout();
-            this.BARREN.SuspendLayout();
             this.CRAGGY.SuspendLayout();
             this.SAVAS.SuspendLayout();
             this.KOTH.SuspendLayout();
@@ -378,10 +388,7 @@
             this.helpToolStripMenuItem,
             this.serverOptionsToolStripMenuItem,
             this.socialMediaToolStripMenuItem,
-            this.pluginsToolStripMenuItem,
-            this.chooseAMapToolStripMenuItem,
-            this.toolStripMenuItem20,
-            this.installUmodToolStripMenuItem});
+            this.pluginsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(3, 1, 0, 1);
@@ -392,7 +399,9 @@
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.videoTutorialsToolStripMenuItem});
+            this.videoTutorialsToolStripMenuItem,
+            this.toolStripMenuItem13,
+            this.browseMapsToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 22);
             this.helpToolStripMenuItem.Text = "Help";
@@ -459,17 +468,51 @@
             // serverOptionsToolStripMenuItem
             // 
             this.serverOptionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.updateServerToolStripMenuItem});
+            this.addAdminToolStripMenuItem,
+            this.setRconIPToolStripMenuItem,
+            this.updateServerToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.wipeMapOnlyToolStripMenuItem,
+            this.toolStripMenuItem6,
+            this.wipeServerToolStripMenuItem,
+            this.toolStripMenuItem7,
+            this.fILELOCATIONSToolStripMenuItem});
             this.serverOptionsToolStripMenuItem.Name = "serverOptionsToolStripMenuItem";
             this.serverOptionsToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
             this.serverOptionsToolStripMenuItem.Text = "Server Options";
             // 
+            // addAdminToolStripMenuItem
+            // 
+            this.addAdminToolStripMenuItem.Name = "addAdminToolStripMenuItem";
+            this.addAdminToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addAdminToolStripMenuItem.Text = "Add Admin";
+            this.addAdminToolStripMenuItem.Click += new System.EventHandler(this.addAdminToolStripMenuItem_Click);
+            // 
             // updateServerToolStripMenuItem
             // 
             this.updateServerToolStripMenuItem.Name = "updateServerToolStripMenuItem";
-            this.updateServerToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.updateServerToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.updateServerToolStripMenuItem.Text = "Update Server";
             this.updateServerToolStripMenuItem.Click += new System.EventHandler(this.UpdateServerToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 6);
+            // 
+            // wipeServerToolStripMenuItem
+            // 
+            this.wipeServerToolStripMenuItem.Name = "wipeServerToolStripMenuItem";
+            this.wipeServerToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.wipeServerToolStripMenuItem.Text = "Full Wipe Server";
+            this.wipeServerToolStripMenuItem.Click += new System.EventHandler(this.wipeServerToolStripMenuItem_Click);
+            // 
+            // wipeMapOnlyToolStripMenuItem
+            // 
+            this.wipeMapOnlyToolStripMenuItem.Name = "wipeMapOnlyToolStripMenuItem";
+            this.wipeMapOnlyToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.wipeMapOnlyToolStripMenuItem.Text = "Wipe Map Only";
+            this.wipeMapOnlyToolStripMenuItem.Click += new System.EventHandler(this.wipeMapOnlyToolStripMenuItem_Click);
             // 
             // socialMediaToolStripMenuItem
             // 
@@ -715,7 +758,10 @@
             this.downloadOxideToolStripMenuItem,
             this.toolStripMenuItem18,
             this.browseFreePluginsToolStripMenuItem,
-            this.toolStripMenuItem29});
+            this.toolStripMenuItem29,
+            this.installUmodToolStripMenuItem1,
+            this.toolStripMenuItem10,
+            this.pluginManagerToolStripMenuItem});
             this.pluginsToolStripMenuItem.Name = "pluginsToolStripMenuItem";
             this.pluginsToolStripMenuItem.Size = new System.Drawing.Size(58, 22);
             this.pluginsToolStripMenuItem.Text = "Plugins";
@@ -756,82 +802,6 @@
             this.toolStripMenuItem29.Name = "toolStripMenuItem29";
             this.toolStripMenuItem29.Size = new System.Drawing.Size(188, 6);
             // 
-            // chooseAMapToolStripMenuItem
-            // 
-            this.chooseAMapToolStripMenuItem.Name = "chooseAMapToolStripMenuItem";
-            this.chooseAMapToolStripMenuItem.Size = new System.Drawing.Size(86, 22);
-            this.chooseAMapToolStripMenuItem.Text = "Choose Map";
-            this.chooseAMapToolStripMenuItem.Click += new System.EventHandler(this.chooseAMapToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem20
-            // 
-            this.toolStripMenuItem20.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.startFileToolStripMenuItem,
-            this.updateFIleToolStripMenuItem,
-            this.toolStripMenuItem10,
-            this.serverFilesFolderToolStripMenuItem,
-            this.serverFolderToolStripMenuItem,
-            this.steamCMDToolStripMenuItem1});
-            this.toolStripMenuItem20.Name = "toolStripMenuItem20";
-            this.toolStripMenuItem20.Size = new System.Drawing.Size(106, 22);
-            this.toolStripMenuItem20.Text = "FILE LOCATIONS";
-            this.toolStripMenuItem20.Click += new System.EventHandler(this.ToolStripMenuItem20_Click);
-            // 
-            // startFileToolStripMenuItem
-            // 
-            this.startFileToolStripMenuItem.Name = "startFileToolStripMenuItem";
-            this.startFileToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
-            this.startFileToolStripMenuItem.Text = "Start File";
-            this.startFileToolStripMenuItem.Click += new System.EventHandler(this.StartFileToolStripMenuItem_Click);
-            // 
-            // updateFIleToolStripMenuItem
-            // 
-            this.updateFIleToolStripMenuItem.Name = "updateFIleToolStripMenuItem";
-            this.updateFIleToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
-            this.updateFIleToolStripMenuItem.Text = "Update FIle ";
-            this.updateFIleToolStripMenuItem.Click += new System.EventHandler(this.UpdateFIleToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem10
-            // 
-            this.toolStripMenuItem10.Name = "toolStripMenuItem10";
-            this.toolStripMenuItem10.Size = new System.Drawing.Size(170, 6);
-            // 
-            // serverFilesFolderToolStripMenuItem
-            // 
-            this.serverFilesFolderToolStripMenuItem.Name = "serverFilesFolderToolStripMenuItem";
-            this.serverFilesFolderToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
-            this.serverFilesFolderToolStripMenuItem.Text = "Server Files Folder";
-            this.serverFilesFolderToolStripMenuItem.Click += new System.EventHandler(this.ServerFilesFolderToolStripMenuItem_Click);
-            // 
-            // serverFolderToolStripMenuItem
-            // 
-            this.serverFolderToolStripMenuItem.Name = "serverFolderToolStripMenuItem";
-            this.serverFolderToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
-            this.serverFolderToolStripMenuItem.Text = "USSR! Folder";
-            this.serverFolderToolStripMenuItem.Click += new System.EventHandler(this.ServerFolderToolStripMenuItem_Click);
-            // 
-            // steamCMDToolStripMenuItem1
-            // 
-            this.steamCMDToolStripMenuItem1.Name = "steamCMDToolStripMenuItem1";
-            this.steamCMDToolStripMenuItem1.Size = new System.Drawing.Size(173, 22);
-            this.steamCMDToolStripMenuItem1.Text = "Steam CMD Folder";
-            this.steamCMDToolStripMenuItem1.Click += new System.EventHandler(this.SteamCMDToolStripMenuItem1_Click);
-            // 
-            // installUmodToolStripMenuItem
-            // 
-            this.installUmodToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.downloadInstallToolStripMenuItem});
-            this.installUmodToolStripMenuItem.Name = "installUmodToolStripMenuItem";
-            this.installUmodToolStripMenuItem.Size = new System.Drawing.Size(86, 22);
-            this.installUmodToolStripMenuItem.Text = "Install Umod";
-            // 
-            // downloadInstallToolStripMenuItem
-            // 
-            this.downloadInstallToolStripMenuItem.Name = "downloadInstallToolStripMenuItem";
-            this.downloadInstallToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.downloadInstallToolStripMenuItem.Text = "Download & Install";
-            this.downloadInstallToolStripMenuItem.Click += new System.EventHandler(this.DownloadInstallToolStripMenuItem_Click);
-            // 
             // maintab
             // 
             this.maintab.AccessibleName = "";
@@ -869,7 +839,7 @@
             this.maintab.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maintab.Location = new System.Drawing.Point(4, 22);
             this.maintab.Name = "maintab";
-            this.maintab.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.maintab.Padding = new System.Windows.Forms.Padding(3);
             this.maintab.Size = new System.Drawing.Size(1721, 957);
             this.maintab.TabIndex = 0;
             this.maintab.Text = "Server Setup";
@@ -1812,7 +1782,7 @@
             // 
             this.RefreshSmall.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("RefreshSmall.BackgroundImage")));
             this.RefreshSmall.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.RefreshSmall.Location = new System.Drawing.Point(320, 259);
+            this.RefreshSmall.Location = new System.Drawing.Point(316, 256);
             this.RefreshSmall.Name = "RefreshSmall";
             this.RefreshSmall.Size = new System.Drawing.Size(31, 30);
             this.RefreshSmall.TabIndex = 3;
@@ -2003,9 +1973,9 @@
             // da
             // 
             this.da.Controls.Add(this.procgen);
+            this.da.Controls.Add(this.BARREN);
             this.da.Controls.Add(this.custom);
             this.da.Controls.Add(this.Hapis);
-            this.da.Controls.Add(this.BARREN);
             this.da.Controls.Add(this.CRAGGY);
             this.da.Controls.Add(this.SAVAS);
             this.da.Controls.Add(this.KOTH);
@@ -2044,7 +2014,7 @@
             this.procgen.Controls.Add(this.label1);
             this.procgen.Location = new System.Drawing.Point(4, 22);
             this.procgen.Name = "procgen";
-            this.procgen.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.procgen.Padding = new System.Windows.Forms.Padding(3);
             this.procgen.Size = new System.Drawing.Size(449, 381);
             this.procgen.TabIndex = 0;
             this.procgen.Text = "PROCGEN";
@@ -2067,23 +2037,29 @@
             this.mapseedtext.Size = new System.Drawing.Size(295, 20);
             this.mapseedtext.TabIndex = 2;
             this.mapseedtext.Text = "2";
+            this.mapseedtext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mapseedtext_KeyPress);
             // 
             // mapsizebox
             // 
             this.mapsizebox.Location = new System.Drawing.Point(150, 282);
+            this.mapsizebox.MaxLength = 4;
             this.mapsizebox.Name = "mapsizebox";
             this.mapsizebox.Size = new System.Drawing.Size(294, 20);
             this.mapsizebox.TabIndex = 2;
             this.mapsizebox.Text = "3000";
+            this.mapsizebox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mapsizebox_KeyPress);
+            this.mapsizebox.Validating += new System.ComponentModel.CancelEventHandler(this.BAmapsizebox_Validating);
             // 
             // maxplayertext
             // 
             this.maxplayertext.Location = new System.Drawing.Point(149, 256);
+            this.maxplayertext.MaxLength = 3;
             this.maxplayertext.Name = "maxplayertext";
             this.maxplayertext.Size = new System.Drawing.Size(294, 20);
             this.maxplayertext.TabIndex = 2;
             this.maxplayertext.Text = "10";
             this.maxplayertext.TextChanged += new System.EventHandler(this.maxplayertext_TextChanged);
+            this.maxplayertext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.maxplayertext_KeyPress);
             // 
             // serverdisctext
             // 
@@ -2121,18 +2097,22 @@
             // rconporttext
             // 
             this.rconporttext.Location = new System.Drawing.Point(149, 126);
+            this.rconporttext.MaxLength = 5;
             this.rconporttext.Name = "rconporttext";
             this.rconporttext.Size = new System.Drawing.Size(294, 20);
             this.rconporttext.TabIndex = 4;
             this.rconporttext.Text = "28016";
+            this.rconporttext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rconporttext_KeyPress);
             // 
             // serverporttext
             // 
             this.serverporttext.Location = new System.Drawing.Point(149, 100);
+            this.serverporttext.MaxLength = 5;
             this.serverporttext.Name = "serverporttext";
             this.serverporttext.Size = new System.Drawing.Size(294, 20);
             this.serverporttext.TabIndex = 3;
             this.serverporttext.Text = "28015";
+            this.serverporttext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.serverporttext_KeyPress);
             // 
             // servernametext
             // 
@@ -2274,13 +2254,276 @@
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Verdana", 21.75F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(6, 3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(440, 32);
             this.label1.TabIndex = 0;
-            this.label1.Text = "PROCGEN MAP GENERATOR";
+            this.label1.Text = "PROCGEN MAP";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // BARREN
+            // 
+            this.BARREN.BackColor = System.Drawing.Color.CadetBlue;
+            this.BARREN.Controls.Add(this.button4);
+            this.BARREN.Controls.Add(this.BAidentitytext);
+            this.BARREN.Controls.Add(this.label15);
+            this.BARREN.Controls.Add(this.BAmapseedtext);
+            this.BARREN.Controls.Add(this.BAmapsizebox);
+            this.BARREN.Controls.Add(this.BAmaxplayertext);
+            this.BARREN.Controls.Add(this.BAserverdisctext);
+            this.BARREN.Controls.Add(this.BAserverurltext);
+            this.BARREN.Controls.Add(this.BAserverpicturetext);
+            this.BARREN.Controls.Add(this.BArconpasstext);
+            this.BARREN.Controls.Add(this.BArconporttext);
+            this.BARREN.Controls.Add(this.BAserverportext);
+            this.BARREN.Controls.Add(this.BAservernametext);
+            this.BARREN.Controls.Add(this.label44);
+            this.BARREN.Controls.Add(this.label55);
+            this.BARREN.Controls.Add(this.label58);
+            this.BARREN.Controls.Add(this.label59);
+            this.BARREN.Controls.Add(this.label60);
+            this.BARREN.Controls.Add(this.label61);
+            this.BARREN.Controls.Add(this.label62);
+            this.BARREN.Controls.Add(this.label63);
+            this.BARREN.Controls.Add(this.label64);
+            this.BARREN.Controls.Add(this.label65);
+            this.BARREN.Controls.Add(this.label67);
+            this.BARREN.Location = new System.Drawing.Point(4, 22);
+            this.BARREN.Name = "BARREN";
+            this.BARREN.Size = new System.Drawing.Size(449, 381);
+            this.BARREN.TabIndex = 3;
+            this.BARREN.Text = "BARREN";
+            this.BARREN.Click += new System.EventHandler(this.BARREN_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(148, 333);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(295, 32);
+            this.button4.TabIndex = 66;
+            this.button4.Text = "GENERATE START FILE";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
+            // 
+            // BAidentitytext
+            // 
+            this.BAidentitytext.Location = new System.Drawing.Point(149, 48);
+            this.BAidentitytext.Name = "BAidentitytext";
+            this.BAidentitytext.Size = new System.Drawing.Size(294, 20);
+            this.BAidentitytext.TabIndex = 65;
+            this.BAidentitytext.Text = "Barren";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(22, 51);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(121, 13);
+            this.label15.TabIndex = 64;
+            this.label15.Text = "SERVER IDENTITY";
+            // 
+            // BAmapseedtext
+            // 
+            this.BAmapseedtext.Location = new System.Drawing.Point(148, 308);
+            this.BAmapseedtext.Name = "BAmapseedtext";
+            this.BAmapseedtext.Size = new System.Drawing.Size(295, 20);
+            this.BAmapseedtext.TabIndex = 63;
+            this.BAmapseedtext.Text = "2";
+            this.BAmapseedtext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mapseedtext_KeyPress);
+            // 
+            // BAmapsizebox
+            // 
+            this.BAmapsizebox.Location = new System.Drawing.Point(150, 282);
+            this.BAmapsizebox.MaxLength = 4;
+            this.BAmapsizebox.Name = "BAmapsizebox";
+            this.BAmapsizebox.Size = new System.Drawing.Size(294, 20);
+            this.BAmapsizebox.TabIndex = 62;
+            this.BAmapsizebox.Text = "3000";
+            this.BAmapsizebox.TextChanged += new System.EventHandler(this.BAmapsizebox_TextChanged);
+            this.BAmapsizebox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mapsizebox_KeyPress);
+            this.BAmapsizebox.Validating += new System.ComponentModel.CancelEventHandler(this.BAmapsizebox_Validating);
+            // 
+            // BAmaxplayertext
+            // 
+            this.BAmaxplayertext.Location = new System.Drawing.Point(149, 256);
+            this.BAmaxplayertext.MaxLength = 3;
+            this.BAmaxplayertext.Name = "BAmaxplayertext";
+            this.BAmaxplayertext.Size = new System.Drawing.Size(294, 20);
+            this.BAmaxplayertext.TabIndex = 61;
+            this.BAmaxplayertext.Text = "10";
+            this.BAmaxplayertext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.maxplayertext_KeyPress);
+            // 
+            // BAserverdisctext
+            // 
+            this.BAserverdisctext.Location = new System.Drawing.Point(149, 230);
+            this.BAserverdisctext.Name = "BAserverdisctext";
+            this.BAserverdisctext.Size = new System.Drawing.Size(294, 20);
+            this.BAserverdisctext.TabIndex = 60;
+            this.BAserverdisctext.Text = "Ted Pommes is.... \\namazing";
+            // 
+            // BAserverurltext
+            // 
+            this.BAserverurltext.Location = new System.Drawing.Point(149, 204);
+            this.BAserverurltext.Name = "BAserverurltext";
+            this.BAserverurltext.Size = new System.Drawing.Size(294, 20);
+            this.BAserverurltext.TabIndex = 59;
+            this.BAserverurltext.Text = "https://discord.gg/DPKWPr4";
+            // 
+            // BAserverpicturetext
+            // 
+            this.BAserverpicturetext.Location = new System.Drawing.Point(149, 178);
+            this.BAserverpicturetext.Name = "BAserverpicturetext";
+            this.BAserverpicturetext.Size = new System.Drawing.Size(294, 20);
+            this.BAserverpicturetext.TabIndex = 58;
+            this.BAserverpicturetext.Text = "https://i.imgur.com/sqGFVW9.png";
+            // 
+            // BArconpasstext
+            // 
+            this.BArconpasstext.Location = new System.Drawing.Point(149, 152);
+            this.BArconpasstext.Name = "BArconpasstext";
+            this.BArconpasstext.Size = new System.Drawing.Size(294, 20);
+            this.BArconpasstext.TabIndex = 57;
+            this.BArconpasstext.Text = "123456seven";
+            // 
+            // BArconporttext
+            // 
+            this.BArconporttext.Location = new System.Drawing.Point(149, 126);
+            this.BArconporttext.MaxLength = 5;
+            this.BArconporttext.Name = "BArconporttext";
+            this.BArconporttext.Size = new System.Drawing.Size(294, 20);
+            this.BArconporttext.TabIndex = 56;
+            this.BArconporttext.Text = "28016";
+            this.BArconporttext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rconporttext_KeyPress);
+            // 
+            // BAserverportext
+            // 
+            this.BAserverportext.Location = new System.Drawing.Point(149, 100);
+            this.BAserverportext.MaxLength = 5;
+            this.BAserverportext.Name = "BAserverportext";
+            this.BAserverportext.Size = new System.Drawing.Size(294, 20);
+            this.BAserverportext.TabIndex = 55;
+            this.BAserverportext.Text = "28015";
+            this.BAserverportext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.serverporttext_KeyPress);
+            // 
+            // BAservernametext
+            // 
+            this.BAservernametext.Location = new System.Drawing.Point(149, 74);
+            this.BAservernametext.Name = "BAservernametext";
+            this.BAservernametext.Size = new System.Drawing.Size(294, 20);
+            this.BAservernametext.TabIndex = 54;
+            this.BAservernametext.Text = "Snitzel";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.Location = new System.Drawing.Point(66, 311);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(71, 13);
+            this.label44.TabIndex = 51;
+            this.label44.Text = "MAP SEED";
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label55.Location = new System.Drawing.Point(69, 285);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(68, 13);
+            this.label55.TabIndex = 50;
+            this.label55.Text = "MAP SIZE";
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label58.Location = new System.Drawing.Point(49, 259);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(94, 13);
+            this.label58.TabIndex = 49;
+            this.label58.Text = "MAX PLAYERS";
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label59.Location = new System.Drawing.Point(-1, 233);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(144, 13);
+            this.label59.TabIndex = 48;
+            this.label59.Text = "SERVER DISCRIPTION";
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label60.Location = new System.Drawing.Point(26, 207);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(117, 13);
+            this.label60.TabIndex = 47;
+            this.label60.Text = "SERVER WEBSITE";
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label61.Location = new System.Drawing.Point(29, 181);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(114, 13);
+            this.label61.TabIndex = 46;
+            this.label61.Text = "SERVER PICTURE";
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label62.Location = new System.Drawing.Point(27, 155);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(116, 13);
+            this.label62.TabIndex = 45;
+            this.label62.Text = "RCON PASSWORD";
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label63.Location = new System.Drawing.Point(65, 129);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(78, 13);
+            this.label63.TabIndex = 44;
+            this.label63.Text = "RCON PORT";
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label64.Location = new System.Drawing.Point(51, 103);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(92, 13);
+            this.label64.TabIndex = 43;
+            this.label64.Text = "SERVER PORT";
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label65.Location = new System.Drawing.Point(48, 77);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(95, 13);
+            this.label65.TabIndex = 42;
+            this.label65.Text = "SERVER NAME";
+            // 
+            // label67
+            // 
+            this.label67.Font = new System.Drawing.Font("Verdana", 21.75F, System.Drawing.FontStyle.Bold);
+            this.label67.Location = new System.Drawing.Point(6, 3);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(440, 33);
+            this.label67.TabIndex = 41;
+            this.label67.Text = "BARREN MAP";
+            this.label67.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // custom
             // 
@@ -2315,7 +2558,7 @@
             // 
             // BTNbatchCustom
             // 
-            this.BTNbatchCustom.Location = new System.Drawing.Point(150, 321);
+            this.BTNbatchCustom.Location = new System.Drawing.Point(151, 315);
             this.BTNbatchCustom.Name = "BTNbatchCustom";
             this.BTNbatchCustom.Size = new System.Drawing.Size(296, 32);
             this.BTNbatchCustom.TabIndex = 30;
@@ -2325,90 +2568,96 @@
             // 
             // mapurlbox
             // 
-            this.mapurlbox.Location = new System.Drawing.Point(150, 295);
+            this.mapurlbox.Location = new System.Drawing.Point(149, 288);
             this.mapurlbox.Name = "mapurlbox";
-            this.mapurlbox.Size = new System.Drawing.Size(294, 20);
+            this.mapurlbox.Size = new System.Drawing.Size(296, 20);
             this.mapurlbox.TabIndex = 27;
             this.mapurlbox.Text = "https://www.dropbox.com/s/vvl3nynh9vzhthn/1kbuildprac2019.map?dl=1";
             this.mapurlbox.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // CMmaxplayertext
             // 
-            this.CMmaxplayertext.Location = new System.Drawing.Point(150, 269);
+            this.CMmaxplayertext.Location = new System.Drawing.Point(149, 262);
+            this.CMmaxplayertext.MaxLength = 3;
             this.CMmaxplayertext.Name = "CMmaxplayertext";
-            this.CMmaxplayertext.Size = new System.Drawing.Size(294, 20);
+            this.CMmaxplayertext.Size = new System.Drawing.Size(296, 20);
             this.CMmaxplayertext.TabIndex = 25;
             this.CMmaxplayertext.Text = "10";
             this.CMmaxplayertext.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.CMmaxplayertext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.maxplayertext_KeyPress);
             // 
             // CMserverdisctext
             // 
-            this.CMserverdisctext.Location = new System.Drawing.Point(150, 243);
+            this.CMserverdisctext.Location = new System.Drawing.Point(149, 236);
             this.CMserverdisctext.Name = "CMserverdisctext";
-            this.CMserverdisctext.Size = new System.Drawing.Size(294, 20);
+            this.CMserverdisctext.Size = new System.Drawing.Size(296, 20);
             this.CMserverdisctext.TabIndex = 24;
             this.CMserverdisctext.Text = "Ted Pommes is.... \\namazing";
             this.CMserverdisctext.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // CMserverurltext
             // 
-            this.CMserverurltext.Location = new System.Drawing.Point(150, 217);
+            this.CMserverurltext.Location = new System.Drawing.Point(149, 210);
             this.CMserverurltext.Name = "CMserverurltext";
-            this.CMserverurltext.Size = new System.Drawing.Size(294, 20);
+            this.CMserverurltext.Size = new System.Drawing.Size(296, 20);
             this.CMserverurltext.TabIndex = 23;
             this.CMserverurltext.Text = "https://discord.gg/DPKWPr4";
             this.CMserverurltext.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // CMserverpicturetext
             // 
-            this.CMserverpicturetext.Location = new System.Drawing.Point(148, 191);
+            this.CMserverpicturetext.Location = new System.Drawing.Point(149, 184);
             this.CMserverpicturetext.Name = "CMserverpicturetext";
-            this.CMserverpicturetext.Size = new System.Drawing.Size(294, 20);
+            this.CMserverpicturetext.Size = new System.Drawing.Size(296, 20);
             this.CMserverpicturetext.TabIndex = 22;
             this.CMserverpicturetext.Text = "https://i.imgur.com/sqGFVW9.png";
             this.CMserverpicturetext.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // CMrconpasstext
             // 
-            this.CMrconpasstext.Location = new System.Drawing.Point(148, 165);
+            this.CMrconpasstext.Location = new System.Drawing.Point(149, 158);
             this.CMrconpasstext.Name = "CMrconpasstext";
-            this.CMrconpasstext.Size = new System.Drawing.Size(294, 20);
+            this.CMrconpasstext.Size = new System.Drawing.Size(296, 20);
             this.CMrconpasstext.TabIndex = 21;
             this.CMrconpasstext.Text = "123456seven";
             this.CMrconpasstext.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // CMrconporttext
             // 
-            this.CMrconporttext.Location = new System.Drawing.Point(148, 139);
+            this.CMrconporttext.Location = new System.Drawing.Point(149, 132);
+            this.CMrconporttext.MaxLength = 5;
             this.CMrconporttext.Name = "CMrconporttext";
-            this.CMrconporttext.Size = new System.Drawing.Size(294, 20);
+            this.CMrconporttext.Size = new System.Drawing.Size(296, 20);
             this.CMrconporttext.TabIndex = 20;
             this.CMrconporttext.Text = "28016";
             this.CMrconporttext.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
+            this.CMrconporttext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rconporttext_KeyPress);
             // 
             // CMserverportext
             // 
-            this.CMserverportext.Location = new System.Drawing.Point(148, 113);
+            this.CMserverportext.Location = new System.Drawing.Point(149, 106);
+            this.CMserverportext.MaxLength = 5;
             this.CMserverportext.Name = "CMserverportext";
-            this.CMserverportext.Size = new System.Drawing.Size(294, 20);
+            this.CMserverportext.Size = new System.Drawing.Size(296, 20);
             this.CMserverportext.TabIndex = 19;
             this.CMserverportext.Text = "28015";
             this.CMserverportext.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
+            this.CMserverportext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.serverporttext_KeyPress);
             // 
             // CMservernametext
             // 
-            this.CMservernametext.Location = new System.Drawing.Point(148, 87);
+            this.CMservernametext.Location = new System.Drawing.Point(149, 80);
             this.CMservernametext.Name = "CMservernametext";
-            this.CMservernametext.Size = new System.Drawing.Size(294, 20);
+            this.CMservernametext.Size = new System.Drawing.Size(296, 20);
             this.CMservernametext.TabIndex = 28;
             this.CMservernametext.Text = "Snitzel";
             this.CMservernametext.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
             // 
             // CMidentitytext
             // 
-            this.CMidentitytext.Location = new System.Drawing.Point(147, 61);
+            this.CMidentitytext.Location = new System.Drawing.Point(148, 55);
             this.CMidentitytext.Name = "CMidentitytext";
-            this.CMidentitytext.Size = new System.Drawing.Size(294, 20);
+            this.CMidentitytext.Size = new System.Drawing.Size(296, 20);
             this.CMidentitytext.TabIndex = 18;
             this.CMidentitytext.Text = "CustomMap";
             this.CMidentitytext.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
@@ -2417,7 +2666,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(82, 298);
+            this.label16.Location = new System.Drawing.Point(80, 291);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(62, 13);
             this.label16.TabIndex = 15;
@@ -2428,7 +2677,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(50, 272);
+            this.label18.Location = new System.Drawing.Point(49, 265);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(94, 13);
             this.label18.TabIndex = 13;
@@ -2439,7 +2688,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(0, 246);
+            this.label19.Location = new System.Drawing.Point(-1, 239);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(144, 13);
             this.label19.TabIndex = 12;
@@ -2450,7 +2699,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(27, 220);
+            this.label20.Location = new System.Drawing.Point(26, 213);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(117, 13);
             this.label20.TabIndex = 11;
@@ -2461,7 +2710,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(28, 194);
+            this.label21.Location = new System.Drawing.Point(29, 187);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(114, 13);
             this.label21.TabIndex = 10;
@@ -2472,7 +2721,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(26, 168);
+            this.label22.Location = new System.Drawing.Point(27, 161);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(116, 13);
             this.label22.TabIndex = 9;
@@ -2483,7 +2732,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(64, 142);
+            this.label23.Location = new System.Drawing.Point(65, 135);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(78, 13);
             this.label23.TabIndex = 8;
@@ -2494,7 +2743,7 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(50, 116);
+            this.label24.Location = new System.Drawing.Point(51, 109);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(92, 13);
             this.label24.TabIndex = 7;
@@ -2505,7 +2754,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(47, 90);
+            this.label25.Location = new System.Drawing.Point(48, 83);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(95, 13);
             this.label25.TabIndex = 6;
@@ -2516,7 +2765,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(20, 64);
+            this.label26.Location = new System.Drawing.Point(21, 58);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(121, 13);
             this.label26.TabIndex = 17;
@@ -2525,12 +2774,12 @@
             // 
             // label27
             // 
-            this.label27.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Font = new System.Drawing.Font("Verdana", 21.75F, System.Drawing.FontStyle.Bold);
             this.label27.Location = new System.Drawing.Point(6, 3);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(443, 32);
             this.label27.TabIndex = 5;
-            this.label27.Text = "CUSTOM MAP GENERATOR";
+            this.label27.Text = "CUSTOM MAP";
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label27.Click += new System.EventHandler(this.label27_Click);
             // 
@@ -2566,9 +2815,9 @@
             // 
             // HAidentitytext
             // 
-            this.HAidentitytext.Location = new System.Drawing.Point(148, 60);
+            this.HAidentitytext.Location = new System.Drawing.Point(148, 55);
             this.HAidentitytext.Name = "HAidentitytext";
-            this.HAidentitytext.Size = new System.Drawing.Size(294, 20);
+            this.HAidentitytext.Size = new System.Drawing.Size(296, 20);
             this.HAidentitytext.TabIndex = 42;
             this.HAidentitytext.Text = "HapisIsland";
             // 
@@ -2576,7 +2825,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(21, 63);
+            this.label7.Location = new System.Drawing.Point(21, 58);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(121, 13);
             this.label7.TabIndex = 41;
@@ -2584,9 +2833,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(148, 292);
+            this.button3.Location = new System.Drawing.Point(148, 288);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(296, 37);
+            this.button3.Size = new System.Drawing.Size(294, 37);
             this.button3.TabIndex = 39;
             this.button3.Text = "GENERATE START FILE";
             this.button3.UseVisualStyleBackColor = true;
@@ -2594,15 +2843,17 @@
             // 
             // HPmaxplayertext
             // 
-            this.HPmaxplayertext.Location = new System.Drawing.Point(148, 266);
+            this.HPmaxplayertext.Location = new System.Drawing.Point(149, 262);
+            this.HPmaxplayertext.MaxLength = 3;
             this.HPmaxplayertext.Name = "HPmaxplayertext";
             this.HPmaxplayertext.Size = new System.Drawing.Size(296, 20);
             this.HPmaxplayertext.TabIndex = 34;
             this.HPmaxplayertext.Text = "10";
+            this.HPmaxplayertext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.maxplayertext_KeyPress);
             // 
             // HPserverdisctext
             // 
-            this.HPserverdisctext.Location = new System.Drawing.Point(148, 240);
+            this.HPserverdisctext.Location = new System.Drawing.Point(149, 236);
             this.HPserverdisctext.Name = "HPserverdisctext";
             this.HPserverdisctext.Size = new System.Drawing.Size(296, 20);
             this.HPserverdisctext.TabIndex = 33;
@@ -2610,7 +2861,7 @@
             // 
             // HPserverurltext
             // 
-            this.HPserverurltext.Location = new System.Drawing.Point(148, 214);
+            this.HPserverurltext.Location = new System.Drawing.Point(149, 210);
             this.HPserverurltext.Name = "HPserverurltext";
             this.HPserverurltext.Size = new System.Drawing.Size(296, 20);
             this.HPserverurltext.TabIndex = 32;
@@ -2618,7 +2869,7 @@
             // 
             // HPserverpicturetext
             // 
-            this.HPserverpicturetext.Location = new System.Drawing.Point(148, 188);
+            this.HPserverpicturetext.Location = new System.Drawing.Point(149, 184);
             this.HPserverpicturetext.Name = "HPserverpicturetext";
             this.HPserverpicturetext.Size = new System.Drawing.Size(296, 20);
             this.HPserverpicturetext.TabIndex = 31;
@@ -2626,7 +2877,7 @@
             // 
             // HPrconpasstext
             // 
-            this.HPrconpasstext.Location = new System.Drawing.Point(148, 162);
+            this.HPrconpasstext.Location = new System.Drawing.Point(149, 158);
             this.HPrconpasstext.Name = "HPrconpasstext";
             this.HPrconpasstext.Size = new System.Drawing.Size(296, 20);
             this.HPrconpasstext.TabIndex = 30;
@@ -2634,23 +2885,27 @@
             // 
             // HPrconporttext
             // 
-            this.HPrconporttext.Location = new System.Drawing.Point(148, 136);
+            this.HPrconporttext.Location = new System.Drawing.Point(149, 132);
+            this.HPrconporttext.MaxLength = 5;
             this.HPrconporttext.Name = "HPrconporttext";
             this.HPrconporttext.Size = new System.Drawing.Size(296, 20);
             this.HPrconporttext.TabIndex = 29;
             this.HPrconporttext.Text = "28016";
+            this.HPrconporttext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rconporttext_KeyPress);
             // 
             // HPserverportext
             // 
-            this.HPserverportext.Location = new System.Drawing.Point(148, 110);
+            this.HPserverportext.Location = new System.Drawing.Point(149, 106);
+            this.HPserverportext.MaxLength = 5;
             this.HPserverportext.Name = "HPserverportext";
             this.HPserverportext.Size = new System.Drawing.Size(296, 20);
             this.HPserverportext.TabIndex = 28;
             this.HPserverportext.Text = "28015";
+            this.HPserverportext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.serverporttext_KeyPress);
             // 
             // HPservernametext
             // 
-            this.HPservernametext.Location = new System.Drawing.Point(148, 84);
+            this.HPservernametext.Location = new System.Drawing.Point(149, 80);
             this.HPservernametext.Name = "HPservernametext";
             this.HPservernametext.Size = new System.Drawing.Size(296, 20);
             this.HPservernametext.TabIndex = 37;
@@ -2660,7 +2915,7 @@
             // 
             this.label45.AutoSize = true;
             this.label45.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.Location = new System.Drawing.Point(48, 269);
+            this.label45.Location = new System.Drawing.Point(49, 265);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(94, 13);
             this.label45.TabIndex = 22;
@@ -2670,7 +2925,7 @@
             // 
             this.label46.AutoSize = true;
             this.label46.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label46.Location = new System.Drawing.Point(-2, 243);
+            this.label46.Location = new System.Drawing.Point(-1, 239);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(144, 13);
             this.label46.TabIndex = 21;
@@ -2680,7 +2935,7 @@
             // 
             this.label49.AutoSize = true;
             this.label49.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.Location = new System.Drawing.Point(25, 217);
+            this.label49.Location = new System.Drawing.Point(26, 213);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(117, 13);
             this.label49.TabIndex = 20;
@@ -2690,7 +2945,7 @@
             // 
             this.label50.AutoSize = true;
             this.label50.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.Location = new System.Drawing.Point(28, 191);
+            this.label50.Location = new System.Drawing.Point(29, 187);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(114, 13);
             this.label50.TabIndex = 19;
@@ -2700,7 +2955,7 @@
             // 
             this.label51.AutoSize = true;
             this.label51.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label51.Location = new System.Drawing.Point(26, 165);
+            this.label51.Location = new System.Drawing.Point(27, 161);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(116, 13);
             this.label51.TabIndex = 18;
@@ -2710,7 +2965,7 @@
             // 
             this.label52.AutoSize = true;
             this.label52.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label52.Location = new System.Drawing.Point(64, 139);
+            this.label52.Location = new System.Drawing.Point(65, 135);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(78, 13);
             this.label52.TabIndex = 17;
@@ -2720,7 +2975,7 @@
             // 
             this.label53.AutoSize = true;
             this.label53.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label53.Location = new System.Drawing.Point(50, 113);
+            this.label53.Location = new System.Drawing.Point(51, 109);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(92, 13);
             this.label53.TabIndex = 16;
@@ -2730,7 +2985,7 @@
             // 
             this.label54.AutoSize = true;
             this.label54.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label54.Location = new System.Drawing.Point(47, 87);
+            this.label54.Location = new System.Drawing.Point(48, 83);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(95, 13);
             this.label54.TabIndex = 15;
@@ -2738,264 +2993,13 @@
             // 
             // label56
             // 
-            this.label56.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label56.Font = new System.Drawing.Font("Verdana", 21.75F, System.Drawing.FontStyle.Bold);
             this.label56.Location = new System.Drawing.Point(6, 3);
             this.label56.Name = "label56";
             this.label56.Size = new System.Drawing.Size(444, 33);
             this.label56.TabIndex = 14;
-            this.label56.Text = "HAPIS ISLAND GENERATOR";
+            this.label56.Text = "HAPIS ISLAND";
             this.label56.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // BARREN
-            // 
-            this.BARREN.BackColor = System.Drawing.Color.CadetBlue;
-            this.BARREN.Controls.Add(this.BAidentitytext);
-            this.BARREN.Controls.Add(this.label15);
-            this.BARREN.Controls.Add(this.BAmapseedtext);
-            this.BARREN.Controls.Add(this.BAmapsizebox);
-            this.BARREN.Controls.Add(this.BAmaxplayertext);
-            this.BARREN.Controls.Add(this.BAserverdisctext);
-            this.BARREN.Controls.Add(this.BAserverurltext);
-            this.BARREN.Controls.Add(this.BAserverpicturetext);
-            this.BARREN.Controls.Add(this.BArconpasstext);
-            this.BARREN.Controls.Add(this.BArconporttext);
-            this.BARREN.Controls.Add(this.BAserverportext);
-            this.BARREN.Controls.Add(this.BAservernametext);
-            this.BARREN.Controls.Add(this.label44);
-            this.BARREN.Controls.Add(this.label55);
-            this.BARREN.Controls.Add(this.label58);
-            this.BARREN.Controls.Add(this.label59);
-            this.BARREN.Controls.Add(this.label60);
-            this.BARREN.Controls.Add(this.label61);
-            this.BARREN.Controls.Add(this.label62);
-            this.BARREN.Controls.Add(this.label63);
-            this.BARREN.Controls.Add(this.label64);
-            this.BARREN.Controls.Add(this.label65);
-            this.BARREN.Controls.Add(this.label67);
-            this.BARREN.Controls.Add(this.button4);
-            this.BARREN.Location = new System.Drawing.Point(4, 22);
-            this.BARREN.Name = "BARREN";
-            this.BARREN.Size = new System.Drawing.Size(449, 381);
-            this.BARREN.TabIndex = 3;
-            this.BARREN.Text = "BARREN";
-            // 
-            // BAidentitytext
-            // 
-            this.BAidentitytext.Location = new System.Drawing.Point(148, 38);
-            this.BAidentitytext.Name = "BAidentitytext";
-            this.BAidentitytext.Size = new System.Drawing.Size(294, 20);
-            this.BAidentitytext.TabIndex = 65;
-            this.BAidentitytext.Text = "Barren";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(21, 41);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(121, 13);
-            this.label15.TabIndex = 64;
-            this.label15.Text = "SERVER IDENTITY";
-            // 
-            // BAmapseedtext
-            // 
-            this.BAmapseedtext.Location = new System.Drawing.Point(147, 298);
-            this.BAmapseedtext.Name = "BAmapseedtext";
-            this.BAmapseedtext.Size = new System.Drawing.Size(295, 20);
-            this.BAmapseedtext.TabIndex = 63;
-            this.BAmapseedtext.Text = "2";
-            // 
-            // BAmapsizebox
-            // 
-            this.BAmapsizebox.Location = new System.Drawing.Point(149, 272);
-            this.BAmapsizebox.Name = "BAmapsizebox";
-            this.BAmapsizebox.Size = new System.Drawing.Size(294, 20);
-            this.BAmapsizebox.TabIndex = 62;
-            this.BAmapsizebox.Text = "3000";
-            // 
-            // BAmaxplayertext
-            // 
-            this.BAmaxplayertext.Location = new System.Drawing.Point(148, 246);
-            this.BAmaxplayertext.Name = "BAmaxplayertext";
-            this.BAmaxplayertext.Size = new System.Drawing.Size(294, 20);
-            this.BAmaxplayertext.TabIndex = 61;
-            this.BAmaxplayertext.Text = "10";
-            // 
-            // BAserverdisctext
-            // 
-            this.BAserverdisctext.Location = new System.Drawing.Point(148, 220);
-            this.BAserverdisctext.Name = "BAserverdisctext";
-            this.BAserverdisctext.Size = new System.Drawing.Size(294, 20);
-            this.BAserverdisctext.TabIndex = 60;
-            this.BAserverdisctext.Text = "Ted Pommes is.... \\namazing";
-            // 
-            // BAserverurltext
-            // 
-            this.BAserverurltext.Location = new System.Drawing.Point(148, 194);
-            this.BAserverurltext.Name = "BAserverurltext";
-            this.BAserverurltext.Size = new System.Drawing.Size(294, 20);
-            this.BAserverurltext.TabIndex = 59;
-            this.BAserverurltext.Text = "https://discord.gg/DPKWPr4";
-            // 
-            // BAserverpicturetext
-            // 
-            this.BAserverpicturetext.Location = new System.Drawing.Point(148, 168);
-            this.BAserverpicturetext.Name = "BAserverpicturetext";
-            this.BAserverpicturetext.Size = new System.Drawing.Size(294, 20);
-            this.BAserverpicturetext.TabIndex = 58;
-            this.BAserverpicturetext.Text = "https://i.imgur.com/sqGFVW9.png";
-            // 
-            // BArconpasstext
-            // 
-            this.BArconpasstext.Location = new System.Drawing.Point(148, 142);
-            this.BArconpasstext.Name = "BArconpasstext";
-            this.BArconpasstext.Size = new System.Drawing.Size(294, 20);
-            this.BArconpasstext.TabIndex = 57;
-            this.BArconpasstext.Text = "123456seven";
-            // 
-            // BArconporttext
-            // 
-            this.BArconporttext.Location = new System.Drawing.Point(148, 116);
-            this.BArconporttext.Name = "BArconporttext";
-            this.BArconporttext.Size = new System.Drawing.Size(294, 20);
-            this.BArconporttext.TabIndex = 56;
-            this.BArconporttext.Text = "28016";
-            // 
-            // BAserverportext
-            // 
-            this.BAserverportext.Location = new System.Drawing.Point(148, 90);
-            this.BAserverportext.Name = "BAserverportext";
-            this.BAserverportext.Size = new System.Drawing.Size(294, 20);
-            this.BAserverportext.TabIndex = 55;
-            this.BAserverportext.Text = "28015";
-            // 
-            // BAservernametext
-            // 
-            this.BAservernametext.Location = new System.Drawing.Point(148, 64);
-            this.BAservernametext.Name = "BAservernametext";
-            this.BAservernametext.Size = new System.Drawing.Size(294, 20);
-            this.BAservernametext.TabIndex = 54;
-            this.BAservernametext.Text = "Snitzel";
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.Location = new System.Drawing.Point(65, 301);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(71, 13);
-            this.label44.TabIndex = 51;
-            this.label44.Text = "MAP SEED";
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label55.Location = new System.Drawing.Point(68, 275);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(68, 13);
-            this.label55.TabIndex = 50;
-            this.label55.Text = "MAP SIZE";
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label58.Location = new System.Drawing.Point(48, 249);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(94, 13);
-            this.label58.TabIndex = 49;
-            this.label58.Text = "MAX PLAYERS";
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label59.Location = new System.Drawing.Point(-2, 223);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(144, 13);
-            this.label59.TabIndex = 48;
-            this.label59.Text = "SERVER DISCRIPTION";
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label60.Location = new System.Drawing.Point(25, 197);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(117, 13);
-            this.label60.TabIndex = 47;
-            this.label60.Text = "SERVER WEBSITE";
-            // 
-            // label61
-            // 
-            this.label61.AutoSize = true;
-            this.label61.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label61.Location = new System.Drawing.Point(28, 171);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(114, 13);
-            this.label61.TabIndex = 46;
-            this.label61.Text = "SERVER PICTURE";
-            // 
-            // label62
-            // 
-            this.label62.AutoSize = true;
-            this.label62.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label62.Location = new System.Drawing.Point(26, 145);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(116, 13);
-            this.label62.TabIndex = 45;
-            this.label62.Text = "RCON PASSWORD";
-            // 
-            // label63
-            // 
-            this.label63.AutoSize = true;
-            this.label63.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label63.Location = new System.Drawing.Point(64, 119);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(78, 13);
-            this.label63.TabIndex = 44;
-            this.label63.Text = "RCON PORT";
-            // 
-            // label64
-            // 
-            this.label64.AutoSize = true;
-            this.label64.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label64.Location = new System.Drawing.Point(50, 93);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(92, 13);
-            this.label64.TabIndex = 43;
-            this.label64.Text = "SERVER PORT";
-            // 
-            // label65
-            // 
-            this.label65.AutoSize = true;
-            this.label65.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label65.Location = new System.Drawing.Point(47, 67);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(95, 13);
-            this.label65.TabIndex = 42;
-            this.label65.Text = "SERVER NAME";
-            // 
-            // label67
-            // 
-            this.label67.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label67.Location = new System.Drawing.Point(6, 3);
-            this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(440, 33);
-            this.label67.TabIndex = 41;
-            this.label67.Text = "PROCGEN MAP GENERATOR";
-            this.label67.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(148, 324);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(298, 37);
-            this.button4.TabIndex = 39;
-            this.button4.Text = "GENERATE START FILE";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // CRAGGY
             // 
@@ -3030,7 +3034,7 @@
             // 
             this.CRidentitytext.Location = new System.Drawing.Point(148, 55);
             this.CRidentitytext.Name = "CRidentitytext";
-            this.CRidentitytext.Size = new System.Drawing.Size(298, 20);
+            this.CRidentitytext.Size = new System.Drawing.Size(296, 20);
             this.CRidentitytext.TabIndex = 63;
             this.CRidentitytext.Text = "Craggy";
             // 
@@ -3057,10 +3061,12 @@
             // CRmaxplayertext
             // 
             this.CRmaxplayertext.Location = new System.Drawing.Point(149, 262);
+            this.CRmaxplayertext.MaxLength = 3;
             this.CRmaxplayertext.Name = "CRmaxplayertext";
             this.CRmaxplayertext.Size = new System.Drawing.Size(296, 20);
             this.CRmaxplayertext.TabIndex = 57;
             this.CRmaxplayertext.Text = "10";
+            this.CRmaxplayertext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.maxplayertext_KeyPress);
             // 
             // CRserverdisctext
             // 
@@ -3097,18 +3103,22 @@
             // CRrconporttext
             // 
             this.CRrconporttext.Location = new System.Drawing.Point(149, 132);
+            this.CRrconporttext.MaxLength = 5;
             this.CRrconporttext.Name = "CRrconporttext";
             this.CRrconporttext.Size = new System.Drawing.Size(296, 20);
             this.CRrconporttext.TabIndex = 52;
             this.CRrconporttext.Text = "28016";
+            this.CRrconporttext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rconporttext_KeyPress);
             // 
             // CRserverportext
             // 
             this.CRserverportext.Location = new System.Drawing.Point(149, 106);
+            this.CRserverportext.MaxLength = 5;
             this.CRserverportext.Name = "CRserverportext";
             this.CRserverportext.Size = new System.Drawing.Size(296, 20);
             this.CRserverportext.TabIndex = 51;
             this.CRserverportext.Text = "28015";
+            this.CRserverportext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.serverporttext_KeyPress);
             // 
             // CRservernametext
             // 
@@ -3200,12 +3210,12 @@
             // 
             // label77
             // 
-            this.label77.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label77.Font = new System.Drawing.Font("Verdana", 21.75F, System.Drawing.FontStyle.Bold);
             this.label77.Location = new System.Drawing.Point(6, 3);
             this.label77.Name = "label77";
             this.label77.Size = new System.Drawing.Size(438, 33);
             this.label77.TabIndex = 41;
-            this.label77.Text = "CRAGGY  ISLAND GENERATOR";
+            this.label77.Text = "CRAGGY  ISLAND";
             this.label77.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SAVAS
@@ -3241,7 +3251,7 @@
             // 
             this.SAidentitytext.Location = new System.Drawing.Point(148, 55);
             this.SAidentitytext.Name = "SAidentitytext";
-            this.SAidentitytext.Size = new System.Drawing.Size(298, 20);
+            this.SAidentitytext.Size = new System.Drawing.Size(296, 20);
             this.SAidentitytext.TabIndex = 63;
             this.SAidentitytext.Text = "Savas";
             // 
@@ -3268,10 +3278,12 @@
             // SAmaxplayertext
             // 
             this.SAmaxplayertext.Location = new System.Drawing.Point(149, 262);
+            this.SAmaxplayertext.MaxLength = 3;
             this.SAmaxplayertext.Name = "SAmaxplayertext";
             this.SAmaxplayertext.Size = new System.Drawing.Size(296, 20);
             this.SAmaxplayertext.TabIndex = 57;
             this.SAmaxplayertext.Text = "10";
+            this.SAmaxplayertext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.maxplayertext_KeyPress);
             // 
             // SAserverdisctext
             // 
@@ -3308,18 +3320,22 @@
             // SArconporttext
             // 
             this.SArconporttext.Location = new System.Drawing.Point(149, 132);
+            this.SArconporttext.MaxLength = 5;
             this.SArconporttext.Name = "SArconporttext";
             this.SArconporttext.Size = new System.Drawing.Size(296, 20);
             this.SArconporttext.TabIndex = 52;
             this.SArconporttext.Text = "28016";
+            this.SArconporttext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rconporttext_KeyPress);
             // 
             // SAserverportext
             // 
             this.SAserverportext.Location = new System.Drawing.Point(149, 106);
+            this.SAserverportext.MaxLength = 5;
             this.SAserverportext.Name = "SAserverportext";
             this.SAserverportext.Size = new System.Drawing.Size(296, 20);
             this.SAserverportext.TabIndex = 51;
             this.SAserverportext.Text = "28015";
+            this.SAserverportext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.serverporttext_KeyPress);
             // 
             // SAservernametext
             // 
@@ -3411,12 +3427,12 @@
             // 
             // label92
             // 
-            this.label92.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label92.Font = new System.Drawing.Font("Verdana", 21.75F, System.Drawing.FontStyle.Bold);
             this.label92.Location = new System.Drawing.Point(6, 3);
             this.label92.Name = "label92";
             this.label92.Size = new System.Drawing.Size(444, 33);
             this.label92.TabIndex = 41;
-            this.label92.Text = "SAVAS ISLAND GENERATOR";
+            this.label92.Text = "SAVAS ISLAND";
             this.label92.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // KOTH
@@ -3452,7 +3468,7 @@
             // 
             this.KOidentitytext.Location = new System.Drawing.Point(148, 55);
             this.KOidentitytext.Name = "KOidentitytext";
-            this.KOidentitytext.Size = new System.Drawing.Size(298, 20);
+            this.KOidentitytext.Size = new System.Drawing.Size(296, 20);
             this.KOidentitytext.TabIndex = 63;
             this.KOidentitytext.Text = "SavasKOTH";
             // 
@@ -3479,10 +3495,12 @@
             // KOmaxplayertext
             // 
             this.KOmaxplayertext.Location = new System.Drawing.Point(149, 262);
+            this.KOmaxplayertext.MaxLength = 3;
             this.KOmaxplayertext.Name = "KOmaxplayertext";
             this.KOmaxplayertext.Size = new System.Drawing.Size(296, 20);
             this.KOmaxplayertext.TabIndex = 57;
             this.KOmaxplayertext.Text = "10";
+            this.KOmaxplayertext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.maxplayertext_KeyPress);
             // 
             // KOserverdisctext
             // 
@@ -3519,18 +3537,22 @@
             // KOrconporttext
             // 
             this.KOrconporttext.Location = new System.Drawing.Point(149, 132);
+            this.KOrconporttext.MaxLength = 5;
             this.KOrconporttext.Name = "KOrconporttext";
             this.KOrconporttext.Size = new System.Drawing.Size(296, 20);
             this.KOrconporttext.TabIndex = 52;
             this.KOrconporttext.Text = "28016";
+            this.KOrconporttext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rconporttext_KeyPress);
             // 
             // KOserverportext
             // 
             this.KOserverportext.Location = new System.Drawing.Point(149, 106);
+            this.KOserverportext.MaxLength = 5;
             this.KOserverportext.Name = "KOserverportext";
             this.KOserverportext.Size = new System.Drawing.Size(296, 20);
             this.KOserverportext.TabIndex = 51;
             this.KOserverportext.Text = "28015";
+            this.KOserverportext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.serverporttext_KeyPress);
             // 
             // KOservernametext
             // 
@@ -3744,11 +3766,118 @@
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 0;
             // 
+            // toolStripMenuItem6
+            // 
+            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(180, 6);
+            // 
+            // toolStripMenuItem7
+            // 
+            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(180, 6);
+            // 
+            // fILELOCATIONSToolStripMenuItem
+            // 
+            this.fILELOCATIONSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.startFileToolStripMenuItem1,
+            this.updateFileToolStripMenuItem1,
+            this.toolStripMenuItem8,
+            this.serverFilesToolStripMenuItem,
+            this.uSSRFolderToolStripMenuItem,
+            this.toolStripMenuItem9,
+            this.steamCMDFolderToolStripMenuItem});
+            this.fILELOCATIONSToolStripMenuItem.Name = "fILELOCATIONSToolStripMenuItem";
+            this.fILELOCATIONSToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.fILELOCATIONSToolStripMenuItem.Text = "FILE LOCATIONS";
+            // 
+            // startFileToolStripMenuItem1
+            // 
+            this.startFileToolStripMenuItem1.Name = "startFileToolStripMenuItem1";
+            this.startFileToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.startFileToolStripMenuItem1.Text = "Start File";
+            this.startFileToolStripMenuItem1.Click += new System.EventHandler(this.StartFileToolStripMenuItem_Click);
+            // 
+            // updateFileToolStripMenuItem1
+            // 
+            this.updateFileToolStripMenuItem1.Name = "updateFileToolStripMenuItem1";
+            this.updateFileToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.updateFileToolStripMenuItem1.Text = "Update File";
+            this.updateFileToolStripMenuItem1.Click += new System.EventHandler(this.UpdateFIleToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem8
+            // 
+            this.toolStripMenuItem8.Name = "toolStripMenuItem8";
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(177, 6);
+            // 
+            // serverFilesToolStripMenuItem
+            // 
+            this.serverFilesToolStripMenuItem.Name = "serverFilesToolStripMenuItem";
+            this.serverFilesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.serverFilesToolStripMenuItem.Text = "Server Files";
+            this.serverFilesToolStripMenuItem.Click += new System.EventHandler(this.ServerFilesFolderToolStripMenuItem_Click);
+            // 
+            // uSSRFolderToolStripMenuItem
+            // 
+            this.uSSRFolderToolStripMenuItem.Name = "uSSRFolderToolStripMenuItem";
+            this.uSSRFolderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.uSSRFolderToolStripMenuItem.Text = "USSR Folder";
+            this.uSSRFolderToolStripMenuItem.Click += new System.EventHandler(this.ServerFolderToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem9
+            // 
+            this.toolStripMenuItem9.Name = "toolStripMenuItem9";
+            this.toolStripMenuItem9.Size = new System.Drawing.Size(177, 6);
+            // 
+            // steamCMDFolderToolStripMenuItem
+            // 
+            this.steamCMDFolderToolStripMenuItem.Name = "steamCMDFolderToolStripMenuItem";
+            this.steamCMDFolderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.steamCMDFolderToolStripMenuItem.Text = "Steam CMD Folder";
+            this.steamCMDFolderToolStripMenuItem.Click += new System.EventHandler(this.SteamCMDToolStripMenuItem1_Click);
+            // 
+            // installUmodToolStripMenuItem1
+            // 
+            this.installUmodToolStripMenuItem1.Name = "installUmodToolStripMenuItem1";
+            this.installUmodToolStripMenuItem1.Size = new System.Drawing.Size(191, 22);
+            this.installUmodToolStripMenuItem1.Text = "Install Umod";
+            this.installUmodToolStripMenuItem1.Click += new System.EventHandler(this.DownloadInstallToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem10
+            // 
+            this.toolStripMenuItem10.Name = "toolStripMenuItem10";
+            this.toolStripMenuItem10.Size = new System.Drawing.Size(188, 6);
+            // 
+            // pluginManagerToolStripMenuItem
+            // 
+            this.pluginManagerToolStripMenuItem.Name = "pluginManagerToolStripMenuItem";
+            this.pluginManagerToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.pluginManagerToolStripMenuItem.Text = "Plugin Manager";
+            this.pluginManagerToolStripMenuItem.Click += new System.EventHandler(this.pluginManagerToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem13
+            // 
+            this.toolStripMenuItem13.Name = "toolStripMenuItem13";
+            this.toolStripMenuItem13.Size = new System.Drawing.Size(177, 6);
+            // 
+            // browseMapsToolStripMenuItem
+            // 
+            this.browseMapsToolStripMenuItem.Name = "browseMapsToolStripMenuItem";
+            this.browseMapsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.browseMapsToolStripMenuItem.Text = "Browse Maps";
+            this.browseMapsToolStripMenuItem.Click += new System.EventHandler(this.chooseAMapToolStripMenuItem_Click);
+            // 
+            // setRconIPToolStripMenuItem
+            // 
+            this.setRconIPToolStripMenuItem.Name = "setRconIPToolStripMenuItem";
+            this.setRconIPToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.setRconIPToolStripMenuItem.Text = "Set Rcon IP";
+            this.setRconIPToolStripMenuItem.Click += new System.EventHandler(this.setRconIPToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(840, 768);
+            this.ClientSize = new System.Drawing.Size(840, 769);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -3756,7 +3885,7 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ultimate Server Setup Rust - USSR! V0.4 Fixed by BMGJET";
+            this.Text = "Ultimate Server Setup Rust - USSR! V1.0 Fixed by BMGJET";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -3785,12 +3914,12 @@
             this.da.ResumeLayout(false);
             this.procgen.ResumeLayout(false);
             this.procgen.PerformLayout();
+            this.BARREN.ResumeLayout(false);
+            this.BARREN.PerformLayout();
             this.custom.ResumeLayout(false);
             this.custom.PerformLayout();
             this.Hapis.ResumeLayout(false);
             this.Hapis.PerformLayout();
-            this.BARREN.ResumeLayout(false);
-            this.BARREN.PerformLayout();
             this.CRAGGY.ResumeLayout(false);
             this.CRAGGY.PerformLayout();
             this.SAVAS.ResumeLayout(false);
@@ -3888,9 +4017,6 @@
 
 		// Token: 0x04000026 RID: 38
 		private global::System.Windows.Forms.ToolStripSeparator toolStripMenuItem5;
-
-		// Token: 0x0400003B RID: 59
-		private global::System.Windows.Forms.ToolStripMenuItem chooseAMapToolStripMenuItem;
 
 		// Token: 0x0400003F RID: 63
 		private global::System.Windows.Forms.ToolStripSeparator toolStripMenuItem12;
@@ -4279,9 +4405,6 @@
 		// Token: 0x040000CE RID: 206
 		private global::System.Windows.Forms.Label label67;
 
-		// Token: 0x040000D0 RID: 208
-		private global::System.Windows.Forms.Button button4;
-
 		// Token: 0x040000D1 RID: 209
 		private global::System.Windows.Forms.TabPage CRAGGY;
 
@@ -4630,32 +4753,8 @@
 		// Token: 0x04000151 RID: 337
 		private global::System.Windows.Forms.ToolStripSeparator toolStripMenuItem29;
 
-		// Token: 0x04000152 RID: 338
-		private global::System.Windows.Forms.ToolStripMenuItem installUmodToolStripMenuItem;
-
-		// Token: 0x04000153 RID: 339
-		private global::System.Windows.Forms.ToolStripMenuItem downloadInstallToolStripMenuItem;
-
-		// Token: 0x0400015C RID: 348
-		private global::System.Windows.Forms.ToolStripMenuItem toolStripMenuItem20;
-
 		// Token: 0x0400015D RID: 349
 		private global::System.Windows.Forms.TextBox ServerVarsFinal;
-
-		// Token: 0x0400015E RID: 350
-		private global::System.Windows.Forms.ToolStripMenuItem startFileToolStripMenuItem;
-
-		// Token: 0x0400015F RID: 351
-		private global::System.Windows.Forms.ToolStripMenuItem updateFIleToolStripMenuItem;
-
-		// Token: 0x04000160 RID: 352
-		private global::System.Windows.Forms.ToolStripSeparator toolStripMenuItem10;
-
-		// Token: 0x04000161 RID: 353
-		private global::System.Windows.Forms.ToolStripMenuItem serverFolderToolStripMenuItem;
-
-		// Token: 0x04000162 RID: 354
-		private global::System.Windows.Forms.ToolStripMenuItem steamCMDToolStripMenuItem1;
 
 		// Token: 0x04000163 RID: 355
 		private global::System.Windows.Forms.ToolStripMenuItem serverOptionsToolStripMenuItem;
@@ -4729,10 +4828,28 @@
 		// Token: 0x0400017A RID: 378
 		private global::System.Windows.Forms.TextBox hasspace;
 
-		// Token: 0x0400017B RID: 379
-		private global::System.Windows.Forms.ToolStripMenuItem serverFilesFolderToolStripMenuItem;
-
 		// Token: 0x0400017C RID: 380
 		private global::System.Windows.Forms.TextBox CheckDll;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem addAdminToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem wipeServerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem wipeMapOnlyToolStripMenuItem;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem6;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem7;
+        private System.Windows.Forms.ToolStripMenuItem fILELOCATIONSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem startFileToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem updateFileToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem8;
+        private System.Windows.Forms.ToolStripMenuItem serverFilesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem uSSRFolderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem9;
+        private System.Windows.Forms.ToolStripMenuItem steamCMDFolderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem installUmodToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem13;
+        private System.Windows.Forms.ToolStripMenuItem browseMapsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem10;
+        private System.Windows.Forms.ToolStripMenuItem pluginManagerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem setRconIPToolStripMenuItem;
     }
 }
