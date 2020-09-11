@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.Icon = ((System.Drawing.Icon)(batchgen.Form1.ActiveForm.Icon));
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.ServerVars = new System.Windows.Forms.DataGridView();
             this.pluginname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Variable = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -171,7 +171,7 @@
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(492, 314);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form2";

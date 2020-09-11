@@ -397,8 +397,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.helpToolStripMenuItem,
             this.serverOptionsToolStripMenuItem,
-            this.socialMediaToolStripMenuItem,
-            this.pluginsToolStripMenuItem});
+            this.pluginsToolStripMenuItem,
+            this.socialMediaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(3, 1, 0, 1);
@@ -1881,9 +1881,9 @@
             // 
             this.RefreshSmall.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("RefreshSmall.BackgroundImage")));
             this.RefreshSmall.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.RefreshSmall.Location = new System.Drawing.Point(316, 256);
+            this.RefreshSmall.Location = new System.Drawing.Point(323, 262);
             this.RefreshSmall.Name = "RefreshSmall";
-            this.RefreshSmall.Size = new System.Drawing.Size(31, 30);
+            this.RefreshSmall.Size = new System.Drawing.Size(24, 24);
             this.RefreshSmall.TabIndex = 3;
             this.RefreshSmall.UseVisualStyleBackColor = true;
             this.RefreshSmall.Click += new System.EventHandler(this.RefreshSmall_Click);
@@ -3915,7 +3915,7 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ultimate Server Setup Rust - USSR! V1.0 Enhanced by BMGJET";
+            this.Text = "Rust Ultimate Server Setup V1.0";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);

@@ -9,7 +9,7 @@ using System.Net;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
-using batchgen.Properties;
+using RUSS.Properties;
 using Ionic.Zip;
 
 namespace batchgen
@@ -70,7 +70,7 @@ namespace batchgen
 			bool flag = this.ServerVarsFinal.Text == "";
 			if (flag)
 			{
-				this.Finaltext.Text = "RustDedicated.exe -batchmode +server.identity " +	@"""" + this.identitytext.Text + @"""" + 	" +server.hostname " + @"""" +	this.servernametext.Text + @""" +server.level ""Procedural Map""" + " +server.seed " + @"""" +	this.mapseedtext.Text + @"""" +	" +server.worldsize " + @"""" +	this.mapsizebox.Text + @"""" + " +server.maxplayers " + @"""" +this.maxplayertext.Text + @""" +rcon.ip " + MyIP + " +rcon.port " + this.rconporttext.Text + " +server.port " + this.serverporttext.Text + " +rcon.password " + @"""" + this.rconpasstext.Text +  @"""" + " +server.description " + @"""" + 	this.serverdisctext.Text + 	@"""" + " +server.url " + @"""" + 	this.serverurltext.Text + @"""" + 	" +server.headerimage " + @"""" + this.serverpicturetext.Text + @"""" +  " -logfile " + @"""" + this.LogLocation.Text +	".log" + @"""";
+				this.Finaltext.Text = "RustDedicated.exe -batchmode +server.identity " +	@"""" + this.identitytext.Text + @"""" + 	" +server.hostname " + @"""" +	this.servernametext.Text + @""" +server.level ""Procedural Map""" + " +server.seed " + @"""" +	this.mapseedtext.Text + @"""" +	" +server.worldsize " + @"""" +	this.mapsizebox.Text + @"""" + " +server.maxplayers " + this.maxplayertext.Text + @" +rcon.ip " + MyIP + " +rcon.port " + this.rconporttext.Text + " +server.port " + this.serverporttext.Text + " +rcon.password " + @"""" + this.rconpasstext.Text +  @"""" + " +server.description " + @"""" + 	this.serverdisctext.Text + 	@"""" + " +server.url " + @"""" + 	this.serverurltext.Text + @"""" + 	" +server.headerimage " + @"""" + this.serverpicturetext.Text + @"""" +  " -logfile " + @"""" + this.LogLocation.Text +	".log" + @"""";
 				
 				this.serverdirectorytext.Text = string.Concat(new string[]
 				{
@@ -87,7 +87,7 @@ namespace batchgen
 			}
 			else
 			{
-				this.Finaltext.Text = this.Finaltext.Text = "RustDedicated.exe -batchmode +server.identity " + @"""" + this.identitytext.Text + @"""" + " +server.hostname " + @"""" + this.servernametext.Text + @""" +server.level ""Procedural Map""" + " +server.seed " + @"""" + this.mapseedtext.Text + @"""" + " +server.worldsize " + @"""" + this.mapsizebox.Text + @"""" + " +server.maxplayers " + @"""" + this.maxplayertext.Text + @""" +rcon.ip " + MyIP + " +rcon.port " + this.rconporttext.Text + " +server.port " + this.serverporttext.Text + " +rcon.password " + @"""" + this.rconpasstext.Text + @"""" + " +server.description " + @"""" + this.serverdisctext.Text + @"""" + " +server.url " + @"""" + this.serverurltext.Text + @"""" + " +server.headerimage " + @"""" + this.serverpicturetext.Text + @"""" + " " + this.ServerVarsFinal.Text + "-logfile " + @"""" + this.LogLocation.Text + ".log" + @"""";
+				this.Finaltext.Text = this.Finaltext.Text = "RustDedicated.exe -batchmode +server.identity " + @"""" + this.identitytext.Text + @"""" + " +server.hostname " + @"""" + this.servernametext.Text + @""" +server.level ""Procedural Map""" + " +server.seed " + @"""" + this.mapseedtext.Text + @"""" + " +server.worldsize " + @"""" + this.mapsizebox.Text + @"""" + " +server.maxplayers "  + this.maxplayertext.Text + @" +rcon.ip " + MyIP + " +rcon.port " + this.rconporttext.Text + " +server.port " + this.serverporttext.Text + " +rcon.password " + @"""" + this.rconpasstext.Text + @"""" + " +server.description " + @"""" + this.serverdisctext.Text + @"""" + " +server.url " + @"""" + this.serverurltext.Text + @"""" + " +server.headerimage " + @"""" + this.serverpicturetext.Text + @"""" + " " + this.ServerVarsFinal.Text + "-logfile " + @"""" + this.LogLocation.Text + ".log" + @"""";
 				
 				this.serverdirectorytext.Text = string.Concat(new string[]
 				{
@@ -179,20 +179,16 @@ namespace batchgen
 			{
 				foreach (ZipEntry zipEntry in zipFile)
 				{
-					zipEntry.Extract(extractFolder, ExtractExistingFileAction.DoNotOverwrite);
+					try
+					{
+						zipEntry.Extract(extractFolder, ExtractExistingFileAction.OverwriteSilently);
+					}
+                    catch { }
 				}
 			}
 		}
 
-
-		//private void button1_Click(object sender, EventArgs e)
-		//{
-		//	File.WriteAllText(this.serverdirectorytext.Text, this.Finaltext.Text);
-		//}
-
-				private readonly Random _random = new Random();
-
-		// Generates a random number within a range.      
+		private readonly Random _random = new Random();
 		public int RandomNumber(int min, int max)
 		{
 			return _random.Next(min, max);
@@ -206,9 +202,12 @@ namespace batchgen
             {
 				MessageBox.Show("SteamCMD will have issues if you have spaces in your file path." + Environment.NewLine + mylocation + Environment.NewLine + Environment.NewLine + "Please create a file structure with no spaces!" + Environment.NewLine + "Such as:" + Environment.NewLine + mylocation.Replace(" ", ""));
             }
+			this.mapsizebox.Text = (RandomNumber(2, 7) * 500).ToString();
+			this.mapseedtext.Text = RandomNumber(1, 10).ToString();
 
 			this.mapPic.ImageLocation = "http://playrust.io/preview.jpg?level=Procedural%20Map&size=" + this.mapsizebox.Text + "&seed=" + this.mapseedtext.Text;
-				this.serverdirectorytext.Text = string.Concat(new string[]
+			
+			this.serverdirectorytext.Text = string.Concat(new string[]
 				{
 					this.currentpath,
 					this.slashbox.Text,
@@ -259,14 +258,14 @@ namespace batchgen
 			serverTitle.Text = Environment.UserName;
 
 
-			PreviewDesc.Text = "Rust Test Server Created In USSR V1.0";
-			serverdisctext.Text = "Rust Test Server Created In USSR V1.0";
-			CMserverdisctext.Text = "Rust Test Server Created In USSR V1.0";
-			HPserverdisctext.Text = "Rust Test Server Created In USSR V1.0";
-			BAserverdisctext.Text = "Rust Test Server Created In USSR V1.0";
-			CRserverdisctext.Text = "Rust Test Server Created In USSR V1.0";
-			SAserverdisctext.Text = "Rust Test Server Created In USSR V1.0";
-			KOserverdisctext.Text = "Rust Test Server Created In USSR V1.0";
+			PreviewDesc.Text = "Rust Server Created By RUSS V1.0!";
+			serverdisctext.Text = PreviewDesc.Text;
+			CMserverdisctext.Text = PreviewDesc.Text;
+			HPserverdisctext.Text = PreviewDesc.Text;
+			BAserverdisctext.Text = PreviewDesc.Text;
+			CRserverdisctext.Text = PreviewDesc.Text;
+			SAserverdisctext.Text = PreviewDesc.Text;
+			KOserverdisctext.Text = PreviewDesc.Text;
 
 			string RandomPassword = RandomNumber(111111, 999999).ToString();
 
@@ -279,12 +278,12 @@ namespace batchgen
 			KOrconpasstext.Text = RandomPassword;
 
 			CMserverurltext.Text = "";
-			HPserverurltext.Text = "";
-			BAserverurltext.Text = "";
-			CRserverurltext.Text = "";
-			SAserverurltext.Text = "";
-			KOserverurltext.Text = "";
-			serverurltext.Text = "";
+			HPserverurltext.Text = CMserverurltext.Text;
+			BAserverurltext.Text = CMserverurltext.Text;
+			CRserverurltext.Text = CMserverurltext.Text;
+			SAserverurltext.Text = CMserverurltext.Text;
+			KOserverurltext.Text = CMserverurltext.Text;
+			serverurltext.Text = CMserverurltext.Text;
 
 
 
@@ -297,7 +296,7 @@ namespace batchgen
 			if (flag)
 			{
 
-				this.Finaltext.Text = "RustDedicated.exe -batchmode +server.identity " + @"""" + this.CMidentitytext.Text + @"""" + " +server.hostname " + @"""" + this.CMservernametext.Text + @""" +server.level " + @"""" + this.mapurlbox.Text + @"""" + " +server.maxplayers " + @"""" + this.CMmaxplayertext.Text + @""" +rcon.ip " + MyIP + " +rcon.port " + this.CMrconporttext.Text + " +server.port " + this.CMserverportext.Text + " +rcon.password " + @"""" + this.CMrconpasstext.Text + @"""" + " +server.description " + @"""" + this.CMserverdisctext.Text + @"""" + " +server.url " + @"""" + this.CMserverurltext.Text + @"""" + " +server.headerimage " + @"""" + this.CMserverpicturetext.Text + @"""" + " -logfile " + @"""" + this.LogLocation.Text + ".log" + @"""";
+				this.Finaltext.Text = "RustDedicated.exe -batchmode +server.identity " + @"""" + this.CMidentitytext.Text + @"""" + " +server.hostname " + @"""" + this.CMservernametext.Text + @""" +levelurl " + @"""" + this.mapurlbox.Text + @"""" + " +server.maxplayers " + this.CMmaxplayertext.Text + @" +rcon.ip " + MyIP + " +rcon.port " + this.CMrconporttext.Text + " +server.port " + this.CMserverportext.Text + " +rcon.password " + @"""" + this.CMrconpasstext.Text + @"""" + " +server.description " + @"""" + this.CMserverdisctext.Text + @"""" + " +server.url " + @"""" + this.CMserverurltext.Text + @"""" + " +server.headerimage " + @"""" + this.CMserverpicturetext.Text + @"""" + " -logfile " + @"""" + this.LogLocation.Text + ".log" + @"""";
 				//this.Finaltext.Text = string.Concat(new string[]
 				//{
 				//	"RustDedicated.exe -batchmode +server.identity \"",
@@ -359,7 +358,7 @@ namespace batchgen
 			}
 			else
 			{
-				this.Finaltext.Text = "RustDedicated.exe -batchmode +server.identity " + @"""" + this.CMidentitytext.Text + @"""" + " +server.hostname " + @"""" + this.CMservernametext.Text + @""" +server.level " + @"""" + this.mapurlbox.Text + @"""" + " +server.maxplayers " + @"""" + this.CMmaxplayertext.Text + @""" +rcon.ip " + MyIP + " +rcon.port " + this.CMrconporttext.Text + " +server.port " + this.CMserverportext.Text + " +rcon.password " + @"""" + this.CMrconpasstext.Text + @"""" + " +server.description " + @"""" + this.CMserverdisctext.Text + @"""" + " +server.url " + @"""" + this.CMserverurltext.Text + @"""" + " +server.headerimage " + @"""" + this.CMserverpicturetext.Text + @""" " + this.ServerVarsFinal.Text +" -logfile " + @"""" + this.LogLocation.Text + ".log" + @"""";
+				this.Finaltext.Text = "RustDedicated.exe -batchmode +server.identity " + @"""" + this.CMidentitytext.Text + @"""" + " +server.hostname " + @"""" + this.CMservernametext.Text + @""" +levelurl " + @"""" + this.mapurlbox.Text + @"""" + " +server.maxplayers " + this.CMmaxplayertext.Text + @" +rcon.ip " + MyIP + " +rcon.port " + this.CMrconporttext.Text + " +server.port " + this.CMserverportext.Text + " +rcon.password " + @"""" + this.CMrconpasstext.Text + @"""" + " +server.description " + @"""" + this.CMserverdisctext.Text + @"""" + " +server.url " + @"""" + this.CMserverurltext.Text + @"""" + " +server.headerimage " + @"""" + this.CMserverpicturetext.Text + @""" " + this.ServerVarsFinal.Text +"-logfile " + @"""" + this.LogLocation.Text + ".log" + @"""";
 				//this.Finaltext.Text = string.Concat(new string[]
 				//{
 				//	"RustDedicated.exe -batchmode +server.identity \"",
@@ -516,7 +515,7 @@ namespace batchgen
 			if (flag)
 			{
 
-				this.Finaltext.Text = "RustDedicated.exe -batchmode +server.identity " + @"""" + this.HAidentitytext.Text + @"""" + " +server.hostname " + @"""" + this.HPservernametext.Text + @""" +server.level ""HapisIsland""" + " +server.seed " + @"""" + " +server.maxplayers " + @"""" + this.HPmaxplayertext.Text + @""" +rcon.ip " + MyIP + " +rcon.port " + this.HPrconporttext.Text + " +server.port " + this.HPserverportext.Text + " +rcon.password " + @"""" + this.HPrconpasstext.Text + @"""" + " +server.description " + @"""" + this.HPserverdisctext.Text + @"""" + " +server.url " + @"""" + this.HPserverurltext.Text + @"""" + " +server.headerimage " + @"""" + this.HPserverpicturetext.Text + @"""" + " -logfile " + @"""" + this.LogLocation.Text + ".log" + @"""";
+				this.Finaltext.Text = "RustDedicated.exe -batchmode +server.identity " + @"""" + this.HAidentitytext.Text + @"""" + " +server.hostname " + @"""" + this.HPservernametext.Text + @""" +server.level ""HapisIsland""" + " +server.seed " + @"""" + " +server.maxplayers " + this.HPmaxplayertext.Text + @" +rcon.ip " + MyIP + " +rcon.port " + this.HPrconporttext.Text + " +server.port " + this.HPserverportext.Text + " +rcon.password " + @"""" + this.HPrconpasstext.Text + @"""" + " +server.description " + @"""" + this.HPserverdisctext.Text + @"""" + " +server.url " + @"""" + this.HPserverurltext.Text + @"""" + " +server.headerimage " + @"""" + this.HPserverpicturetext.Text + @"""" + " -logfile " + @"""" + this.LogLocation.Text + ".log" + @"""";
 
 				//this.Finaltext.Text = string.Concat(new string[]
 				//{
@@ -575,7 +574,7 @@ namespace batchgen
 			}
 			else
 			{
-				this.Finaltext.Text = "RustDedicated.exe -batchmode +server.identity " + @"""" + this.HAidentitytext.Text + @"""" + " +server.hostname " + @"""" + this.HPservernametext.Text + @""" +server.level ""HapisIsland""" + " +server.seed " + @"""" + " +server.maxplayers " + @"""" + this.HPmaxplayertext.Text + @""" +rcon.ip " + MyIP + " +rcon.port " + this.HPrconporttext.Text + " +server.port " + this.HPserverportext.Text + " +rcon.password " + @"""" + this.HPrconpasstext.Text + @"""" + " +server.description " + @"""" + this.HPserverdisctext.Text + @"""" + " +server.url " + @"""" + this.HPserverurltext.Text + @"""" + " +server.headerimage " + @"""" + this.HPserverpicturetext.Text + @""" " + this.ServerVarsFinal.Text + " -logfile " + @"""" + this.LogLocation.Text + ".log" + @"""";
+				this.Finaltext.Text = "RustDedicated.exe -batchmode +server.identity " + @"""" + this.HAidentitytext.Text + @"""" + " +server.hostname " + @"""" + this.HPservernametext.Text + @""" +server.level ""HapisIsland""" + " +server.seed " + @"""" + " +server.maxplayers " + this.HPmaxplayertext.Text + @" +rcon.ip " + MyIP + " +rcon.port " + this.HPrconporttext.Text + " +server.port " + this.HPserverportext.Text + " +rcon.password " + @"""" + this.HPrconpasstext.Text + @"""" + " +server.description " + @"""" + this.HPserverdisctext.Text + @"""" + " +server.url " + @"""" + this.HPserverurltext.Text + @"""" + " +server.headerimage " + @"""" + this.HPserverpicturetext.Text + @""" " + this.ServerVarsFinal.Text + "-logfile " + @"""" + this.LogLocation.Text + ".log" + @"""";
 
 
 				//this.Finaltext.Text = string.Concat(new string[]
@@ -637,14 +636,13 @@ namespace batchgen
 			}
 		}
 
-		// Token: 0x0600004B RID: 75 RVA: 0x00003E74 File Offset: 0x00002074
 		private void button5_Click(object sender, EventArgs e)
 		{
 			bool flag = this.ServerVarsFinal.Text == "";
 			if (flag)
 			{
 
-				this.Finaltext.Text = "RustDedicated.exe -batchmode +server.identity " + @"""" + this.CRidentitytext.Text + @"""" + " +server.hostname " + @"""" + this.CRservernametext.Text + @""" +server.level ""CraggyIsland""" + " +server.seed " + @"""" + " +server.maxplayers " + @"""" + this.CRmaxplayertext.Text + @""" +rcon.ip " + MyIP + " +rcon.port " + this.CRrconporttext.Text + " +server.port " + this.CRserverportext.Text + " +rcon.password " + @"""" + this.CRrconpasstext.Text + @"""" + " +server.description " + @"""" + this.CRserverdisctext.Text + @"""" + " +server.url " + @"""" + this.CRserverurltext.Text + @"""" + " +server.headerimage " + @"""" + this.CRserverpicturetext.Text + @"""" + " -logfile " + @"""" + this.LogLocation.Text + ".log" + @"""";
+				this.Finaltext.Text = "RustDedicated.exe -batchmode +server.identity " + @"""" + this.CRidentitytext.Text + @"""" + " +server.hostname " + @"""" + this.CRservernametext.Text + @""" +server.level ""CraggyIsland""" + " +server.seed " + @"""" + " +server.maxplayers " + this.CRmaxplayertext.Text + @" +rcon.ip " + MyIP + " +rcon.port " + this.CRrconporttext.Text + " +server.port " + this.CRserverportext.Text + " +rcon.password " + @"""" + this.CRrconpasstext.Text + @"""" + " +server.description " + @"""" + this.CRserverdisctext.Text + @"""" + " +server.url " + @"""" + this.CRserverurltext.Text + @"""" + " +server.headerimage " + @"""" + this.CRserverpicturetext.Text + @"""" + " -logfile " + @"""" + this.LogLocation.Text + ".log" + @"""";
 
 				//this.Finaltext.Text = string.Concat(new string[]
 				//{
@@ -703,7 +701,7 @@ namespace batchgen
 			}
 			else
 			{
-				this.Finaltext.Text = "RustDedicated.exe -batchmode +server.identity " + @"""" + this.CRidentitytext.Text + @"""" + " +server.hostname " + @"""" + this.CRservernametext.Text + @""" +server.level ""CraggyIsland""" + " +server.seed " + @"""" + " +server.maxplayers " + @"""" + this.CRmaxplayertext.Text + @""" +rcon.ip " + MyIP + " +rcon.port " + this.CRrconporttext.Text + " +server.port " + this.CRserverportext.Text + " +rcon.password " + @"""" + this.CRrconpasstext.Text + @"""" + " +server.description " + @"""" + this.CRserverdisctext.Text + @"""" + " +server.url " + @"""" + this.CRserverurltext.Text + @"""" + " +server.headerimage " + @"""" + this.CRserverpicturetext.Text + @""" " + this.ServerVarsFinal.Text + " -logfile " + @"""" + this.LogLocation.Text + ".log" + @"""";
+				this.Finaltext.Text = "RustDedicated.exe -batchmode +server.identity " + @"""" + this.CRidentitytext.Text + @"""" + " +server.hostname " + @"""" + this.CRservernametext.Text + @""" +server.level ""CraggyIsland""" + " +server.seed " + @"""" + " +server.maxplayers " + this.CRmaxplayertext.Text + @" +rcon.ip " + MyIP + " +rcon.port " + this.CRrconporttext.Text + " +server.port " + this.CRserverportext.Text + " +rcon.password " + @"""" + this.CRrconpasstext.Text + @"""" + " +server.description " + @"""" + this.CRserverdisctext.Text + @"""" + " +server.url " + @"""" + this.CRserverurltext.Text + @"""" + " +server.headerimage " + @"""" + this.CRserverpicturetext.Text + @""" " + this.ServerVarsFinal.Text + "-logfile " + @"""" + this.LogLocation.Text + ".log" + @"""";
 
 				//this.Finaltext.Text = string.Concat(new string[]
 				//{
@@ -796,7 +794,7 @@ namespace batchgen
 			if (flag)
 			{
 
-				this.Finaltext.Text = "RustDedicated.exe -batchmode +server.identity " + @"""" + this.SAidentitytext.Text + @"""" + " +server.hostname " + @"""" + this.SAservernametext.Text + @""" +server.level ""SavasIsland""" + " +server.seed " + @"""" + " +server.maxplayers " + @"""" + this.SAmaxplayertext.Text + @""" +rcon.ip " + MyIP + " +rcon.port " + this.SArconporttext.Text + " +server.port " + this.SAserverportext.Text + " +rcon.password " + @"""" + this.SArconpasstext.Text + @"""" + " +server.description " + @"""" + this.SAserverdisctext.Text + @"""" + " +server.url " + @"""" + this.SAserverurltext.Text + @"""" + " +server.headerimage " + @"""" + this.SAserverpicturetext.Text + @"""" + " -logfile " + @"""" + this.LogLocation.Text + ".log" + @"""";
+				this.Finaltext.Text = "RustDedicated.exe -batchmode +server.identity " + @"""" + this.SAidentitytext.Text + @"""" + " +server.hostname " + @"""" + this.SAservernametext.Text + @""" +server.level ""SavasIsland""" + " +server.seed " + @"""" + " +server.maxplayers " + this.SAmaxplayertext.Text + @" +rcon.ip " + MyIP + " +rcon.port " + this.SArconporttext.Text + " +server.port " + this.SAserverportext.Text + " +rcon.password " + @"""" + this.SArconpasstext.Text + @"""" + " +server.description " + @"""" + this.SAserverdisctext.Text + @"""" + " +server.url " + @"""" + this.SAserverurltext.Text + @"""" + " +server.headerimage " + @"""" + this.SAserverpicturetext.Text + @"""" + " -logfile " + @"""" + this.LogLocation.Text + ".log" + @"""";
 
 				//this.Finaltext.Text = string.Concat(new string[]
 				//{
@@ -855,7 +853,7 @@ namespace batchgen
 			}
 			else
 			{
-				this.Finaltext.Text = "RustDedicated.exe -batchmode +server.identity " + @"""" + this.SAidentitytext.Text + @"""" + " +server.hostname " + @"""" + this.SAservernametext.Text + @""" +server.level ""SavasIsland""" + " +server.seed " + @"""" + " +server.maxplayers " + @"""" + this.SAmaxplayertext.Text + @""" +rcon.ip " + MyIP + " +rcon.port " + this.SArconporttext.Text + " +server.port " + this.SAserverportext.Text + " +rcon.password " + @"""" + this.SArconpasstext.Text + @"""" + " +server.description " + @"""" + this.SAserverdisctext.Text + @"""" + " +server.url " + @"""" + this.SAserverurltext.Text + @"""" + " +server.headerimage " + @"""" + this.SAserverpicturetext.Text + @""" " + this.ServerVarsFinal.Text + " -logfile " + @"""" + this.LogLocation.Text + ".log" + @"""";
+				this.Finaltext.Text = "RustDedicated.exe -batchmode +server.identity " + @"""" + this.SAidentitytext.Text + @"""" + " +server.hostname " + @"""" + this.SAservernametext.Text + @""" +server.level ""SavasIsland""" + " +server.seed " + @"""" + " +server.maxplayers " + this.SAmaxplayertext.Text + @" +rcon.ip " + MyIP + " +rcon.port " + this.SArconporttext.Text + " +server.port " + this.SAserverportext.Text + " +rcon.password " + @"""" + this.SArconpasstext.Text + @"""" + " +server.description " + @"""" + this.SAserverdisctext.Text + @"""" + " +server.url " + @"""" + this.SAserverurltext.Text + @"""" + " +server.headerimage " + @"""" + this.SAserverpicturetext.Text + @""" " + this.ServerVarsFinal.Text + "-logfile " + @"""" + this.LogLocation.Text + ".log" + @"""";
 				//this.Finaltext.Text = string.Concat(new string[]
 				//{
 				//	"RustDedicated.exe -batchmode +server.identity \"",
@@ -921,7 +919,7 @@ namespace batchgen
 			bool flag = this.ServerVarsFinal.Text == "";
 			if (flag)
 			{
-				this.Finaltext.Text = "RustDedicated.exe -batchmode +server.identity " + @"""" + this.KOidentitytext.Text + @"""" + " +server.hostname " + @"""" + this.KOservernametext.Text + @""" +server.level ""SavasIsland_koth""" + " +server.seed " + @"""" + " +server.maxplayers " + @"""" + this.KOmaxplayertext.Text + @""" +rcon.ip " + MyIP + " +rcon.port " + this.KOrconporttext.Text + " +server.port " + this.KOserverportext.Text + " +rcon.password " + @"""" + this.KOrconpasstext.Text + @"""" + " +server.description " + @"""" + this.KOserverdisctext.Text + @"""" + " +server.url " + @"""" + this.KOserverurltext.Text + @"""" + " +server.headerimage " + @"""" + this.KOserverpicturetext.Text + @"""" + " -logfile " + @"""" + this.LogLocation.Text + ".log" + @"""";
+				this.Finaltext.Text = "RustDedicated.exe -batchmode +server.identity " + @"""" + this.KOidentitytext.Text + @"""" + " +server.hostname " + @"""" + this.KOservernametext.Text + @""" +server.level ""SavasIsland_koth""" + " +server.seed " + @"""" + " +server.maxplayers " + this.KOmaxplayertext.Text + @" +rcon.ip " + MyIP + " +rcon.port " + this.KOrconporttext.Text + " +server.port " + this.KOserverportext.Text + " +rcon.password " + @"""" + this.KOrconpasstext.Text + @"""" + " +server.description " + @"""" + this.KOserverdisctext.Text + @"""" + " +server.url " + @"""" + this.KOserverurltext.Text + @"""" + " +server.headerimage " + @"""" + this.KOserverpicturetext.Text + @"""" + " -logfile " + @"""" + this.LogLocation.Text + ".log" + @"""";
 
 				//this.Finaltext.Text = string.Concat(new string[]
 				//{
@@ -980,7 +978,7 @@ namespace batchgen
 			}
 			else
 			{
-				this.Finaltext.Text = "RustDedicated.exe -batchmode +server.identity " + @"""" + this.KOidentitytext.Text + @"""" + " +server.hostname " + @"""" + this.KOservernametext.Text + @""" +server.level ""SavasIsland""" + " +server.seed " + @"""" + " +server.maxplayers " + @"""" + this.KOmaxplayertext.Text + @""" +rcon.ip " + MyIP + " +rcon.port " + this.KOrconporttext.Text + " +server.port " + this.KOserverportext.Text + " +rcon.password " + @"""" + this.KOrconpasstext.Text + @"""" + " +server.description " + @"""" + this.KOserverdisctext.Text + @"""" + " +server.url " + @"""" + this.KOserverurltext.Text + @"""" + " +server.headerimage " + @"""" + this.KOserverpicturetext.Text + @""" " + this.ServerVarsFinal.Text + " -logfile " + @"""" + this.LogLocation.Text + ".log" + @"""";
+				this.Finaltext.Text = "RustDedicated.exe -batchmode +server.identity " + @"""" + this.KOidentitytext.Text + @"""" + " +server.hostname " + @"""" + this.KOservernametext.Text + @""" +server.level ""SavasIsland_koth""" + " +server.seed " + @"""" + " +server.maxplayers " + this.KOmaxplayertext.Text + @" +rcon.ip " + MyIP + " +rcon.port " + this.KOrconporttext.Text + " +server.port " + this.KOserverportext.Text + " +rcon.password " + @"""" + this.KOrconpasstext.Text + @"""" + " +server.description " + @"""" + this.KOserverdisctext.Text + @"""" + " +server.url " + @"""" + this.KOserverurltext.Text + @"""" + " +server.headerimage " + @"""" + this.KOserverpicturetext.Text + @""" " + this.ServerVarsFinal.Text + "-logfile " + @"""" + this.LogLocation.Text + ".log" + @"""";
 
 				//this.Finaltext.Text = string.Concat(new string[]
 				//{
@@ -4557,6 +4555,12 @@ namespace batchgen
 					else if (peramtest.Contains(@"+hostname "))
 					{
 						Hostname = Cleanupbat(peramtest.Replace(@"+hostname ", ""));
+						if (Hostname.Contains("+levelurl"))
+                        {
+							string[] customm = Hostname.Split(new string[] { " +levelurl" }, StringSplitOptions.None);
+							Hostname = customm[0];
+							Level = customm[1].TrimStart();
+						}
 					}
 					else if (peramtest.Contains(@"+level "))
 					{
@@ -4585,8 +4589,6 @@ namespace batchgen
 							{
 								Maxplayers = ps.Replace("+maxplayers ", "");
 								Maxplayers = Maxplayers.TrimEnd();
-								Maxplayers = Maxplayers.Substring(1, Maxplayers.Length - 2);
-
 							}
 							else if (ps.Contains("ip "))
 							{
@@ -4649,7 +4651,7 @@ namespace batchgen
                         {
 							if (!peramsplitter[i].Contains("-logfile") && !peramsplitter[i].Contains("logs.log"))
 							{
-								varname = peramsplitter[i];
+								varname = peramsplitter[i].Replace("+", "");
 								i++;
 								varvalue = peramsplitter[i].Substring(1, peramsplitter[i].Length - 2);
 								this.ServerVars.Rows.Add(new object[]
@@ -4801,7 +4803,8 @@ namespace batchgen
 							{
 
 								string subPath = "cfg";
-								bool exists = System.IO.Directory.Exists(serverfolder + "\\" + (subPath));
+                                bool exists = System.IO.Directory.Exists(serverfolder + "\\" + (subPath));
+
 
 								if (!exists)
 								{ 
@@ -4836,7 +4839,7 @@ namespace batchgen
 			if (flag)
 			{
 
-				this.Finaltext.Text = "RustDedicated.exe -batchmode +server.identity " + @"""" + this.BAidentitytext.Text + @"""" + " +server.hostname " + @"""" + this.BAservernametext.Text + @""" +server.level ""Barren""" + " +server.seed " + @"""" + this.BAmapseedtext.Text + @"""" + " +server.worldsize " + @"""" + this.BAmapsizebox.Text + @"""" + " +server.maxplayers " + @"""" + this.BAmaxplayertext.Text + @""" +rcon.ip " + MyIP + " +rcon.port " + this.BArconporttext.Text + " +server.port " + this.BAserverportext.Text + " +rcon.password " + @"""" + this.BArconpasstext.Text + @"""" + " +server.description " + @"""" + this.BAserverdisctext.Text + @"""" + " +server.url " + @"""" + this.BAserverurltext.Text + @"""" + " +server.headerimage " + @"""" + this.BAserverpicturetext.Text + @"""" + " -logfile " + @"""" + this.LogLocation.Text + ".log" + @"""";
+				this.Finaltext.Text = "RustDedicated.exe -batchmode +server.identity " + @"""" + this.BAidentitytext.Text + @"""" + " +server.hostname " + @"""" + this.BAservernametext.Text + @""" +server.level ""Barren""" + " +server.seed " + @"""" + this.BAmapseedtext.Text + @"""" + " +server.worldsize " + @"""" + this.BAmapsizebox.Text + @"""" + " +server.maxplayers " + this.BAmaxplayertext.Text + @" +rcon.ip " + MyIP + " +rcon.port " + this.BArconporttext.Text + " +server.port " + this.BAserverportext.Text + " +rcon.password " + @"""" + this.BArconpasstext.Text + @"""" + " +server.description " + @"""" + this.BAserverdisctext.Text + @"""" + " +server.url " + @"""" + this.BAserverurltext.Text + @"""" + " +server.headerimage " + @"""" + this.BAserverpicturetext.Text + @"""" + " -logfile " + @"""" + this.LogLocation.Text + ".log" + @"""";
 
 				//this.Finaltext.Text = string.Concat(new string[]
 				//{
@@ -4903,7 +4906,7 @@ namespace batchgen
 			}
 			else
 			{
-				this.Finaltext.Text = this.Finaltext.Text = "RustDedicated.exe -batchmode +server.identity " + @"""" + this.BAidentitytext.Text + @"""" + " +server.hostname " + @"""" + this.BAservernametext.Text + @""" +server.level ""Procedural Map""" + " +server.seed " + @"""" + this.BAmapseedtext.Text + @"""" + " +server.worldsize " + @"""" + this.BAmapsizebox.Text + @"""" + " +server.maxplayers " + @"""" + this.BAmaxplayertext.Text + @""" +rcon.ip " + MyIP + " +rcon.port " + this.BArconporttext.Text + " +server.port " + this.BAserverportext.Text + " +rcon.password " + @"""" + this.BArconpasstext.Text + @"""" + " +server.description " + @"""" + this.BAserverdisctext.Text + @"""" + " +server.url " + @"""" + this.BAserverurltext.Text + @"""" + " +server.headerimage " + @"""" + this.BAserverpicturetext.Text + @"""" + " " + this.ServerVarsFinal.Text + "-logfile " + @"""" + this.LogLocation.Text + ".log" + @"""";
+				this.Finaltext.Text = this.Finaltext.Text = "RustDedicated.exe -batchmode +server.identity " + @"""" + this.BAidentitytext.Text + @"""" + " +server.hostname " + @"""" + this.BAservernametext.Text + @""" +server.level ""Barren""" + " +server.seed " + @"""" + this.BAmapseedtext.Text + @"""" + " +server.worldsize " + @"""" + this.BAmapsizebox.Text + @"""" + " +server.maxplayers " + this.BAmaxplayertext.Text + @" +rcon.ip " + MyIP + " +rcon.port " + this.BArconporttext.Text + " +server.port " + this.BAserverportext.Text + " +rcon.password " + @"""" + this.BArconpasstext.Text + @"""" + " +server.description " + @"""" + this.BAserverdisctext.Text + @"""" + " +server.url " + @"""" + this.BAserverurltext.Text + @"""" + " +server.headerimage " + @"""" + this.BAserverpicturetext.Text + @"""" + " " + this.ServerVarsFinal.Text + "-logfile " + @"""" + this.LogLocation.Text + ".log" + @"""";
 
 				//this.Finaltext.Text = string.Concat(new string[]
 				//{
