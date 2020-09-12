@@ -15,6 +15,8 @@ namespace batchgen
 {
 	public partial class Form1 : Form
 	{
+
+		MapServer myServer = null;
 		public string lastModified;
 		string MyIP = "127.0.0.1";
 		public Form1()
@@ -192,23 +194,17 @@ namespace batchgen
 			return _random.Next(min, max);
 		}
 
-		public static bool IsAdministrator()
-		{
-			using (WindowsIdentity identity = WindowsIdentity.GetCurrent())
-			{
-				WindowsPrincipal principal = new WindowsPrincipal(identity);
-				return principal.IsInRole(WindowsBuiltInRole.Administrator);
-			}
-		}
 
-		private void Form1_Load(object sender, EventArgs e)
-		{
-			//if (!IsAdministrator())
-			// {
-			//	MessageBox.Show("Program needs to be ran as admin");
-			//	this.Close();
-			// }
 
+	private void Form1_Load(object sender, EventArgs e)
+		{
+
+            textBox3.Text = RUSS.Properties.Settings.Default.MapLocation;
+			textBox4.Text = RUSS.Properties.Settings.Default.MAPOUTPUTURL;
+			maskedTextBox1.Text = RUSS.Properties.Settings.Default.MAPPort;
+			checkBox1.Checked = RUSS.Properties.Settings.Default.MAPServer;
+			StartFileList.Text = RUSS.Properties.Settings.Default.RustCOMBOBOX;
+			MyIP = RUSS.Properties.Settings.Default.RCONIP;
 
 			string mylocation = Application.ExecutablePath;
 			if (mylocation.Contains(" "))
@@ -219,7 +215,7 @@ namespace batchgen
 			this.mapseedtext.Text = RandomNumber(1, 10).ToString();
 
 			this.mapPic.ImageLocation = "http://playrust.io/preview.jpg?level=Procedural%20Map&size=" + this.mapsizebox.Text + "&seed=" + this.mapseedtext.Text;
-			
+			label66.Text = "Size:" + mapsizebox.Text + " Seed:" + mapseedtext.Text;
 			this.serverdirectorytext.Text = string.Concat(new string[]
 				{
 					this.currentpath,
@@ -298,7 +294,10 @@ namespace batchgen
 			KOserverurltext.Text = CMserverurltext.Text;
 			serverurltext.Text = CMserverurltext.Text;
 
-
+			if (StartFileList.Text != "")
+			{
+				readbatinfo();
+			}
 
 		}
 
@@ -715,6 +714,20 @@ namespace batchgen
 
 		private void Form1_FormClosed(object sender, FormClosedEventArgs e)
 		{
+			if (MapServer.Running)
+            {
+				myServer.Stop();
+				myServer = null;
+			}
+
+
+			RUSS.Properties.Settings.Default.MapLocation = textBox3.Text;
+			RUSS.Properties.Settings.Default.MAPOUTPUTURL = textBox4.Text;
+			RUSS.Properties.Settings.Default.MAPPort = maskedTextBox1.Text;
+			RUSS.Properties.Settings.Default.MAPServer = checkBox1.Checked;
+			RUSS.Properties.Settings.Default.RustCOMBOBOX = StartFileList.Text;
+			RUSS.Properties.Settings.Default.RCONIP = MyIP;
+			RUSS.Properties.Settings.Default.Save();
 			Application.Exit();
 		}
 
@@ -926,6 +939,7 @@ namespace batchgen
 			{
 				this.mapPic.ImageLocation = "http://playrust.io/preview.jpg?level=Procedural%20Map&size=" + this.mapsizebox.Text + "&seed=" + this.mapseedtext.Text;
 				this.mapinfolab.Text = "ProcGen Map";
+				label66.Text = "Size:" + mapsizebox.Text + " Seed:" + mapseedtext.Text;
 			}
 			else
 			{
@@ -934,6 +948,7 @@ namespace batchgen
 				{
 					this.mapPic.ImageLocation = "https://vignette.wikia.nocookie.net/play-rust/images/4/47/HapisIsland.jpg/revision/latest/scale-to-width-down/180?cb=20150910033411";
 					this.mapinfolab.Text = "Hapis Island";
+					label66.Text = "Size:" + mapsizebox.Text + " Seed:" + mapseedtext.Text;
 				}
 				else
 				{
@@ -942,6 +957,7 @@ namespace batchgen
 					{
 						this.mapPic.ImageLocation = "https://vignette.wikia.nocookie.net/play-rust/images/6/64/Savas_Island_diagram.jpg/revision/latest/scale-to-width-down/310?cb=20151001214728";
 						this.mapinfolab.Text = "Savas Island";
+						label66.Text = "";
 					}
 					else
 					{
@@ -950,6 +966,7 @@ namespace batchgen
 						{
 							this.mapPic.ImageLocation = "https://vignette.wikia.nocookie.net/play-rust/images/6/64/Savas_Island_diagram.jpg/revision/latest/scale-to-width-down/310?cb=20151001214728";
 							this.mapinfolab.Text = "Savas King Of The Hill";
+							label66.Text = "";
 						}
 						else
 						{
@@ -958,6 +975,7 @@ namespace batchgen
 							{
 								this.mapPic.ImageLocation = "http://playrust.io/preview.jpg?level=Barren&size=" + this.BAmapsizebox.Text + "&seed=" + this.BAmapseedtext.Text;
 								this.mapinfolab.Text = "Barren ProcGen";
+								label66.Text = "";
 							}
 							else
 							{
@@ -966,6 +984,7 @@ namespace batchgen
 								{
 									this.mapPic.ImageLocation = "https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png";
 									this.mapinfolab.Text = "Custom Map Preview Not Supported";
+									label66.Text = "";
 								}
 								else
 								{
@@ -974,6 +993,7 @@ namespace batchgen
 									{
 										this.mapPic.ImageLocation = "https://i.imgur.com/rSYtxoR.jpg";
 										this.mapinfolab.Text = "Craggy Island";
+										label66.Text = "";
 									}
 								}
 							}
@@ -1149,8 +1169,9 @@ namespace batchgen
         }
 
 
-		private void StartFileList_SelectedIndexChanged(object sender, EventArgs e)
-		{
+
+		private void readbatinfo()
+        {
 			try
 			{
 				string filen = StartFileList.Text;
@@ -1192,10 +1213,10 @@ namespace batchgen
 					{
 						Hostname = Cleanupbat(peramtest.Replace(@"+hostname ", ""));
 						if (Hostname.Contains("+levelurl"))
-                        {
+						{
 							string[] customm = Hostname.Split(new string[] { " +levelurl" }, StringSplitOptions.None);
 							Hostname = customm[0];
-							Level = customm[1].TrimStart().Replace("File:",@"File:\\");
+							Level = customm[1].TrimStart();
 						}
 					}
 					else if (peramtest.Contains(@"+level "))
@@ -1284,7 +1305,7 @@ namespace batchgen
 						this.ServerVarsFinal.Text = "";
 						BtnCLLearVars_Click(null, null);
 						for (int i = 2; i < peramsplitter.Length - 2; i++)
-                        {
+						{
 							if (!peramsplitter[i].Contains("-logfile") && !peramsplitter[i].Contains("logs.log"))
 							{
 								varname = peramsplitter[i].Replace("+", "");
@@ -1399,9 +1420,15 @@ namespace batchgen
 				}
 			}
 			catch
-            {
+			{
 				MessageBox.Show("Error reading settings from selected .bat");
-            }
+			}
+		}
+
+
+		private void StartFileList_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			readbatinfo();
 		}
 
 
@@ -1804,14 +1831,34 @@ namespace batchgen
 				BtnStart.Enabled = true;
 			}
 
+			if (MapServer.Running)
+            {
+				label32.Text = "Status: Online";
+				button16.Enabled = false;
+				button18.Enabled = true;
+				maskedTextBox1.Enabled = false;
+				button17.Enabled = false;
+			}
+			else
+            {
+				label32.Text = "Status: Offline";
+				button16.Enabled = true;
+				button18.Enabled = false;
+				maskedTextBox1.Enabled = true;
+				button17.Enabled = true;
+			}
+
 			Process[] pname = Process.GetProcessesByName("RustDedicated");
 			if (pname.Length == 0)
 			{
 				BtnStart.Text = "START";
 				StartFileList.Enabled = true;
-				serverup.Enabled = false;
 				label68.Text = "START YOUR SERVER";
 				infolabel.Text = "Server not running.";
+				if (checkBox1.Checked) //map server
+				{
+					button18_Click_1(null, null);
+				}
 			}
 			else
 			{
@@ -1820,6 +1867,11 @@ namespace batchgen
 					BtnStart.Text = "STOP";
 					StartFileList.Enabled = false;
 					label68.Text = "SERVER RUNNING";
+
+					if(checkBox1.Checked) //map server
+                    {
+						button16_Click_1(null, null);
+					}
 				}
 			}
 		}
@@ -1833,6 +1885,70 @@ namespace batchgen
 			{
 				mapurlbox.Text = @"File:\\" + theDialog.FileName;
 			}
+		}
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+			System.Diagnostics.Process.Start("https://www.yougetsignal.com/tools/open-ports/");
+		}
+
+        private void button16_Click_1(object sender, EventArgs e)
+        {
+			if (textBox3.Text.Contains(".map"))
+			{
+				if (myServer != null)
+                {
+					myServer.Stop();
+					myServer = null;
+				}
+				button16.Enabled = false;
+				myServer = new MapServer(textBox3.Text, int.Parse(maskedTextBox1.Text));
+				serverup.Enabled = true;
+				string[] temp = textBox3.Text.Split('\\');
+				string externalip = new WebClient().DownloadString("http://icanhazip.com") + ":" + maskedTextBox1.Text;
+				textBox4.Text = "http://" + externalip + "/" + temp[temp.Length - 1];
+
+			}
+			else
+            {
+				MessageBox.Show("No Map file selected!");
+            }
+		}
+
+        private void button18_Click_1(object sender, EventArgs e)
+        {
+			if (myServer != null)
+			{
+				myServer.Stop();
+				myServer = null;
+			}
+		}
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+			OpenFileDialog theDialog = new OpenFileDialog();
+			theDialog.Title = "Open Map File";
+			theDialog.Filter = "Map|*.map";
+			if (theDialog.ShowDialog() == DialogResult.OK)
+			{
+				textBox3.Text = theDialog.FileName;
+			}
+		}
+
+        private void resetSettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+			DialogResult dialogResult = MessageBox.Show("This will reset the settings back to default, Do you want to proceed?", "Reset Settings", MessageBoxButtons.YesNo);
+			if (dialogResult == DialogResult.Yes)
+			{
+				RUSS.Properties.Settings.Default.Reset();
+				textBox3.Text = RUSS.Properties.Settings.Default.MapLocation;
+				textBox4.Text = RUSS.Properties.Settings.Default.MAPOUTPUTURL;
+				maskedTextBox1.Text = RUSS.Properties.Settings.Default.MAPPort;
+				checkBox1.Checked = RUSS.Properties.Settings.Default.MAPServer;
+				StartFileList.Text = RUSS.Properties.Settings.Default.RustCOMBOBOX;
+				MyIP = RUSS.Properties.Settings.Default.RCONIP;
+			}
+
 		}
     }
 }

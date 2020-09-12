@@ -22,5 +22,77 @@ namespace RUSS.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string MapLocation {
+            get {
+                return ((string)(this["MapLocation"]));
+            }
+            set {
+                this["MapLocation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("8080")]
+        public string MAPPort {
+            get {
+                return ((string)(this["MAPPort"]));
+            }
+            set {
+                this["MAPPort"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MAPServer {
+            get {
+                return ((bool)(this["MAPServer"]));
+            }
+            set {
+                this["MAPServer"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string MAPOUTPUTURL {
+            get {
+                return ((string)(this["MAPOUTPUTURL"]));
+            }
+            set {
+                this["MAPOUTPUTURL"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string RustCOMBOBOX {
+            get {
+                return ((string)(this["RustCOMBOBOX"]));
+            }
+            set {
+                this["RustCOMBOBOX"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("127.0.0.1")]
+        public string RCONIP {
+            get {
+                return ((string)(this["RCONIP"]));
+            }
+            set {
+                this["RCONIP"] = value;
+            }
+        }
     }
 }

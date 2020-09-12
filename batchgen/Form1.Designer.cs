@@ -119,7 +119,6 @@
             this.ServerVarsFinal = new System.Windows.Forms.TextBox();
             this.panel12 = new System.Windows.Forms.Panel();
             this.BtnStart = new System.Windows.Forms.Button();
-            this.StartFileList = new System.Windows.Forms.ComboBox();
             this.label68 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.PreviewDesc = new System.Windows.Forms.Label();
@@ -217,6 +216,7 @@
             this.label65 = new System.Windows.Forms.Label();
             this.label67 = new System.Windows.Forms.Label();
             this.custom = new System.Windows.Forms.TabPage();
+            this.button15 = new System.Windows.Forms.Button();
             this.BTNbatchCustom = new System.Windows.Forms.Button();
             this.mapurlbox = new System.Windows.Forms.TextBox();
             this.CMmaxplayertext = new System.Windows.Forms.TextBox();
@@ -341,8 +341,27 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.button14 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.serverup = new System.Windows.Forms.Timer(this.components);
-            this.button15 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button18 = new System.Windows.Forms.Button();
+            this.label31 = new System.Windows.Forms.Label();
+            this.button17 = new System.Windows.Forms.Button();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.label57 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.StartFileList = new System.Windows.Forms.ComboBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label66 = new System.Windows.Forms.Label();
+            this.toolStripMenuItem14 = new System.Windows.Forms.ToolStripSeparator();
+            this.resetSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.maintab.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -371,6 +390,8 @@
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // imageList1
@@ -409,7 +430,9 @@
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.videoTutorialsToolStripMenuItem,
             this.toolStripMenuItem13,
-            this.browseMapsToolStripMenuItem});
+            this.browseMapsToolStripMenuItem,
+            this.toolStripMenuItem14,
+            this.resetSettingsToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 22);
             this.helpToolStripMenuItem.Text = "Help";
@@ -953,7 +976,7 @@
             this.maintab.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maintab.Location = new System.Drawing.Point(4, 22);
             this.maintab.Name = "maintab";
-            this.maintab.Padding = new System.Windows.Forms.Padding(3);
+            this.maintab.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.maintab.Size = new System.Drawing.Size(1721, 957);
             this.maintab.TabIndex = 0;
             this.maintab.Text = "Server Setup";
@@ -1579,16 +1602,6 @@
             this.BtnStart.UseVisualStyleBackColor = true;
             this.BtnStart.Click += new System.EventHandler(this.BtnStart_Click);
             // 
-            // StartFileList
-            // 
-            this.StartFileList.FormattingEnabled = true;
-            this.StartFileList.Location = new System.Drawing.Point(5, 36);
-            this.StartFileList.Name = "StartFileList";
-            this.StartFileList.Size = new System.Drawing.Size(350, 21);
-            this.StartFileList.TabIndex = 2;
-            this.StartFileList.SelectedIndexChanged += new System.EventHandler(this.StartFileList_SelectedIndexChanged);
-            this.StartFileList.MouseClick += new System.Windows.Forms.MouseEventHandler(this.StartFileList_MouseClick);
-            // 
             // label68
             // 
             this.label68.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1867,6 +1880,7 @@
             this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.label66);
             this.panel4.Controls.Add(this.RefreshSmall);
             this.panel4.Controls.Add(this.mapinfolab);
             this.panel4.Controls.Add(this.mapPic);
@@ -2105,7 +2119,7 @@
             this.procgen.Controls.Add(this.label1);
             this.procgen.Location = new System.Drawing.Point(4, 22);
             this.procgen.Name = "procgen";
-            this.procgen.Padding = new System.Windows.Forms.Padding(3);
+            this.procgen.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.procgen.Size = new System.Drawing.Size(449, 381);
             this.procgen.TabIndex = 0;
             this.procgen.Text = "PROCGEN";
@@ -2631,6 +2645,16 @@
             this.custom.Size = new System.Drawing.Size(449, 381);
             this.custom.TabIndex = 1;
             this.custom.Text = "CUSTOM MAP";
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(150, 310);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(296, 32);
+            this.button15.TabIndex = 31;
+            this.button15.Text = "Local Only Map";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
             // BTNbatchCustom
             // 
@@ -3809,6 +3833,7 @@
             // 
             this.tabControl1.Controls.Add(this.maintab);
             this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(-4, 22);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -3823,7 +3848,7 @@
             this.tabPage1.Controls.Add(this.tableLayoutPanel1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPage1.Size = new System.Drawing.Size(1721, 957);
             this.tabPage1.TabIndex = 1;
             this.tabPage1.Text = "Server Log";
@@ -3895,27 +3920,237 @@
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.button13_Click_1);
             // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.Color.CadetBlue;
+            this.tabPage2.Controls.Add(this.label41);
+            this.tabPage2.Controls.Add(this.label57);
+            this.tabPage2.Controls.Add(this.linkLabel1);
+            this.tabPage2.Controls.Add(this.groupBox1);
+            this.tabPage2.Controls.Add(this.label37);
+            this.tabPage2.Controls.Add(this.label35);
+            this.tabPage2.Controls.Add(this.button17);
+            this.tabPage2.Controls.Add(this.label32);
+            this.tabPage2.Controls.Add(this.textBox4);
+            this.tabPage2.Controls.Add(this.textBox3);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Size = new System.Drawing.Size(1721, 957);
+            this.tabPage2.TabIndex = 2;
+            this.tabPage2.Text = "Map File Server";
+            // 
             // serverup
             // 
             this.serverup.Enabled = true;
-            this.serverup.Interval = 5000;
+            this.serverup.Interval = 2000;
             this.serverup.Tick += new System.EventHandler(this.serverup_Tick);
             // 
-            // button15
+            // button16
             // 
-            this.button15.Location = new System.Drawing.Point(150, 310);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(296, 32);
-            this.button15.TabIndex = 31;
-            this.button15.Text = "Local Only Map";
-            this.button15.UseVisualStyleBackColor = true;
-            this.button15.Click += new System.EventHandler(this.button15_Click);
+            this.button16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button16.Location = new System.Drawing.Point(44, 53);
+            this.button16.Margin = new System.Windows.Forms.Padding(1);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(104, 50);
+            this.button16.TabIndex = 8;
+            this.button16.Text = "Start Map Server";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click_1);
+            // 
+            // button18
+            // 
+            this.button18.Location = new System.Drawing.Point(159, 53);
+            this.button18.Margin = new System.Windows.Forms.Padding(1);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(104, 50);
+            this.button18.TabIndex = 9;
+            this.button18.Text = "Stop Map Server";
+            this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click_1);
+            // 
+            // label31
+            // 
+            this.label31.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(9, 19);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(29, 13);
+            this.label31.TabIndex = 10;
+            this.label31.Text = "Port:";
+            // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(635, 110);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(93, 19);
+            this.button17.TabIndex = 12;
+            this.button17.Text = "Select";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
+            // 
+            // label32
+            // 
+            this.label32.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(112, 258);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(73, 13);
+            this.label32.TabIndex = 14;
+            this.label32.Text = "Status: Offline";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Verdana", 21.75F, System.Drawing.FontStyle.Bold);
+            this.label35.Location = new System.Drawing.Point(259, 25);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(270, 35);
+            this.label35.TabIndex = 15;
+            this.label35.Text = "MAP File Server";
+            // 
+            // label37
+            // 
+            this.label37.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(112, 84);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(52, 13);
+            this.label37.TabIndex = 16;
+            this.label37.Text = "MAP File:";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.maskedTextBox1);
+            this.groupBox1.Controls.Add(this.label31);
+            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.button18);
+            this.groupBox1.Controls.Add(this.button16);
+            this.groupBox1.Location = new System.Drawing.Point(115, 138);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(613, 117);
+            this.groupBox1.TabIndex = 17;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Settings:";
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(637, 258);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(91, 13);
+            this.linkLabel1.TabIndex = 14;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Port Forword Test";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Font = new System.Drawing.Font("Verdana", 21.75F, System.Drawing.FontStyle.Bold);
+            this.label57.Location = new System.Drawing.Point(109, 328);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(161, 35);
+            this.label57.TabIndex = 20;
+            this.label57.Text = "MAP URL";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Location = new System.Drawing.Point(115, 439);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(481, 108);
+            this.label41.TabIndex = 21;
+            this.label41.Text = resources.GetString("label41.Text");
+            // 
+            // StartFileList
+            // 
+            this.StartFileList.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::RUSS.Properties.Settings.Default, "RustCOMBOBOX", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.StartFileList.FormattingEnabled = true;
+            this.StartFileList.Location = new System.Drawing.Point(5, 36);
+            this.StartFileList.Name = "StartFileList";
+            this.StartFileList.Size = new System.Drawing.Size(350, 21);
+            this.StartFileList.TabIndex = 2;
+            this.StartFileList.Text = global::RUSS.Properties.Settings.Default.RustCOMBOBOX;
+            this.StartFileList.SelectedIndexChanged += new System.EventHandler(this.StartFileList_SelectedIndexChanged);
+            this.StartFileList.MouseClick += new System.Windows.Forms.MouseEventHandler(this.StartFileList_MouseClick);
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::RUSS.Properties.Settings.Default, "MAPPort", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.maskedTextBox1.Location = new System.Drawing.Point(44, 16);
+            this.maskedTextBox1.Mask = "0000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(67, 20);
+            this.maskedTextBox1.TabIndex = 11;
+            this.maskedTextBox1.Text = global::RUSS.Properties.Settings.Default.MAPPort;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = global::RUSS.Properties.Settings.Default.MAPServer;
+            this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::RUSS.Properties.Settings.Default, "MAPServer", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.checkBox1.Location = new System.Drawing.Point(127, 19);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(196, 17);
+            this.checkBox1.TabIndex = 13;
+            this.checkBox1.Text = "Auto Start/Stop with RustDedicated";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::RUSS.Properties.Settings.Default, "MAPOUTPUTURL", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.textBox4.Location = new System.Drawing.Point(115, 377);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(613, 20);
+            this.textBox4.TabIndex = 19;
+            this.textBox4.Text = global::RUSS.Properties.Settings.Default.MAPOUTPUTURL;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::RUSS.Properties.Settings.Default, "MapLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.textBox3.Location = new System.Drawing.Point(170, 84);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(558, 20);
+            this.textBox3.TabIndex = 11;
+            this.textBox3.Text = global::RUSS.Properties.Settings.Default.MapLocation;
+            // 
+            // label66
+            // 
+            this.label66.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label66.ForeColor = System.Drawing.SystemColors.Control;
+            this.label66.Location = new System.Drawing.Point(4, 5);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(345, 13);
+            this.label66.TabIndex = 4;
+            this.label66.Text = "ProcGen Map";
+            this.label66.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // toolStripMenuItem14
+            // 
+            this.toolStripMenuItem14.Name = "toolStripMenuItem14";
+            this.toolStripMenuItem14.Size = new System.Drawing.Size(177, 6);
+            // 
+            // resetSettingsToolStripMenuItem
+            // 
+            this.resetSettingsToolStripMenuItem.Name = "resetSettingsToolStripMenuItem";
+            this.resetSettingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.resetSettingsToolStripMenuItem.Text = "Reset Settings";
+            this.resetSettingsToolStripMenuItem.Click += new System.EventHandler(this.resetSettingsToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(840, 769);
+            this.ClientSize = new System.Drawing.Size(840, 768);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -3971,6 +4206,10 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4602,5 +4841,24 @@
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Timer serverup;
         private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem14;
+        private System.Windows.Forms.ToolStripMenuItem resetSettingsToolStripMenuItem;
     }
 }

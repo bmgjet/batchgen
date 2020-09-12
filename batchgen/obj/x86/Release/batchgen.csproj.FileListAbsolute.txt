@@ -20,3 +20,4 @@ I:\batchgen\batchgen\obj\x86\Release\batchgen.csproj.GenerateResource.cache
 I:\batchgen\batchgen\obj\x86\Release\batchgen.csproj.CoreCompileInputs.cache
 I:\batchgen\batchgen\obj\x86\Release\RUSS.exe
 I:\batchgen\batchgen\obj\x86\Release\RUSS.pdb
+I:\batchgen\batchgen\bin\Release\RUSS.exe.config

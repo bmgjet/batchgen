@@ -65,6 +65,7 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MapServer.cs" />
     <Compile Include="varlist.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -114,10 +115,12 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Resources\RUSS.exe.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\refresh.jpg" />
