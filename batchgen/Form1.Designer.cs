@@ -1,9 +1,7 @@
 ﻿namespace batchgen
 {
-	// Token: 0x02000002 RID: 2
 	public partial class Form1 : global::System.Windows.Forms.Form
 	{
-		// Token: 0x060000B9 RID: 185 RVA: 0x0000B78C File Offset: 0x0000998C
 		protected override void Dispose(bool disposing)
 		{
 			bool flag = disposing && this.components != null;
@@ -14,7 +12,6 @@
 			base.Dispose(disposing);
 		}
 
-		// Token: 0x060000BA RID: 186 RVA: 0x0000B7C4 File Offset: 0x000099C4
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
@@ -51,6 +48,16 @@
             this.uSSRFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripSeparator();
             this.steamCMDFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pluginsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mainSiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem11 = new System.Windows.Forms.ToolStripSeparator();
+            this.downloadOxideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem18 = new System.Windows.Forms.ToolStripSeparator();
+            this.browseFreePluginsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem29 = new System.Windows.Forms.ToolStripSeparator();
+            this.installUmodToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripSeparator();
+            this.pluginManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.socialMediaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.programsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rustAdminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,16 +89,6 @@
             this.howToCreateAPrivateRUSTServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.howToInstallUModOxideToARUSTServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rUSTServerPerformanceHintsAndTipsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pluginsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mainSiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem11 = new System.Windows.Forms.ToolStripSeparator();
-            this.downloadOxideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem18 = new System.Windows.Forms.ToolStripSeparator();
-            this.browseFreePluginsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem29 = new System.Windows.Forms.ToolStripSeparator();
-            this.installUmodToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripSeparator();
-            this.pluginManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.maintab = new System.Windows.Forms.TabPage();
             this.CheckDll = new System.Windows.Forms.TextBox();
             this.hasspace = new System.Windows.Forms.TextBox();
@@ -345,6 +342,7 @@
             this.button14 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.serverup = new System.Windows.Forms.Timer(this.components);
+            this.button15 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.maintab.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -612,6 +610,77 @@
             this.steamCMDFolderToolStripMenuItem.Text = "Steam CMD Folder";
             this.steamCMDFolderToolStripMenuItem.Click += new System.EventHandler(this.SteamCMDToolStripMenuItem1_Click);
             // 
+            // pluginsToolStripMenuItem
+            // 
+            this.pluginsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mainSiteToolStripMenuItem,
+            this.toolStripMenuItem11,
+            this.downloadOxideToolStripMenuItem,
+            this.toolStripMenuItem18,
+            this.browseFreePluginsToolStripMenuItem,
+            this.toolStripMenuItem29,
+            this.installUmodToolStripMenuItem1,
+            this.toolStripMenuItem10,
+            this.pluginManagerToolStripMenuItem});
+            this.pluginsToolStripMenuItem.Name = "pluginsToolStripMenuItem";
+            this.pluginsToolStripMenuItem.Size = new System.Drawing.Size(58, 22);
+            this.pluginsToolStripMenuItem.Text = "Plugins";
+            // 
+            // mainSiteToolStripMenuItem
+            // 
+            this.mainSiteToolStripMenuItem.Name = "mainSiteToolStripMenuItem";
+            this.mainSiteToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.mainSiteToolStripMenuItem.Text = "Main Site";
+            this.mainSiteToolStripMenuItem.Click += new System.EventHandler(this.mainSiteToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem11
+            // 
+            this.toolStripMenuItem11.Name = "toolStripMenuItem11";
+            this.toolStripMenuItem11.Size = new System.Drawing.Size(188, 6);
+            // 
+            // downloadOxideToolStripMenuItem
+            // 
+            this.downloadOxideToolStripMenuItem.Name = "downloadOxideToolStripMenuItem";
+            this.downloadOxideToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.downloadOxideToolStripMenuItem.Text = "Oxide Download Page";
+            this.downloadOxideToolStripMenuItem.Click += new System.EventHandler(this.downloadOxideToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem18
+            // 
+            this.toolStripMenuItem18.Name = "toolStripMenuItem18";
+            this.toolStripMenuItem18.Size = new System.Drawing.Size(188, 6);
+            // 
+            // browseFreePluginsToolStripMenuItem
+            // 
+            this.browseFreePluginsToolStripMenuItem.Name = "browseFreePluginsToolStripMenuItem";
+            this.browseFreePluginsToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.browseFreePluginsToolStripMenuItem.Text = "Browse Free Plugins";
+            this.browseFreePluginsToolStripMenuItem.Click += new System.EventHandler(this.browseFreePluginsToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem29
+            // 
+            this.toolStripMenuItem29.Name = "toolStripMenuItem29";
+            this.toolStripMenuItem29.Size = new System.Drawing.Size(188, 6);
+            // 
+            // installUmodToolStripMenuItem1
+            // 
+            this.installUmodToolStripMenuItem1.Name = "installUmodToolStripMenuItem1";
+            this.installUmodToolStripMenuItem1.Size = new System.Drawing.Size(191, 22);
+            this.installUmodToolStripMenuItem1.Text = "Install Umod";
+            this.installUmodToolStripMenuItem1.Click += new System.EventHandler(this.DownloadInstallToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem10
+            // 
+            this.toolStripMenuItem10.Name = "toolStripMenuItem10";
+            this.toolStripMenuItem10.Size = new System.Drawing.Size(188, 6);
+            // 
+            // pluginManagerToolStripMenuItem
+            // 
+            this.pluginManagerToolStripMenuItem.Name = "pluginManagerToolStripMenuItem";
+            this.pluginManagerToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.pluginManagerToolStripMenuItem.Text = "Plugin Manager";
+            this.pluginManagerToolStripMenuItem.Click += new System.EventHandler(this.pluginManagerToolStripMenuItem_Click);
+            // 
             // socialMediaToolStripMenuItem
             // 
             this.socialMediaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -846,77 +915,6 @@
             this.rUSTServerPerformanceHintsAndTipsToolStripMenuItem.Size = new System.Drawing.Size(314, 22);
             this.rUSTServerPerformanceHintsAndTipsToolStripMenuItem.Text = "RUST Server Performance, Hints and Tips";
             this.rUSTServerPerformanceHintsAndTipsToolStripMenuItem.Click += new System.EventHandler(this.rUSTServerPerformanceHintsAndTipsToolStripMenuItem_Click);
-            // 
-            // pluginsToolStripMenuItem
-            // 
-            this.pluginsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mainSiteToolStripMenuItem,
-            this.toolStripMenuItem11,
-            this.downloadOxideToolStripMenuItem,
-            this.toolStripMenuItem18,
-            this.browseFreePluginsToolStripMenuItem,
-            this.toolStripMenuItem29,
-            this.installUmodToolStripMenuItem1,
-            this.toolStripMenuItem10,
-            this.pluginManagerToolStripMenuItem});
-            this.pluginsToolStripMenuItem.Name = "pluginsToolStripMenuItem";
-            this.pluginsToolStripMenuItem.Size = new System.Drawing.Size(58, 22);
-            this.pluginsToolStripMenuItem.Text = "Plugins";
-            // 
-            // mainSiteToolStripMenuItem
-            // 
-            this.mainSiteToolStripMenuItem.Name = "mainSiteToolStripMenuItem";
-            this.mainSiteToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.mainSiteToolStripMenuItem.Text = "Main Site";
-            this.mainSiteToolStripMenuItem.Click += new System.EventHandler(this.mainSiteToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem11
-            // 
-            this.toolStripMenuItem11.Name = "toolStripMenuItem11";
-            this.toolStripMenuItem11.Size = new System.Drawing.Size(188, 6);
-            // 
-            // downloadOxideToolStripMenuItem
-            // 
-            this.downloadOxideToolStripMenuItem.Name = "downloadOxideToolStripMenuItem";
-            this.downloadOxideToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.downloadOxideToolStripMenuItem.Text = "Oxide Download Page";
-            this.downloadOxideToolStripMenuItem.Click += new System.EventHandler(this.downloadOxideToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem18
-            // 
-            this.toolStripMenuItem18.Name = "toolStripMenuItem18";
-            this.toolStripMenuItem18.Size = new System.Drawing.Size(188, 6);
-            // 
-            // browseFreePluginsToolStripMenuItem
-            // 
-            this.browseFreePluginsToolStripMenuItem.Name = "browseFreePluginsToolStripMenuItem";
-            this.browseFreePluginsToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.browseFreePluginsToolStripMenuItem.Text = "Browse Free Plugins";
-            this.browseFreePluginsToolStripMenuItem.Click += new System.EventHandler(this.browseFreePluginsToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem29
-            // 
-            this.toolStripMenuItem29.Name = "toolStripMenuItem29";
-            this.toolStripMenuItem29.Size = new System.Drawing.Size(188, 6);
-            // 
-            // installUmodToolStripMenuItem1
-            // 
-            this.installUmodToolStripMenuItem1.Name = "installUmodToolStripMenuItem1";
-            this.installUmodToolStripMenuItem1.Size = new System.Drawing.Size(191, 22);
-            this.installUmodToolStripMenuItem1.Text = "Install Umod";
-            this.installUmodToolStripMenuItem1.Click += new System.EventHandler(this.DownloadInstallToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem10
-            // 
-            this.toolStripMenuItem10.Name = "toolStripMenuItem10";
-            this.toolStripMenuItem10.Size = new System.Drawing.Size(188, 6);
-            // 
-            // pluginManagerToolStripMenuItem
-            // 
-            this.pluginManagerToolStripMenuItem.Name = "pluginManagerToolStripMenuItem";
-            this.pluginManagerToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.pluginManagerToolStripMenuItem.Text = "Plugin Manager";
-            this.pluginManagerToolStripMenuItem.Click += new System.EventHandler(this.pluginManagerToolStripMenuItem_Click);
             // 
             // maintab
             // 
@@ -2605,6 +2603,7 @@
             // custom
             // 
             this.custom.BackColor = System.Drawing.Color.CadetBlue;
+            this.custom.Controls.Add(this.button15);
             this.custom.Controls.Add(this.BTNbatchCustom);
             this.custom.Controls.Add(this.mapurlbox);
             this.custom.Controls.Add(this.CMmaxplayertext);
@@ -2635,7 +2634,7 @@
             // 
             // BTNbatchCustom
             // 
-            this.BTNbatchCustom.Location = new System.Drawing.Point(151, 315);
+            this.BTNbatchCustom.Location = new System.Drawing.Point(150, 343);
             this.BTNbatchCustom.Name = "BTNbatchCustom";
             this.BTNbatchCustom.Size = new System.Drawing.Size(296, 32);
             this.BTNbatchCustom.TabIndex = 30;
@@ -2649,7 +2648,6 @@
             this.mapurlbox.Name = "mapurlbox";
             this.mapurlbox.Size = new System.Drawing.Size(296, 20);
             this.mapurlbox.TabIndex = 27;
-            this.mapurlbox.Text = "https://www.dropbox.com/s/vvl3nynh9vzhthn/1kbuildprac2019.map?dl=1";
             // 
             // CMmaxplayertext
             // 
@@ -3903,6 +3901,16 @@
             this.serverup.Interval = 5000;
             this.serverup.Tick += new System.EventHandler(this.serverup_Tick);
             // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(150, 310);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(296, 32);
+            this.button15.TabIndex = 31;
+            this.button15.Text = "Local Only Map";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3968,901 +3976,602 @@
 
 		}
 
-		// Token: 0x04000007 RID: 7
 		private global::System.ComponentModel.IContainer components = null;
 
-		// Token: 0x04000008 RID: 8
 		private global::System.Windows.Forms.Timer checkrun;
 
-		// Token: 0x04000009 RID: 9
 		private global::System.Windows.Forms.Timer delay;
 
-		// Token: 0x0400000A RID: 10
 		private global::System.Windows.Forms.MenuStrip menuStrip1;
 
-		// Token: 0x0400000B RID: 11
 		private global::System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
 
-		// Token: 0x0400000C RID: 12
 		private global::System.Windows.Forms.ToolStripMenuItem socialMediaToolStripMenuItem;
 
-		// Token: 0x0400000D RID: 13
 		private global::System.Windows.Forms.ToolStripMenuItem videoTutorialsToolStripMenuItem;
 
-		// Token: 0x0400000E RID: 14
 		private global::System.Windows.Forms.ToolStripMenuItem fullHostingTutorialsPlaylistToolStripMenuItem;
 
-		// Token: 0x04000011 RID: 17
 		private global::System.Windows.Forms.ToolStripMenuItem howToHostYourOwnRustServerManuallyToolStripMenuItem;
 
-		// Token: 0x04000012 RID: 18
 		private global::System.Windows.Forms.ToolStripMenuItem howToInstallOxideWorkWithPluginsToolStripMenuItem;
 
-		// Token: 0x04000013 RID: 19
 		private global::System.Windows.Forms.ToolStripMenuItem howToPortForwardToolStripMenuItem;
 
-		// Token: 0x04000016 RID: 22
 		private global::System.Windows.Forms.ToolStripMenuItem programsToolStripMenuItem;
 
-		// Token: 0x04000017 RID: 23
 		private global::System.Windows.Forms.ToolStripMenuItem rustAdminToolStripMenuItem;
 
-		// Token: 0x04000018 RID: 24
 		private global::System.Windows.Forms.ToolStripMenuItem rustServerManagerToolStripMenuItem;
 
-		// Token: 0x04000019 RID: 25
 		private global::System.Windows.Forms.ToolStripMenuItem rustEditToolStripMenuItem;
 
-		// Token: 0x0400001A RID: 26
 		private global::System.Windows.Forms.ToolStripMenuItem steamCMDToolStripMenuItem;
 
-		// Token: 0x0400001B RID: 27
 		private global::System.Windows.Forms.ToolStripMenuItem sitesToolStripMenuItem;
 
-		// Token: 0x0400001C RID: 28
 		private global::System.Windows.Forms.ToolStripMenuItem playRustIOToolStripMenuItem;
 
-		// Token: 0x0400001D RID: 29
 		private global::System.Windows.Forms.ToolStripMenuItem playRustcomToolStripMenuItem;
 
-		// Token: 0x0400001E RID: 30
 		private global::System.Windows.Forms.ToolStripMenuItem battleMetricsToolStripMenuItem;
 
-		// Token: 0x0400001F RID: 31
 		private global::System.Windows.Forms.ToolStripMenuItem corrosionHourToolStripMenuItem;
 
-		// Token: 0x04000020 RID: 32
 		private global::System.Windows.Forms.ToolStripMenuItem rustopiaToolStripMenuItem;
 
-		// Token: 0x04000021 RID: 33
 		private global::System.Windows.Forms.ToolStripMenuItem umodToolStripMenuItem;
 
-		// Token: 0x04000022 RID: 34
 		private global::System.Windows.Forms.ToolStripMenuItem chaoscodeToolStripMenuItem;
 
-		// Token: 0x04000023 RID: 35
 		private global::System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
 
-		// Token: 0x04000024 RID: 36
 		private global::System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
 
-		// Token: 0x04000025 RID: 37
 		private global::System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
 
-		// Token: 0x04000026 RID: 38
 		private global::System.Windows.Forms.ToolStripSeparator toolStripMenuItem5;
 
-		// Token: 0x0400003F RID: 63
 		private global::System.Windows.Forms.ToolStripSeparator toolStripMenuItem12;
 
-		// Token: 0x04000040 RID: 64
 		private global::System.Windows.Forms.ToolStripSeparator toolStripMenuItem16;
 
-		// Token: 0x04000041 RID: 65
 		private global::System.Windows.Forms.ToolStripMenuItem pluginsToolStripMenuItem;
 
-		// Token: 0x04000042 RID: 66
 		private global::System.Windows.Forms.ToolStripMenuItem mainSiteToolStripMenuItem;
 
-		// Token: 0x04000043 RID: 67
 		private global::System.Windows.Forms.ToolStripMenuItem browseFreePluginsToolStripMenuItem;
 
-		// Token: 0x04000045 RID: 69
 		private global::System.Windows.Forms.ToolStripSeparator toolStripMenuItem11;
 
-		// Token: 0x04000048 RID: 72
 		private global::System.Windows.Forms.ToolStripMenuItem downloadOxideToolStripMenuItem;
 
-		// Token: 0x04000049 RID: 73
 		private global::System.Windows.Forms.ToolStripSeparator toolStripMenuItem18;
 
-		// Token: 0x0400004A RID: 74
 		private global::System.Windows.Forms.ToolStripMenuItem fortifyCreateAndDesignBaseCanBeCopiedFromOrPastedIntoRustToolStripMenuItem;
 
-		// Token: 0x0400004D RID: 77
 		private global::System.Windows.Forms.ImageList imageList1;
 
-		// Token: 0x0400004E RID: 78
 		private global::System.Windows.Forms.TabPage maintab;
 
-		// Token: 0x0400004F RID: 79
 		private global::System.Windows.Forms.ProgressBar progressBar2;
 
-		// Token: 0x04000050 RID: 80
 		private global::System.Windows.Forms.Button button9;
 
-		// Token: 0x04000051 RID: 81
 		private global::System.Windows.Forms.Panel panel4;
 
-		// Token: 0x04000054 RID: 84
 		private global::System.Windows.Forms.Label label81;
 
-		// Token: 0x04000056 RID: 86
 		private global::System.Windows.Forms.Label label80;
 
-		// Token: 0x04000057 RID: 87
 		private global::System.Windows.Forms.Label label78;
 
-		// Token: 0x04000058 RID: 88
 		private global::System.Windows.Forms.TextBox test;
 
-		// Token: 0x04000059 RID: 89
 		private global::System.Windows.Forms.TextBox parametersbox;
 
-		// Token: 0x0400005A RID: 90
 		private global::System.Windows.Forms.TextBox deditextbox;
 
-		// Token: 0x0400005B RID: 91
 		private global::System.Windows.Forms.TextBox loglog;
 
-		// Token: 0x0400005C RID: 92
 		private global::System.Windows.Forms.TextBox quibox;
 
-		// Token: 0x0400005D RID: 93
 		private global::System.Windows.Forms.TextBox slashbox;
 
-		// Token: 0x0400005E RID: 94
 		private global::System.Windows.Forms.TextBox steamcmdbox;
 
-		// Token: 0x0400005F RID: 95
 		private global::System.Windows.Forms.TextBox serbat;
 
-		// Token: 0x04000060 RID: 96
 		private global::System.Windows.Forms.TextBox Finaltext;
 
-		// Token: 0x04000061 RID: 97
 		private global::System.Windows.Forms.Button button2;
 
-		// Token: 0x04000065 RID: 101
 		private global::System.Windows.Forms.Panel panel5;
 
-		// Token: 0x04000066 RID: 102
 		private global::System.Windows.Forms.Label infolabel;
 
-		// Token: 0x04000067 RID: 103
 		private global::System.Windows.Forms.Label label47;
 
-		// Token: 0x04000068 RID: 104
 		private global::System.Windows.Forms.Button button1;
 
-		// Token: 0x04000069 RID: 105
 		private global::System.Windows.Forms.Panel panel3;
 
-		// Token: 0x0400006B RID: 107
 		private global::System.Windows.Forms.Label label29;
 
-		// Token: 0x0400006C RID: 108
 		private global::System.Windows.Forms.ProgressBar progressBar1;
 
-		// Token: 0x0400006D RID: 109
 		private global::System.Windows.Forms.Button steamcmdIns;
 
-		// Token: 0x0400006E RID: 110
 		private global::System.Windows.Forms.TabControl da;
 
-		// Token: 0x0400006F RID: 111
 		private global::System.Windows.Forms.TabPage procgen;
 
-		// Token: 0x04000071 RID: 113
 		private global::System.Windows.Forms.Button genbtn;
 
-		// Token: 0x04000072 RID: 114
 		private global::System.Windows.Forms.TextBox mapseedtext;
 
-		// Token: 0x04000073 RID: 115
 		private global::System.Windows.Forms.TextBox mapsizebox;
 
-		// Token: 0x04000074 RID: 116
 		private global::System.Windows.Forms.TextBox maxplayertext;
 
-		// Token: 0x04000075 RID: 117
 		private global::System.Windows.Forms.TextBox serverdisctext;
 
-		// Token: 0x04000076 RID: 118
 		private global::System.Windows.Forms.TextBox serverurltext;
 
-		// Token: 0x04000077 RID: 119
 		private global::System.Windows.Forms.TextBox serverpicturetext;
 
-		// Token: 0x04000078 RID: 120
 		private global::System.Windows.Forms.TextBox rconpasstext;
 
-		// Token: 0x04000079 RID: 121
 		private global::System.Windows.Forms.TextBox rconporttext;
 
-		// Token: 0x0400007A RID: 122
 		private global::System.Windows.Forms.TextBox serverporttext;
 
-		// Token: 0x0400007B RID: 123
 		private global::System.Windows.Forms.TextBox servernametext;
 
-		// Token: 0x0400007C RID: 124
 		private global::System.Windows.Forms.TextBox identitytext;
 
-		// Token: 0x0400007D RID: 125
 		private global::System.Windows.Forms.Label label13;
 
-		// Token: 0x0400007E RID: 126
 		private global::System.Windows.Forms.Label label12;
 
-		// Token: 0x0400007F RID: 127
 		private global::System.Windows.Forms.Label label11;
 
-		// Token: 0x04000080 RID: 128
 		private global::System.Windows.Forms.Label label10;
 
-		// Token: 0x04000081 RID: 129
 		private global::System.Windows.Forms.Label label9;
 
-		// Token: 0x04000082 RID: 130
 		private global::System.Windows.Forms.Label label8;
 
-		// Token: 0x04000083 RID: 131
 		private global::System.Windows.Forms.Label label6;
 
-		// Token: 0x04000084 RID: 132
 		private global::System.Windows.Forms.Label label5;
 
-		// Token: 0x04000085 RID: 133
 		private global::System.Windows.Forms.Label label4;
 
-		// Token: 0x04000086 RID: 134
 		private global::System.Windows.Forms.Label label3;
 
-		// Token: 0x04000087 RID: 135
 		private global::System.Windows.Forms.Label label2;
 
-		// Token: 0x04000088 RID: 136
 		private global::System.Windows.Forms.Label label1;
 
-		// Token: 0x04000089 RID: 137
 		private global::System.Windows.Forms.TabPage custom;
 
-		// Token: 0x0400008B RID: 139
 		private global::System.Windows.Forms.Button BTNbatchCustom;
 
-		// Token: 0x0400008C RID: 140
 		private global::System.Windows.Forms.TextBox mapurlbox;
 
-		// Token: 0x0400008D RID: 141
 		private global::System.Windows.Forms.TextBox CMmaxplayertext;
 
-		// Token: 0x0400008E RID: 142
 		private global::System.Windows.Forms.TextBox CMserverdisctext;
 
-		// Token: 0x0400008F RID: 143
 		private global::System.Windows.Forms.TextBox CMserverurltext;
 
-		// Token: 0x04000090 RID: 144
 		private global::System.Windows.Forms.TextBox CMserverpicturetext;
 
-		// Token: 0x04000091 RID: 145
 		private global::System.Windows.Forms.TextBox CMrconpasstext;
 
-		// Token: 0x04000092 RID: 146
 		private global::System.Windows.Forms.TextBox CMrconporttext;
 
-		// Token: 0x04000093 RID: 147
 		private global::System.Windows.Forms.TextBox CMserverportext;
 
-		// Token: 0x04000094 RID: 148
 		private global::System.Windows.Forms.TextBox CMservernametext;
 
-		// Token: 0x04000095 RID: 149
 		private global::System.Windows.Forms.TextBox CMidentitytext;
 
-		// Token: 0x04000096 RID: 150
 		private global::System.Windows.Forms.Label label16;
 
-		// Token: 0x04000097 RID: 151
 		private global::System.Windows.Forms.Label label18;
 
-		// Token: 0x04000098 RID: 152
 		private global::System.Windows.Forms.Label label19;
 
-		// Token: 0x04000099 RID: 153
 		private global::System.Windows.Forms.Label label20;
 
-		// Token: 0x0400009A RID: 154
 		private global::System.Windows.Forms.Label label21;
 
-		// Token: 0x0400009B RID: 155
 		private global::System.Windows.Forms.Label label22;
 
-		// Token: 0x0400009C RID: 156
 		private global::System.Windows.Forms.Label label23;
 
-		// Token: 0x0400009D RID: 157
 		private global::System.Windows.Forms.Label label24;
 
-		// Token: 0x0400009E RID: 158
 		private global::System.Windows.Forms.Label label25;
 
-		// Token: 0x0400009F RID: 159
 		private global::System.Windows.Forms.Label label26;
 
-		// Token: 0x040000A0 RID: 160
 		private global::System.Windows.Forms.Label label27;
 
-		// Token: 0x040000A1 RID: 161
 		private global::System.Windows.Forms.TabPage Hapis;
 
-		// Token: 0x040000A2 RID: 162
 		private global::System.Windows.Forms.TextBox HAidentitytext;
 
-		// Token: 0x040000A3 RID: 163
 		private global::System.Windows.Forms.Label label7;
 
-		// Token: 0x040000A5 RID: 165
 		private global::System.Windows.Forms.Button button3;
 
-		// Token: 0x040000A6 RID: 166
 		private global::System.Windows.Forms.TextBox HPmaxplayertext;
 
-		// Token: 0x040000A7 RID: 167
 		private global::System.Windows.Forms.TextBox HPserverdisctext;
 
-		// Token: 0x040000A8 RID: 168
 		private global::System.Windows.Forms.TextBox HPserverurltext;
 
-		// Token: 0x040000A9 RID: 169
 		private global::System.Windows.Forms.TextBox HPserverpicturetext;
 
-		// Token: 0x040000AA RID: 170
 		private global::System.Windows.Forms.TextBox HPrconpasstext;
 
-		// Token: 0x040000AB RID: 171
 		private global::System.Windows.Forms.TextBox HPrconporttext;
 
-		// Token: 0x040000AC RID: 172
 		private global::System.Windows.Forms.TextBox HPserverportext;
 
-		// Token: 0x040000AD RID: 173
 		private global::System.Windows.Forms.TextBox HPservernametext;
 
-		// Token: 0x040000AE RID: 174
 		private global::System.Windows.Forms.Label label45;
 
-		// Token: 0x040000AF RID: 175
 		private global::System.Windows.Forms.Label label46;
 
-		// Token: 0x040000B0 RID: 176
 		private global::System.Windows.Forms.Label label49;
 
-		// Token: 0x040000B1 RID: 177
 		private global::System.Windows.Forms.Label label50;
 
-		// Token: 0x040000B2 RID: 178
 		private global::System.Windows.Forms.Label label51;
 
-		// Token: 0x040000B3 RID: 179
 		private global::System.Windows.Forms.Label label52;
 
-		// Token: 0x040000B4 RID: 180
 		private global::System.Windows.Forms.Label label53;
 
-		// Token: 0x040000B5 RID: 181
 		private global::System.Windows.Forms.Label label54;
 
-		// Token: 0x040000B6 RID: 182
 		private global::System.Windows.Forms.Label label56;
 
-		// Token: 0x040000B7 RID: 183
 		private global::System.Windows.Forms.TabPage BARREN;
 
-		// Token: 0x040000B8 RID: 184
 		private global::System.Windows.Forms.TextBox BAidentitytext;
 
-		// Token: 0x040000B9 RID: 185
 		private global::System.Windows.Forms.Label label15;
 
-		// Token: 0x040000BA RID: 186
 		private global::System.Windows.Forms.TextBox BAmapseedtext;
 
-		// Token: 0x040000BB RID: 187
 		private global::System.Windows.Forms.TextBox BAmapsizebox;
 
-		// Token: 0x040000BC RID: 188
 		private global::System.Windows.Forms.TextBox BAmaxplayertext;
 
-		// Token: 0x040000BD RID: 189
 		private global::System.Windows.Forms.TextBox BAserverdisctext;
 
-		// Token: 0x040000BE RID: 190
 		private global::System.Windows.Forms.TextBox BAserverurltext;
 
-		// Token: 0x040000BF RID: 191
 		private global::System.Windows.Forms.TextBox BAserverpicturetext;
 
-		// Token: 0x040000C0 RID: 192
 		private global::System.Windows.Forms.TextBox BArconpasstext;
 
-		// Token: 0x040000C1 RID: 193
 		private global::System.Windows.Forms.TextBox BArconporttext;
 
-		// Token: 0x040000C2 RID: 194
 		private global::System.Windows.Forms.TextBox BAserverportext;
 
-		// Token: 0x040000C3 RID: 195
 		private global::System.Windows.Forms.TextBox BAservernametext;
 
-		// Token: 0x040000C4 RID: 196
 		private global::System.Windows.Forms.Label label44;
 
-		// Token: 0x040000C5 RID: 197
 		private global::System.Windows.Forms.Label label55;
 
-		// Token: 0x040000C6 RID: 198
 		private global::System.Windows.Forms.Label label58;
 
-		// Token: 0x040000C7 RID: 199
 		private global::System.Windows.Forms.Label label59;
 
-		// Token: 0x040000C8 RID: 200
 		private global::System.Windows.Forms.Label label60;
 
-		// Token: 0x040000C9 RID: 201
 		private global::System.Windows.Forms.Label label61;
 
-		// Token: 0x040000CA RID: 202
 		private global::System.Windows.Forms.Label label62;
 
-		// Token: 0x040000CB RID: 203
 		private global::System.Windows.Forms.Label label63;
 
-		// Token: 0x040000CC RID: 204
 		private global::System.Windows.Forms.Label label64;
 
-		// Token: 0x040000CD RID: 205
 		private global::System.Windows.Forms.Label label65;
 
-		// Token: 0x040000CE RID: 206
 		private global::System.Windows.Forms.Label label67;
 
-		// Token: 0x040000D1 RID: 209
 		private global::System.Windows.Forms.TabPage CRAGGY;
 
-		// Token: 0x040000D2 RID: 210
 		private global::System.Windows.Forms.TextBox CRidentitytext;
 
-		// Token: 0x040000D3 RID: 211
 		private global::System.Windows.Forms.Label label36;
 
-		// Token: 0x040000D5 RID: 213
 		private global::System.Windows.Forms.Button button5;
 
-		// Token: 0x040000D6 RID: 214
 		private global::System.Windows.Forms.TextBox CRmaxplayertext;
 
-		// Token: 0x040000D7 RID: 215
 		private global::System.Windows.Forms.TextBox CRserverdisctext;
 
-		// Token: 0x040000D8 RID: 216
 		private global::System.Windows.Forms.TextBox CRserverurltext;
 
-		// Token: 0x040000D9 RID: 217
 		private global::System.Windows.Forms.TextBox CRserverpicturetext;
 
-		// Token: 0x040000DA RID: 218
 		private global::System.Windows.Forms.TextBox CRrconpasstext;
 
-		// Token: 0x040000DB RID: 219
 		private global::System.Windows.Forms.TextBox CRrconporttext;
 
-		// Token: 0x040000DC RID: 220
 		private global::System.Windows.Forms.TextBox CRserverportext;
 
-		// Token: 0x040000DD RID: 221
 		private global::System.Windows.Forms.TextBox CRservernametext;
 
-		// Token: 0x040000DE RID: 222
 		private global::System.Windows.Forms.Label label69;
 
-		// Token: 0x040000DF RID: 223
 		private global::System.Windows.Forms.Label label70;
 
-		// Token: 0x040000E0 RID: 224
 		private global::System.Windows.Forms.Label label71;
 
-		// Token: 0x040000E1 RID: 225
 		private global::System.Windows.Forms.Label label72;
 
-		// Token: 0x040000E2 RID: 226
 		private global::System.Windows.Forms.Label label73;
 
-		// Token: 0x040000E3 RID: 227
 		private global::System.Windows.Forms.Label label74;
 
-		// Token: 0x040000E4 RID: 228
 		private global::System.Windows.Forms.Label label75;
 
-		// Token: 0x040000E5 RID: 229
 		private global::System.Windows.Forms.Label label76;
 
-		// Token: 0x040000E6 RID: 230
 		private global::System.Windows.Forms.Label label77;
 
-		// Token: 0x040000E7 RID: 231
 		private global::System.Windows.Forms.TabPage SAVAS;
 
-		// Token: 0x040000E8 RID: 232
 		private global::System.Windows.Forms.TextBox SAidentitytext;
 
-		// Token: 0x040000E9 RID: 233
 		private global::System.Windows.Forms.Label label39;
 
-		// Token: 0x040000EB RID: 235
 		private global::System.Windows.Forms.Button button7;
 
-		// Token: 0x040000EC RID: 236
 		private global::System.Windows.Forms.TextBox SAmaxplayertext;
 
-		// Token: 0x040000ED RID: 237
 		private global::System.Windows.Forms.TextBox SAserverdisctext;
 
-		// Token: 0x040000EE RID: 238
 		private global::System.Windows.Forms.TextBox SAserverurltext;
 
-		// Token: 0x040000EF RID: 239
 		private global::System.Windows.Forms.TextBox SAserverpicturetext;
 
-		// Token: 0x040000F0 RID: 240
 		private global::System.Windows.Forms.TextBox SArconpasstext;
 
-		// Token: 0x040000F1 RID: 241
 		private global::System.Windows.Forms.TextBox SArconporttext;
 
-		// Token: 0x040000F2 RID: 242
 		private global::System.Windows.Forms.TextBox SAserverportext;
 
-		// Token: 0x040000F3 RID: 243
 		private global::System.Windows.Forms.TextBox SAservernametext;
 
-		// Token: 0x040000F4 RID: 244
 		private global::System.Windows.Forms.Label label84;
 
-		// Token: 0x040000F5 RID: 245
 		private global::System.Windows.Forms.Label label85;
 
-		// Token: 0x040000F6 RID: 246
 		private global::System.Windows.Forms.Label label86;
 
-		// Token: 0x040000F7 RID: 247
 		private global::System.Windows.Forms.Label label87;
 
-		// Token: 0x040000F8 RID: 248
 		private global::System.Windows.Forms.Label label88;
 
-		// Token: 0x040000F9 RID: 249
 		private global::System.Windows.Forms.Label label89;
 
-		// Token: 0x040000FA RID: 250
 		private global::System.Windows.Forms.Label label90;
 
-		// Token: 0x040000FB RID: 251
 		private global::System.Windows.Forms.Label label91;
 
-		// Token: 0x040000FC RID: 252
 		private global::System.Windows.Forms.Label label92;
 
-		// Token: 0x040000FD RID: 253
 		private global::System.Windows.Forms.TabPage KOTH;
 
-		// Token: 0x040000FE RID: 254
 		private global::System.Windows.Forms.TextBox KOidentitytext;
 
-		// Token: 0x040000FF RID: 255
 		private global::System.Windows.Forms.Label label40;
 
-		// Token: 0x04000101 RID: 257
 		private global::System.Windows.Forms.Button button8;
 
-		// Token: 0x04000102 RID: 258
 		private global::System.Windows.Forms.TextBox KOmaxplayertext;
 
-		// Token: 0x04000103 RID: 259
 		private global::System.Windows.Forms.TextBox KOserverdisctext;
 
-		// Token: 0x04000104 RID: 260
 		private global::System.Windows.Forms.TextBox KOserverurltext;
 
-		// Token: 0x04000105 RID: 261
 		private global::System.Windows.Forms.TextBox KOserverpicturetext;
 
-		// Token: 0x04000106 RID: 262
 		private global::System.Windows.Forms.TextBox KOrconpasstext;
 
-		// Token: 0x04000107 RID: 263
 		private global::System.Windows.Forms.TextBox KOrconporttext;
 
-		// Token: 0x04000108 RID: 264
 		private global::System.Windows.Forms.TextBox KOserverportext;
 
-		// Token: 0x04000109 RID: 265
 		private global::System.Windows.Forms.TextBox KOservernametext;
 
-		// Token: 0x0400010A RID: 266
 		private global::System.Windows.Forms.Label label95;
 
-		// Token: 0x0400010B RID: 267
 		private global::System.Windows.Forms.Label label96;
 
-		// Token: 0x0400010C RID: 268
 		private global::System.Windows.Forms.Label label97;
 
-		// Token: 0x0400010D RID: 269
 		private global::System.Windows.Forms.Label label98;
 
-		// Token: 0x0400010E RID: 270
 		private global::System.Windows.Forms.Label label99;
 
-		// Token: 0x0400010F RID: 271
 		private global::System.Windows.Forms.Label label100;
 
-		// Token: 0x04000110 RID: 272
 		private global::System.Windows.Forms.Label label101;
 
-		// Token: 0x04000111 RID: 273
 		private global::System.Windows.Forms.Label label102;
 
-		// Token: 0x04000112 RID: 274
 		private global::System.Windows.Forms.Label label103;
 
-		// Token: 0x04000113 RID: 275
 		private global::System.Windows.Forms.Panel panel1;
 
-		// Token: 0x04000114 RID: 276
 		private global::System.Windows.Forms.Label label14;
 
-		// Token: 0x04000115 RID: 277
 		private global::System.Windows.Forms.TextBox LogLocation;
 
-		// Token: 0x04000116 RID: 278
 		private global::System.Windows.Forms.TextBox dedicateddirectory;
 
-		// Token: 0x04000117 RID: 279
 		private global::System.Windows.Forms.TextBox servfilesdirectory;
 
-		// Token: 0x04000118 RID: 280
 		private global::System.Windows.Forms.TextBox cmdbatdir;
 
-		// Token: 0x04000119 RID: 281
 		private global::System.Windows.Forms.TextBox CMDDirectorybox;
 
-		// Token: 0x0400011A RID: 282
 		private global::System.Windows.Forms.TextBox serverdirectorytext;
 
-		// Token: 0x0400011B RID: 283
 		private global::System.Windows.Forms.Label label34;
 
-		// Token: 0x0400011C RID: 284
 		private global::System.Windows.Forms.Label label33;
 
-		// Token: 0x0400011D RID: 285
 		private global::System.Windows.Forms.TabControl tabControl1;
 
-		// Token: 0x0400011E RID: 286
 		private global::System.Windows.Forms.Button button10;
 
-		// Token: 0x0400011F RID: 287
 		private global::System.Windows.Forms.ToolStripMenuItem guidesToolStripMenuItem;
 
-		// Token: 0x04000120 RID: 288
 		private global::System.Windows.Forms.ToolStripMenuItem rustLabsToolStripMenuItem;
 
-		// Token: 0x04000121 RID: 289
 		private global::System.Windows.Forms.ToolStripMenuItem howToolStripMenuItem;
 
-		// Token: 0x04000122 RID: 290
 		private global::System.Windows.Forms.ToolStripMenuItem httpswwwrustafiedcomhowtohostarustserverinlinuxToolStripMenuItem;
 
-		// Token: 0x04000123 RID: 291
 		private global::System.Windows.Forms.ToolStripSeparator toolStripMenuItem22;
 
-		// Token: 0x04000124 RID: 292
 		private global::System.Windows.Forms.ToolStripMenuItem hostARUSTDedicatedServerToolStripMenuItem;
 
-		// Token: 0x04000125 RID: 293
 		private global::System.Windows.Forms.ToolStripMenuItem populateYourRUSTServerWithThese6TipsToolStripMenuItem;
 
-		// Token: 0x04000126 RID: 294
 		private global::System.Windows.Forms.ToolStripMenuItem howToCreateAPrivateRUSTServerToolStripMenuItem;
 
-		// Token: 0x04000127 RID: 295
 		private global::System.Windows.Forms.ToolStripMenuItem howToInstallUModOxideToARUSTServerToolStripMenuItem;
 
-		// Token: 0x04000128 RID: 296
 		private global::System.Windows.Forms.ToolStripMenuItem rUSTServerPerformanceHintsAndTipsToolStripMenuItem;
 
-		// Token: 0x04000132 RID: 306
 		private global::System.Windows.Forms.ToolStripSeparator toolStripMenuItem25;
 
-		// Token: 0x04000133 RID: 307
 		private global::System.Windows.Forms.ToolStripSeparator toolStripMenuItem28;
 
-		// Token: 0x04000134 RID: 308
 		private global::System.Windows.Forms.ToolStripMenuItem mostBeginnerMistakesQuestionsToolStripMenuItem;
 
-		// Token: 0x04000135 RID: 309
 		private global::System.Windows.Forms.Panel panel9;
 
-		// Token: 0x04000136 RID: 310
 		private global::System.Windows.Forms.PictureBox PreviewPic;
 
-		// Token: 0x04000137 RID: 311
 		private global::System.Windows.Forms.PictureBox BannerServer;
 
-		// Token: 0x04000138 RID: 312
 		private global::System.Windows.Forms.Label serverTitle;
 
-		// Token: 0x04000139 RID: 313
 		private global::System.Windows.Forms.Label label42;
 
-		// Token: 0x0400013A RID: 314
 		private global::System.Windows.Forms.Label label38;
 
-		// Token: 0x0400013B RID: 315
 		private global::System.Windows.Forms.Label mapTypeprev;
 
-		// Token: 0x0400013C RID: 316
 		private global::System.Windows.Forms.Label MaxPlayersPrev;
 
-		// Token: 0x0400013D RID: 317
 		private global::System.Windows.Forms.Label FakeMS;
 
-		// Token: 0x0400013F RID: 319
 		private global::System.Windows.Forms.Label label43;
 
-		// Token: 0x04000140 RID: 320
 		private global::System.Windows.Forms.PictureBox mapPic;
 
-		// Token: 0x04000141 RID: 321
 		private global::System.Windows.Forms.Panel panel12;
 
-		// Token: 0x04000142 RID: 322
 		private global::System.Windows.Forms.Label label68;
 
-		// Token: 0x04000143 RID: 323
 		private global::System.Windows.Forms.Button BtnStart;
 
-		// Token: 0x04000144 RID: 324
 		private global::System.Windows.Forms.ComboBox StartFileList;
 
-		// Token: 0x04000145 RID: 325
 		private global::System.Windows.Forms.Panel panel13;
 
-		// Token: 0x04000146 RID: 326
 		private global::System.Windows.Forms.Button button11;
 
-		// Token: 0x04000147 RID: 327
 		private global::System.Windows.Forms.Button BtnRefreshbrowser;
 
-		// Token: 0x04000148 RID: 328
 		private global::System.Windows.Forms.Button BtnViewPage;
 
-		// Token: 0x04000149 RID: 329
 		private global::System.Windows.Forms.Label PreviewDesc;
 
-		// Token: 0x0400014A RID: 330
 		private global::System.Windows.Forms.Label label83;
 
-		// Token: 0x0400014B RID: 331
 		private global::System.Windows.Forms.Label mapinfolab;
 
-		// Token: 0x0400014C RID: 332
 		private global::System.Windows.Forms.TextBox textBox1;
 
-		// Token: 0x0400014D RID: 333
 		private global::System.Windows.Forms.RadioButton RdioStaging;
 
-		// Token: 0x0400014E RID: 334
 		private global::System.Windows.Forms.RadioButton RdioNormal;
 
-		// Token: 0x0400014F RID: 335
 		private global::System.Windows.Forms.TextBox cmdbatdirstaging;
 
-		// Token: 0x04000150 RID: 336
 		private global::System.Windows.Forms.Button RefreshSmall;
 
-		// Token: 0x04000151 RID: 337
-		private global::System.Windows.Forms.ToolStripSeparator toolStripMenuItem29;
+	    private global::System.Windows.Forms.ToolStripSeparator toolStripMenuItem29;
 
-		// Token: 0x0400015D RID: 349
 		private global::System.Windows.Forms.TextBox ServerVarsFinal;
 
-		// Token: 0x04000163 RID: 355
 		private global::System.Windows.Forms.ToolStripMenuItem serverOptionsToolStripMenuItem;
 
-		// Token: 0x04000164 RID: 356
 		private global::System.Windows.Forms.ToolStripMenuItem updateServerToolStripMenuItem;
 
-		// Token: 0x04000165 RID: 357
 		private global::System.Windows.Forms.DataGridView ServerVars;
 
-		// Token: 0x04000166 RID: 358
 		private global::System.Windows.Forms.Button BtnCLLearVars;
 
-		// Token: 0x04000167 RID: 359
 		private global::System.Windows.Forms.Button button12;
 
-		// Token: 0x04000168 RID: 360
 		private global::System.Windows.Forms.Button BtnCompleteVars;
 
-		// Token: 0x04000169 RID: 361
 		private global::System.Windows.Forms.Panel panel2;
 
-		// Token: 0x0400016A RID: 362
 		private global::System.Windows.Forms.Panel panel6;
 
-		// Token: 0x0400016B RID: 363
 		private global::System.Windows.Forms.Button BTNadd;
 
-		// Token: 0x0400016C RID: 364
 		private global::System.Windows.Forms.Button btnclear;
 
-		// Token: 0x0400016D RID: 365
 		private global::System.Windows.Forms.TextBox varvalue;
 
-		// Token: 0x0400016E RID: 366
 		private global::System.Windows.Forms.TextBox varvar;
 
-		// Token: 0x0400016F RID: 367
 		private global::System.Windows.Forms.Label label30;
 
-		// Token: 0x04000170 RID: 368
 		private global::System.Windows.Forms.Label label28;
 
-		// Token: 0x04000171 RID: 369
 		private global::System.Windows.Forms.Label label17;
 
-		// Token: 0x04000172 RID: 370
 		private global::System.Windows.Forms.Panel panel7;
 
-		// Token: 0x04000173 RID: 371
 		private global::System.Windows.Forms.Button button6;
 
-		// Token: 0x04000174 RID: 372
 		private global::System.Windows.Forms.Label label48;
 
-		// Token: 0x04000175 RID: 373
 		private global::System.Windows.Forms.TextBox SearchVar;
 
-		// Token: 0x04000176 RID: 374
 		private global::System.Windows.Forms.DataGridViewTextBoxColumn Variable;
 
-		// Token: 0x04000177 RID: 375
 		private global::System.Windows.Forms.DataGridViewTextBoxColumn Value;
 
-		// Token: 0x04000178 RID: 376
 		private global::System.Windows.Forms.Label LockedLbl;
 
-		// Token: 0x04000179 RID: 377
 		private global::System.Windows.Forms.Label LockedLbl2;
 
-		// Token: 0x0400017A RID: 378
 		private global::System.Windows.Forms.TextBox hasspace;
 
-		// Token: 0x0400017C RID: 380
 		private global::System.Windows.Forms.TextBox CheckDll;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem addAdminToolStripMenuItem;
@@ -4892,5 +4601,6 @@
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Timer serverup;
+        private System.Windows.Forms.Button button15;
     }
 }

@@ -11,13 +11,12 @@ I:\RustServerGUI\batchgen\obj\x86\Release\batchgen.pdb
 I:\RustServerGUI\batchgen\obj\x86\Release\batchgen.csprojAssemblyReference.cache
 I:\batchgen\batchgen\bin\Release\RUSS.exe
 I:\batchgen\batchgen\bin\Release\RUSS.pdb
-I:\batchgen\batchgen\bin\Release\DotNetZip.dll
+I:\batchgen\batchgen\obj\x86\Release\batchgen.csprojAssemblyReference.cache
 I:\batchgen\batchgen\obj\x86\Release\batchgen.Form1.resources
 I:\batchgen\batchgen\obj\x86\Release\batchgen.Form2.resources
 I:\batchgen\batchgen\obj\x86\Release\batchgen.Form3.resources
 I:\batchgen\batchgen\obj\x86\Release\RUSS.Properties.Resources.resources
 I:\batchgen\batchgen\obj\x86\Release\batchgen.csproj.GenerateResource.cache
 I:\batchgen\batchgen\obj\x86\Release\batchgen.csproj.CoreCompileInputs.cache
-I:\batchgen\batchgen\obj\x86\Release\batchgen.csproj.CopyComplete
 I:\batchgen\batchgen\obj\x86\Release\RUSS.exe
 I:\batchgen\batchgen\obj\x86\Release\RUSS.pdb

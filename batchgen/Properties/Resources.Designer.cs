@@ -59,5 +59,15 @@ namespace RUSS.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] DotNetZip {
+            get {
+                object obj = ResourceManager.GetObject("DotNetZip", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

@@ -20,3 +20,4 @@ I:\batchgen\batchgen\obj\x86\Debug\batchgen.csproj.CoreCompileInputs.cache
 I:\batchgen\batchgen\obj\x86\Debug\batchgen.csproj.CopyComplete
 I:\batchgen\batchgen\obj\x86\Debug\RUSS.exe
 I:\batchgen\batchgen\obj\x86\Debug\RUSS.pdb
+I:\batchgen\batchgen\obj\x86\Debug\batchgen.csprojAssemblyReference.cache
