@@ -151,7 +151,7 @@
 This tool will create a HTTP server on your computer.
 This will be able to serve your map files.
 
-Make sure your ports are foroworded and open to the public.
+Make sure your ports are forwarded and open to the public.
 Then set your rust dedicated setup to use the MAP URL provided above.
 </value>
   </data>

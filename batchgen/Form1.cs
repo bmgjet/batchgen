@@ -9,20 +9,30 @@ using System.Net;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Ionic.Zip;
-using System.Security.Principal;
+using System.Text;
 
 namespace batchgen
 {
 	public partial class Form1 : Form
 	{
 
+		public delegate void SafeCallDelegate(string text);
+		public static Form1 gui;
 		MapServer myServer = null;
 		public string lastModified;
 		string MyIP = "127.0.0.1";
+		string EIP = "127.0.0.1";
+		public static string whitelist = "127.0.0.1";
+		bool loaded = false;
+		bool settingsloaded = false;
+		public static bool lwhite;
 		public Form1()
 		{
 			this.InitializeComponent();
+			gui = this;
+
 		}
+
 
 		private static DialogResult ShowInputDialog(ref string input, string title)
 		{
@@ -198,12 +208,22 @@ namespace batchgen
 
 	private void Form1_Load(object sender, EventArgs e)
 		{
+			try
+            {
+				EIP = RemoveSpecialCharacters(new WebClient().DownloadString("http://icanhazip.com"));
 
+			}
+			catch
+            {
+
+            }
+			whitelist = RUSS.Properties.Settings.Default.Whitelist;
             textBox3.Text = RUSS.Properties.Settings.Default.MapLocation;
 			textBox4.Text = RUSS.Properties.Settings.Default.MAPOUTPUTURL;
 			maskedTextBox1.Text = RUSS.Properties.Settings.Default.MAPPort;
 			checkBox1.Checked = RUSS.Properties.Settings.Default.MAPServer;
-			StartFileList.Text = RUSS.Properties.Settings.Default.RustCOMBOBOX;
+			checkBox2.Checked = RUSS.Properties.Settings.Default.LimitWhite;
+			lwhite = RUSS.Properties.Settings.Default.LimitWhite;
 			MyIP = RUSS.Properties.Settings.Default.RCONIP;
 
 			string mylocation = Application.ExecutablePath;
@@ -293,6 +313,18 @@ namespace batchgen
 			SAserverurltext.Text = CMserverurltext.Text;
 			KOserverurltext.Text = CMserverurltext.Text;
 			serverurltext.Text = CMserverurltext.Text;
+
+            try
+            {
+				StartFileList.Items.Add(RUSS.Properties.Settings.Default.RustCOMBOBOX);
+				int index = StartFileList.FindString(RUSS.Properties.Settings.Default.RustCOMBOBOX);
+				StartFileList.SelectedIndex = index;
+			}
+			catch
+            {
+
+            }
+			settingsloaded = true;
 
 			if (StartFileList.Text != "")
 			{
@@ -628,47 +660,6 @@ namespace batchgen
 		}
 
 
-		private void steamCMDToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			Process.Start("http://bit.ly/2KGuqVA");
-		}
-
-
-		private void playRustcomToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			Process.Start("http://bit.ly/2MYacJJ");
-		}
-
-
-		private void battleMetricsToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			Process.Start("http://bit.ly/2YSufvh");
-		}
-
-
-		private void corrosionHourToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			Process.Start("http://bit.ly/2ZMdoM2");
-		}
-
-
-		private void rustopiaToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			Process.Start("http://bit.ly/2OLylp4");
-		}
-
-
-		private void umodToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			Process.Start("http://bit.ly/2M5CYZf");
-		}
-
-
-		private void chaoscodeToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			Process.Start("http://bit.ly/2Kp8ZJF");
-		}
-
 		private void howToHostYourOwnRustServerManuallyToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("http://bit.ly/2KyDUlp");
@@ -725,8 +716,10 @@ namespace batchgen
 			RUSS.Properties.Settings.Default.MAPOUTPUTURL = textBox4.Text;
 			RUSS.Properties.Settings.Default.MAPPort = maskedTextBox1.Text;
 			RUSS.Properties.Settings.Default.MAPServer = checkBox1.Checked;
+			RUSS.Properties.Settings.Default.LimitWhite = checkBox2.Checked;
 			RUSS.Properties.Settings.Default.RustCOMBOBOX = StartFileList.Text;
 			RUSS.Properties.Settings.Default.RCONIP = MyIP;
+			RUSS.Properties.Settings.Default.Whitelist = whitelist;
 			RUSS.Properties.Settings.Default.Save();
 			Application.Exit();
 		}
@@ -804,9 +797,9 @@ namespace batchgen
 
 			if (BtnStart.Text == "START")
 			{
-				try
-				{
-					string fileName = this.StartFileList.Items[this.StartFileList.SelectedIndex].ToString();
+                try
+                {
+                    string fileName = this.StartFileList.Items[this.StartFileList.SelectedIndex].ToString();
 					Process.Start(new ProcessStartInfo(fileName)
 					{
 						WorkingDirectory = this.currentpath + "\\RustServerFiles"
@@ -815,12 +808,13 @@ namespace batchgen
 					StartFileList.Enabled = false;
 					serverup.Enabled = true;
 					BtnStart.Enabled = false;
-				}
-				catch
-				{
-				}
-			}
-			else
+                }
+                catch
+                {
+                }
+            }
+
+            else
             {
 				try
 				{
@@ -1030,20 +1024,27 @@ namespace batchgen
 
 		private void UpdateServerToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			Directory.CreateDirectory("RustServerFiles");
-			File.WriteAllText(this.cmdbatdir.Text, "steamcmd.exe +login anonymous +force_install_dir " + this.servfilesdirectory.Text + " +app_update 258550 +quit");
-			Process.Start(this.CMDDirectorybox.Text, "steamcmd.exe +login anonymous +force_install_dir " + this.servfilesdirectory.Text + " +app_update 258550 +quit");
-			this.infolabel.Text = "Downloading Server Files, wait for SteamCMD";
-			Process[] processesByName = Process.GetProcessesByName("steamcmd");
-			bool flag = processesByName.Length == 0;
-			if (flag)
+			try
 			{
+				Directory.CreateDirectory("RustServerFiles");
+				File.WriteAllText(this.cmdbatdir.Text, "steamcmd.exe +login anonymous +force_install_dir " + this.servfilesdirectory.Text + " +app_update 258550 +quit");
 				Process.Start(this.CMDDirectorybox.Text, "steamcmd.exe +login anonymous +force_install_dir " + this.servfilesdirectory.Text + " +app_update 258550 +quit");
+				this.infolabel.Text = "Downloading Server Files, wait for SteamCMD";
+				Process[] processesByName = Process.GetProcessesByName("steamcmd");
+				bool flag = processesByName.Length == 0;
+				if (flag)
+				{
+					Process.Start(this.CMDDirectorybox.Text, "steamcmd.exe +login anonymous +force_install_dir " + this.servfilesdirectory.Text + " +app_update 258550 +quit");
+				}
+				else
+				{
+					this.checkrun.Enabled = true;
+				}
 			}
-			else
-			{
-				this.checkrun.Enabled = true;
-			}
+			catch
+            {
+				MessageBox.Show("Error Updating, Missing files." + Environment.NewLine + "Please use the download server files button to update!");
+            }
 		}
 
 		
@@ -1171,257 +1172,260 @@ namespace batchgen
 
 
 		private void readbatinfo()
-        {
-			try
+		{
+			if (settingsloaded)
 			{
-				string filen = StartFileList.Text;
-				string text = System.IO.File.ReadAllText(@"RustServerFiles\\" + filen);
-
-				//load in bat file.
-				string Identity = "";
-				string Hostname = "";
-				string Level = "";
-				string Seed = "";
-				string Worldsize = "";
-				string Maxplayers = "";
-				string RconIP = "";
-				string RconPort = "";
-				string ServerPort = "";
-				string Password = "";
-				string Description = "";
-				string URL = "";
-				string Headerimage = "";
-
-
-				string[] perams = text.Split(new string[] { "+server." }, System.StringSplitOptions.RemoveEmptyEntries);
-
-				for (int i = 0; i < perams.Length; i++)
+				try
 				{
-					perams[i] = "+" + perams[i];
-				}
+					string filen = StartFileList.Text;
+					string text = System.IO.File.ReadAllText(@"RustServerFiles\\" + filen);
+
+					//load in bat file.
+					string Identity = "";
+					string Hostname = "";
+					string Level = "";
+					string Seed = "";
+					string Worldsize = "";
+					string Maxplayers = "";
+					string RconIP = "";
+					string RconPort = "";
+					string ServerPort = "";
+					string Password = "";
+					string Description = "";
+					string URL = "";
+					string Headerimage = "";
 
 
-				foreach (string peramtest in perams)
-				{
+					string[] perams = text.Split(new string[] { "+server." }, System.StringSplitOptions.RemoveEmptyEntries);
 
-					if (peramtest.Contains(@"+identity "))
+					for (int i = 0; i < perams.Length; i++)
 					{
-						Identity = Cleanupbat(peramtest.Replace(@"+identity ", ""));
+						perams[i] = "+" + perams[i];
 					}
 
-					else if (peramtest.Contains(@"+hostname "))
+
+					foreach (string peramtest in perams)
 					{
-						Hostname = Cleanupbat(peramtest.Replace(@"+hostname ", ""));
-						if (Hostname.Contains("+levelurl"))
+
+						if (peramtest.Contains(@"+identity "))
 						{
-							string[] customm = Hostname.Split(new string[] { " +levelurl" }, StringSplitOptions.None);
-							Hostname = customm[0];
-							Level = customm[1].TrimStart();
-						}
-					}
-					else if (peramtest.Contains(@"+level "))
-					{
-						Level = peramtest.Remove(peramtest.Length - 2);
-						Level = Level.Replace(@"+level", "");
-						Level = Level.Replace(@"""", "");
-						Level = Level.Replace(@"\", "");
-						Level = Level.Trim();
-
-					}
-					else if (peramtest.Contains(@"+seed "))
-					{
-						Seed = Cleanupbat(peramtest.Replace(@"+seed ", ""));
-					}
-					else if (peramtest.Contains(@"+worldsize "))
-					{
-						Worldsize = Cleanupbat(peramtest.Replace(@"+worldsize ", ""));
-					}
-					else if (peramtest.Contains(@"+maxplayers "))
-					{
-						string[] peramsplitter = peramtest.Split(new string[] { "+rcon." }, System.StringSplitOptions.RemoveEmptyEntries);
-
-						foreach (string ps in peramsplitter)
-						{
-							if (ps.Contains("+maxplayers "))
-							{
-								Maxplayers = ps.Replace("+maxplayers ", "");
-								Maxplayers = Maxplayers.TrimEnd();
-							}
-							else if (ps.Contains("ip "))
-							{
-								RconIP = ps.Replace("ip ", "");
-								RconIP = RconIP.TrimEnd();
-							}
-							else if (ps.Contains("port "))
-							{
-								RconPort = ps.Replace("port ", "");
-								RconPort = RconPort.TrimEnd();
-							}
+							Identity = Cleanupbat(peramtest.Replace(@"+identity ", ""));
 						}
 
-					}
-					else if (peramtest.Contains(@"+port "))
-					{
-						string[] peramsplitter = peramtest.Split(new string[] { "+rcon." }, System.StringSplitOptions.RemoveEmptyEntries);
-
-						foreach (string ps in peramsplitter)
+						else if (peramtest.Contains(@"+hostname "))
 						{
-							if (ps.Contains("+port "))
+							Hostname = Cleanupbat(peramtest.Replace(@"+hostname ", ""));
+							if (Hostname.Contains("+levelurl"))
 							{
-								ServerPort = ps.Replace("+port ", "");
-								ServerPort = ServerPort.TrimEnd();
-
-							}
-							else if (ps.Contains("password "))
-							{
-								Password = Cleanupbat(ps.Replace("password ", ""));
+								string[] customm = Hostname.Split(new string[] { " +levelurl" }, StringSplitOptions.None);
+								Hostname = customm[0];
+								Level = customm[1].TrimStart();
 							}
 						}
-
-					}
-					else if (peramtest.Contains(@"+description "))
-					{
-						Description = peramtest.Replace(@"+description ", "");
-						Description = Description.Replace(@"""", "");
-						Description = Description.Replace(@"\", "");
-						Description = Description.Trim();
-					}
-					else if (peramtest.Contains(@"+url "))
-					{
-						URL = peramtest.Substring(6, peramtest.Length - 8);
-
-
-
-					}
-					else if (peramtest.Contains(@"+headerimage "))
-					{
-
-						string[] peramsplitter = peramtest.Split(new string[] { " " }, System.StringSplitOptions.RemoveEmptyEntries);
-						Headerimage = peramsplitter[1].Substring(1, peramsplitter[1].Length - 2);
-
-						string varname = "";
-						string varvalue = "";
-
-						this.ServerVarsFinal.Text = "";
-						BtnCLLearVars_Click(null, null);
-						for (int i = 2; i < peramsplitter.Length - 2; i++)
+						else if (peramtest.Contains(@"+level "))
 						{
-							if (!peramsplitter[i].Contains("-logfile") && !peramsplitter[i].Contains("logs.log"))
+							Level = peramtest.Remove(peramtest.Length - 2);
+							Level = Level.Replace(@"+level", "");
+							Level = Level.Replace(@"""", "");
+							Level = Level.Replace(@"\", "");
+							Level = Level.Trim();
+
+						}
+						else if (peramtest.Contains(@"+seed "))
+						{
+							Seed = Cleanupbat(peramtest.Replace(@"+seed ", ""));
+						}
+						else if (peramtest.Contains(@"+worldsize "))
+						{
+							Worldsize = Cleanupbat(peramtest.Replace(@"+worldsize ", ""));
+						}
+						else if (peramtest.Contains(@"+maxplayers "))
+						{
+							string[] peramsplitter = peramtest.Split(new string[] { "+rcon." }, System.StringSplitOptions.RemoveEmptyEntries);
+
+							foreach (string ps in peramsplitter)
 							{
-								varname = peramsplitter[i].Replace("+", "");
-								i++;
-								varvalue = peramsplitter[i].Substring(1, peramsplitter[i].Length - 2);
-								this.ServerVars.Rows.Add(new object[]
+								if (ps.Contains("+maxplayers "))
 								{
+									Maxplayers = ps.Replace("+maxplayers ", "");
+									Maxplayers = Maxplayers.TrimEnd();
+								}
+								else if (ps.Contains("ip "))
+								{
+									RconIP = ps.Replace("ip ", "");
+									RconIP = RconIP.TrimEnd();
+								}
+								else if (ps.Contains("port "))
+								{
+									RconPort = ps.Replace("port ", "");
+									RconPort = RconPort.TrimEnd();
+								}
+							}
+
+						}
+						else if (peramtest.Contains(@"+port "))
+						{
+							string[] peramsplitter = peramtest.Split(new string[] { "+rcon." }, System.StringSplitOptions.RemoveEmptyEntries);
+
+							foreach (string ps in peramsplitter)
+							{
+								if (ps.Contains("+port "))
+								{
+									ServerPort = ps.Replace("+port ", "");
+									ServerPort = ServerPort.TrimEnd();
+
+								}
+								else if (ps.Contains("password "))
+								{
+									Password = Cleanupbat(ps.Replace("password ", ""));
+								}
+							}
+
+						}
+						else if (peramtest.Contains(@"+description "))
+						{
+							Description = peramtest.Replace(@"+description ", "");
+							Description = Description.Replace(@"""", "");
+							Description = Description.Replace(@"\", "");
+							Description = Description.Trim();
+						}
+						else if (peramtest.Contains(@"+url "))
+						{
+							URL = peramtest.Substring(6, peramtest.Length - 8);
+
+
+
+						}
+						else if (peramtest.Contains(@"+headerimage "))
+						{
+
+							string[] peramsplitter = peramtest.Split(new string[] { " " }, System.StringSplitOptions.RemoveEmptyEntries);
+							Headerimage = peramsplitter[1].Substring(1, peramsplitter[1].Length - 2);
+
+							string varname = "";
+							string varvalue = "";
+
+							this.ServerVarsFinal.Text = "";
+							BtnCLLearVars_Click(null, null);
+							for (int i = 2; i < peramsplitter.Length - 2; i++)
+							{
+								if (!peramsplitter[i].Contains("-logfile") && !peramsplitter[i].Contains("logs.log"))
+								{
+									varname = peramsplitter[i].Replace("+", "");
+									i++;
+									varvalue = peramsplitter[i].Substring(1, peramsplitter[i].Length - 2);
+									this.ServerVars.Rows.Add(new object[]
+									{
 								varname,
 								varvalue
-								});
+									});
+								}
 							}
-						}
-						if (varname != "")
-						{
-							BtnCompleteVars_Click(null, null);
-						}
+							if (varname != "")
+							{
+								BtnCompleteVars_Click(null, null);
+							}
 
+						}
+					}
+					MyIP = RconIP;
+					switch (Level)
+					{
+						case "Procedural Map":
+							da.SelectedIndex = 0;
+							identitytext.Text = Identity;
+							servernametext.Text = Hostname;
+							serverporttext.Text = ServerPort;
+							rconporttext.Text = RconPort;
+							rconpasstext.Text = Password;
+							serverpicturetext.Text = Headerimage;
+							serverurltext.Text = URL;
+							serverdisctext.Text = Description;
+							maxplayertext.Text = Maxplayers;
+							mapsizebox.Text = Worldsize;
+							mapseedtext.Text = Seed;
+							break;
+						case "Barren":
+							da.SelectedIndex = 1;
+							BAidentitytext.Text = Identity;
+							BAservernametext.Text = Hostname;
+							BAserverportext.Text = ServerPort;
+							BArconporttext.Text = RconPort;
+							BArconpasstext.Text = Password;
+							BAserverpicturetext.Text = Headerimage;
+							BAserverurltext.Text = URL;
+							BAserverdisctext.Text = Description;
+							BAmaxplayertext.Text = Maxplayers;
+							BAmapsizebox.Text = Worldsize;
+							BAmapseedtext.Text = Seed;
+							break;
+						case "HapisIsland":
+							da.SelectedIndex = 3;
+							HAidentitytext.Text = Identity;
+							HPservernametext.Text = Hostname;
+							HPserverportext.Text = ServerPort;
+							HPrconporttext.Text = RconPort;
+							HPrconpasstext.Text = Password;
+							HPserverpicturetext.Text = Headerimage;
+							HPserverurltext.Text = URL;
+							HPserverdisctext.Text = Description;
+							HPmaxplayertext.Text = Maxplayers;
+							break;
+						case "CraggyIsland":
+							da.SelectedIndex = 4;
+							CRidentitytext.Text = Identity;
+							CRservernametext.Text = Hostname;
+							CRserverportext.Text = ServerPort;
+							CRrconporttext.Text = RconPort;
+							CRrconpasstext.Text = Password;
+							CRserverpicturetext.Text = Headerimage;
+							CRserverurltext.Text = URL;
+							CRserverdisctext.Text = Description;
+							CRmaxplayertext.Text = Maxplayers;
+							break;
+						case "SavasIsland":
+							da.SelectedIndex = 5;
+							SAidentitytext.Text = Identity;
+							SAservernametext.Text = Hostname;
+							SAserverportext.Text = ServerPort;
+							SArconporttext.Text = RconPort;
+							SArconpasstext.Text = Password;
+							SAserverpicturetext.Text = Headerimage;
+							SAserverurltext.Text = URL;
+							SAserverdisctext.Text = Description;
+							SAmaxplayertext.Text = Maxplayers;
+							break;
+						case "SavasIsland_koth":
+							da.SelectedIndex = 6;
+							KOidentitytext.Text = Identity;
+							KOservernametext.Text = Hostname;
+							KOserverportext.Text = ServerPort;
+							KOrconporttext.Text = RconPort;
+							KOrconpasstext.Text = Password;
+							KOserverpicturetext.Text = Headerimage;
+							KOserverurltext.Text = URL;
+							KOserverdisctext.Text = Description;
+							KOmaxplayertext.Text = Maxplayers;
+							break;
+						default:
+							da.SelectedIndex = 2;
+							CMidentitytext.Text = Identity;
+							CMservernametext.Text = Hostname;
+							CMserverportext.Text = ServerPort;
+							CMrconporttext.Text = RconPort;
+							CMrconpasstext.Text = Password;
+							CMserverpicturetext.Text = Headerimage;
+							CMserverurltext.Text = URL;
+							CMserverdisctext.Text = Description;
+							CMmaxplayertext.Text = Maxplayers;
+							mapurlbox.Text = Level;
+							break;
 					}
 				}
-				MyIP = RconIP;
-				switch (Level)
+				catch
 				{
-					case "Procedural Map":
-						da.SelectedIndex = 0;
-						identitytext.Text = Identity;
-						servernametext.Text = Hostname;
-						serverporttext.Text = ServerPort;
-						rconporttext.Text = RconPort;
-						rconpasstext.Text = Password;
-						serverpicturetext.Text = Headerimage;
-						serverurltext.Text = URL;
-						serverdisctext.Text = Description;
-						maxplayertext.Text = Maxplayers;
-						mapsizebox.Text = Worldsize;
-						mapseedtext.Text = Seed;
-						break;
-					case "Barren":
-						da.SelectedIndex = 1;
-						BAidentitytext.Text = Identity;
-						BAservernametext.Text = Hostname;
-						BAserverportext.Text = ServerPort;
-						BArconporttext.Text = RconPort;
-						BArconpasstext.Text = Password;
-						BAserverpicturetext.Text = Headerimage;
-						BAserverurltext.Text = URL;
-						BAserverdisctext.Text = Description;
-						BAmaxplayertext.Text = Maxplayers;
-						BAmapsizebox.Text = Worldsize;
-						BAmapseedtext.Text = Seed;
-						break;
-					case "HapisIsland":
-						da.SelectedIndex = 3;
-						HAidentitytext.Text = Identity;
-						HPservernametext.Text = Hostname;
-						HPserverportext.Text = ServerPort;
-						HPrconporttext.Text = RconPort;
-						HPrconpasstext.Text = Password;
-						HPserverpicturetext.Text = Headerimage;
-						HPserverurltext.Text = URL;
-						HPserverdisctext.Text = Description;
-						HPmaxplayertext.Text = Maxplayers;
-						break;
-					case "CraggyIsland":
-						da.SelectedIndex = 4;
-						CRidentitytext.Text = Identity;
-						CRservernametext.Text = Hostname;
-						CRserverportext.Text = ServerPort;
-						CRrconporttext.Text = RconPort;
-						CRrconpasstext.Text = Password;
-						CRserverpicturetext.Text = Headerimage;
-						CRserverurltext.Text = URL;
-						CRserverdisctext.Text = Description;
-						CRmaxplayertext.Text = Maxplayers;
-						break;
-					case "SavasIsland":
-						da.SelectedIndex = 5;
-						SAidentitytext.Text = Identity;
-						SAservernametext.Text = Hostname;
-						SAserverportext.Text = ServerPort;
-						SArconporttext.Text = RconPort;
-						SArconpasstext.Text = Password;
-						SAserverpicturetext.Text = Headerimage;
-						SAserverurltext.Text = URL;
-						SAserverdisctext.Text = Description;
-						SAmaxplayertext.Text = Maxplayers;
-						break;
-					case "SavasIsland_koth":
-						da.SelectedIndex = 6;
-						KOidentitytext.Text = Identity;
-						KOservernametext.Text = Hostname;
-						KOserverportext.Text = ServerPort;
-						KOrconporttext.Text = RconPort;
-						KOrconpasstext.Text = Password;
-						KOserverpicturetext.Text = Headerimage;
-						KOserverurltext.Text = URL;
-						KOserverdisctext.Text = Description;
-						KOmaxplayertext.Text = Maxplayers;
-						break;
-					default:
-						da.SelectedIndex = 2;
-						CMidentitytext.Text = Identity;
-						CMservernametext.Text = Hostname;
-						CMserverportext.Text = ServerPort;
-						CMrconporttext.Text = RconPort;
-						CMrconpasstext.Text = Password;
-						CMserverpicturetext.Text = Headerimage;
-						CMserverurltext.Text = URL;
-						CMserverdisctext.Text = Description;
-						CMmaxplayertext.Text = Maxplayers;
-						mapurlbox.Text = Level;
-						break;
+					MessageBox.Show("Error reading settings from selected .bat");
 				}
-			}
-			catch
-			{
-				MessageBox.Show("Error reading settings from selected .bat");
 			}
 		}
 
@@ -1770,10 +1774,16 @@ namespace batchgen
             {
 				this.delay.Enabled = true;
 			}
+			else if (tabControl1.SelectedIndex == 2)
+            {
+				loaded = true;
+			}
 			else
             {
+				loaded = false;
 				this.delay.Enabled = false;
 			}
+
 		}
 
         private void button13_Click_1(object sender, EventArgs e)
@@ -1902,12 +1912,8 @@ namespace batchgen
 					myServer = null;
 				}
 				button16.Enabled = false;
-				myServer = new MapServer(textBox3.Text, int.Parse(maskedTextBox1.Text));
+				myServer = new MapServer(textBox3.Text, int.Parse(maskedTextBox1.Text),ref gui);
 				serverup.Enabled = true;
-				string[] temp = textBox3.Text.Split('\\');
-				string externalip = new WebClient().DownloadString("http://icanhazip.com") + ":" + maskedTextBox1.Text;
-				textBox4.Text = "http://" + externalip + "/" + temp[temp.Length - 1];
-
 			}
 			else
             {
@@ -1915,7 +1921,24 @@ namespace batchgen
             }
 		}
 
-        private void button18_Click_1(object sender, EventArgs e)
+		public void WriteTextSafe(string text)
+		{
+			try
+			{
+				if (textBox5.InvokeRequired)
+				{
+					var d = new SafeCallDelegate(WriteTextSafe);
+					textBox5.Invoke(d, new object[] { text });
+				}
+				else
+				{
+					textBox5.Text += text;
+				}
+			}
+            catch { }
+		}
+
+		private void button18_Click_1(object sender, EventArgs e)
         {
 			if (myServer != null)
 			{
@@ -1926,14 +1949,20 @@ namespace batchgen
 
         private void button17_Click(object sender, EventArgs e)
         {
-			OpenFileDialog theDialog = new OpenFileDialog();
-			theDialog.Title = "Open Map File";
-			theDialog.Filter = "Map|*.map";
-			if (theDialog.ShowDialog() == DialogResult.OK)
-			{
+            OpenFileDialog theDialog = new OpenFileDialog();
+            theDialog.Title = "Open Map File";
+            theDialog.Filter = "Map|*.map";
+            if (theDialog.ShowDialog() == DialogResult.OK)
+            {
+                textBox3.Text = theDialog.FileName;
+            }
+
+			if (textBox3.Text != theDialog.FileName)
+            {
 				textBox3.Text = theDialog.FileName;
+
 			}
-		}
+        }
 
         private void resetSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -1946,9 +1975,53 @@ namespace batchgen
 				maskedTextBox1.Text = RUSS.Properties.Settings.Default.MAPPort;
 				checkBox1.Checked = RUSS.Properties.Settings.Default.MAPServer;
 				StartFileList.Text = RUSS.Properties.Settings.Default.RustCOMBOBOX;
+				checkBox2.Checked = RUSS.Properties.Settings.Default.LimitWhite;
+				whitelist = RUSS.Properties.Settings.Default.Whitelist;
 				MyIP = RUSS.Properties.Settings.Default.RCONIP;
 			}
+		}
+		public static string RemoveSpecialCharacters(string str)
+		{
+			StringBuilder sb = new StringBuilder();
+			for (int i = 0; i < str.Length; i++)
+			{
+				if ((str[i] >= '0' && str[i] <= '9')
+					|| (str[i] >= 'A' && str[i] <= 'z'
+						|| (str[i] == '.' || str[i] == '_' || str[i] == '/' || str[i] == ':')))
+				{
+					sb.Append(str[i]);
+				}
+			}
+			return sb.ToString();
+		}
 
+		private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+			string[] temp = textBox3.Text.Split('\\');
+			string externalip = EIP + ":" + maskedTextBox1.Text;
+			textBox4.Text = RemoveSpecialCharacters("http://" + externalip + "/" + temp[temp.Length - 1]);
+		}
+
+		private void checkBox2_CheckedChanged(object sender, EventArgs e)
+		{
+			lwhite = checkBox2.Checked;
+			string localip = Dns.GetHostByName(Dns.GetHostName()).AddressList[0].ToString();
+			if (checkBox2.Checked && loaded)
+			{
+				if (!whitelist.Contains(EIP))
+                {
+					whitelist += EIP + " ";
+				}
+				if (!whitelist.Contains(localip))
+				{
+					whitelist += localip + " ";
+				}
+				string input = whitelist;
+				if (ShowInputDialog(ref input, "IPs:") == DialogResult.OK)
+				{
+					whitelist = input;
+				}
+			}
 		}
     }
 }

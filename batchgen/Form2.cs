@@ -63,21 +63,26 @@ namespace batchgen
 
                     if (foundata && foundata2)
                     {
-                        this.ServerVars.Rows.Add(new object[]
-                        {
+                        //found all data end for each loop.
+                        break;
+                    }
+                }
+                if (foundata || foundata2)
+                {
+                    this.ServerVars.Rows.Add(new object[]
+                    {
                         pluginname,
                         plugincreator,
                         pluginversion,
                         plugindescription,
                         file
-                        });
-                        foundata = false;
-                        foundata2 = false;
-                        pluginname = "";
-                        pluginversion = "";
-                        plugincreator = "";
-                        plugindescription = "";
-                    }
+                    });
+                    foundata = false;
+                    foundata2 = false;
+                    pluginname = "";
+                    pluginversion = "";
+                    plugincreator = "";
+                    plugindescription = "";
                 }
 
             }

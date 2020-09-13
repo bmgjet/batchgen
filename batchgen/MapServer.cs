@@ -6,7 +6,7 @@ using System.Threading;
 
 class MapServer
 {
-
+    public batchgen.Form1 _form1;
     public string MapFile = "";
     private Thread _serverThread;
     private HttpListener _listener;
@@ -31,8 +31,9 @@ class MapServer
     /// </summary>
     /// <param name="path">Directory path to serve.</param>
     /// <param name="port">Port of the server.</param>
-    public MapServer(string path, int port)
+    public MapServer(string path, int port, ref batchgen.Form1 form1)
     {
+        _form1 = form1;
         this.Initialize(path, port);
     }
 
@@ -57,11 +58,27 @@ class MapServer
             try
             {
                 HttpListenerContext context = _listener.GetContext();
-                Process(context);
+                if (batchgen.Form1.lwhite)
+                {
+                    string connected = context.Request.UserHostAddress.Split(new string[] { ":" }, System.StringSplitOptions.RemoveEmptyEntries)[0];
+                    if (batchgen.Form1.whitelist.Contains(connected))
+                    {
+                        Process(context);
+                    }
+                    else
+                    {
+                        context.Response.OutputStream.Close();
+                        _form1.WriteTextSafe("Blocked IP: " + connected + Environment.NewLine);
+                    }
+                }
+                else
+                {
+                    Process(context);
+                }
             }
             catch (Exception ex)
             {
-
+                //_form1.WriteTextSafe("Error: " + ex.ToString() + Environment.NewLine);
             }
         }
     }
@@ -69,6 +86,7 @@ class MapServer
     private void Process(HttpListenerContext context)
     {
         string filename = MapFile;
+        _form1.WriteTextSafe("User-Agent:"+context.Request.UserAgent + Environment.NewLine + "User-IP:"+context.Request.UserHostAddress+Environment.NewLine);
         Stream input = new FileStream(filename, FileMode.Open);
         context.Response.ContentType = "application/x-binary";
         context.Response.ContentLength64 = input.Length;
