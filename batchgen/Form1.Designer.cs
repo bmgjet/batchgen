@@ -29,6 +29,19 @@
             this.howToPortForwardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem28 = new System.Windows.Forms.ToolStripSeparator();
             this.mostBeginnerMistakesQuestionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.writtenGuidesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.howToHostYourOwnRustDedicatedServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.howToHostARustServerInLinuxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem15 = new System.Windows.Forms.ToolStripSeparator();
+            this.hostARustDedicatedServerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.populateYourRustServerWithThese6TipsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.howToCreateAPrivateRustServerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.howToInstallUmodOxideToAServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rustServerPerformanceTipsAndTricksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.programsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.rustAdminRconControlPlayerManagmentServerStatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rustEditCreateAndEditMapsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fortifyCreateAndDesignBasesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem13 = new System.Windows.Forms.ToolStripSeparator();
             this.browseMapsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem14 = new System.Windows.Forms.ToolStripSeparator();
@@ -333,19 +346,6 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.serverup = new System.Windows.Forms.Timer(this.components);
-            this.writtenGuidesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.howToHostYourOwnRustDedicatedServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.howToHostARustServerInLinuxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem15 = new System.Windows.Forms.ToolStripSeparator();
-            this.hostARustDedicatedServerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.populateYourRustServerWithThese6TipsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.howToCreateAPrivateRustServerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.howToInstallUmodOxideToAServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rustServerPerformanceTipsAndTricksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.programsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.rustAdminRconControlPlayerManagmentServerStatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rustEditCreateAndEditMapsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fortifyCreateAndDesignBasesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.maintab.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -481,6 +481,106 @@
             this.mostBeginnerMistakesQuestionsToolStripMenuItem.Text = "15 Most Mistakes / Questions";
             this.mostBeginnerMistakesQuestionsToolStripMenuItem.Click += new System.EventHandler(this.mostBeginnerMistakesQuestionsToolStripMenuItem_Click);
             // 
+            // writtenGuidesToolStripMenuItem
+            // 
+            this.writtenGuidesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.howToHostYourOwnRustDedicatedServerToolStripMenuItem,
+            this.howToHostARustServerInLinuxToolStripMenuItem,
+            this.toolStripMenuItem15,
+            this.hostARustDedicatedServerToolStripMenuItem1,
+            this.populateYourRustServerWithThese6TipsToolStripMenuItem1,
+            this.howToCreateAPrivateRustServerToolStripMenuItem1,
+            this.howToInstallUmodOxideToAServerToolStripMenuItem,
+            this.rustServerPerformanceTipsAndTricksToolStripMenuItem});
+            this.writtenGuidesToolStripMenuItem.Name = "writtenGuidesToolStripMenuItem";
+            this.writtenGuidesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.writtenGuidesToolStripMenuItem.Text = "Written Guides";
+            // 
+            // howToHostYourOwnRustDedicatedServerToolStripMenuItem
+            // 
+            this.howToHostYourOwnRustDedicatedServerToolStripMenuItem.Name = "howToHostYourOwnRustDedicatedServerToolStripMenuItem";
+            this.howToHostYourOwnRustDedicatedServerToolStripMenuItem.Size = new System.Drawing.Size(314, 22);
+            this.howToHostYourOwnRustDedicatedServerToolStripMenuItem.Text = "How to: Host your own Rust Dedicated Server";
+            this.howToHostYourOwnRustDedicatedServerToolStripMenuItem.Click += new System.EventHandler(this.howToolStripMenuItem_Click);
+            // 
+            // howToHostARustServerInLinuxToolStripMenuItem
+            // 
+            this.howToHostARustServerInLinuxToolStripMenuItem.Name = "howToHostARustServerInLinuxToolStripMenuItem";
+            this.howToHostARustServerInLinuxToolStripMenuItem.Size = new System.Drawing.Size(314, 22);
+            this.howToHostARustServerInLinuxToolStripMenuItem.Text = "How to host a Rust Server in Linux";
+            this.howToHostARustServerInLinuxToolStripMenuItem.Click += new System.EventHandler(this.httpswwwrustafiedcomhowtohostarustserverinlinuxToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem15
+            // 
+            this.toolStripMenuItem15.Name = "toolStripMenuItem15";
+            this.toolStripMenuItem15.Size = new System.Drawing.Size(311, 6);
+            // 
+            // hostARustDedicatedServerToolStripMenuItem1
+            // 
+            this.hostARustDedicatedServerToolStripMenuItem1.Name = "hostARustDedicatedServerToolStripMenuItem1";
+            this.hostARustDedicatedServerToolStripMenuItem1.Size = new System.Drawing.Size(314, 22);
+            this.hostARustDedicatedServerToolStripMenuItem1.Text = "Host A Rust Dedicated Server";
+            this.hostARustDedicatedServerToolStripMenuItem1.Click += new System.EventHandler(this.hostARUSTDedicatedServerToolStripMenuItem_Click);
+            // 
+            // populateYourRustServerWithThese6TipsToolStripMenuItem1
+            // 
+            this.populateYourRustServerWithThese6TipsToolStripMenuItem1.Name = "populateYourRustServerWithThese6TipsToolStripMenuItem1";
+            this.populateYourRustServerWithThese6TipsToolStripMenuItem1.Size = new System.Drawing.Size(314, 22);
+            this.populateYourRustServerWithThese6TipsToolStripMenuItem1.Text = "Populate Your Rust Server with these 6 tips";
+            this.populateYourRustServerWithThese6TipsToolStripMenuItem1.Click += new System.EventHandler(this.populateYourRUSTServerWithThese6TipsToolStripMenuItem_Click);
+            // 
+            // howToCreateAPrivateRustServerToolStripMenuItem1
+            // 
+            this.howToCreateAPrivateRustServerToolStripMenuItem1.Name = "howToCreateAPrivateRustServerToolStripMenuItem1";
+            this.howToCreateAPrivateRustServerToolStripMenuItem1.Size = new System.Drawing.Size(314, 22);
+            this.howToCreateAPrivateRustServerToolStripMenuItem1.Text = "How to create a private Rust server";
+            this.howToCreateAPrivateRustServerToolStripMenuItem1.Click += new System.EventHandler(this.howToCreateAPrivateRUSTServerToolStripMenuItem_Click);
+            // 
+            // howToInstallUmodOxideToAServerToolStripMenuItem
+            // 
+            this.howToInstallUmodOxideToAServerToolStripMenuItem.Name = "howToInstallUmodOxideToAServerToolStripMenuItem";
+            this.howToInstallUmodOxideToAServerToolStripMenuItem.Size = new System.Drawing.Size(314, 22);
+            this.howToInstallUmodOxideToAServerToolStripMenuItem.Text = "How to install Umod (Oxide) to a server";
+            this.howToInstallUmodOxideToAServerToolStripMenuItem.Click += new System.EventHandler(this.howToInstallUModOxideToARUSTServerToolStripMenuItem_Click);
+            // 
+            // rustServerPerformanceTipsAndTricksToolStripMenuItem
+            // 
+            this.rustServerPerformanceTipsAndTricksToolStripMenuItem.Name = "rustServerPerformanceTipsAndTricksToolStripMenuItem";
+            this.rustServerPerformanceTipsAndTricksToolStripMenuItem.Size = new System.Drawing.Size(314, 22);
+            this.rustServerPerformanceTipsAndTricksToolStripMenuItem.Text = "Rust Server performance, tips and tricks";
+            this.rustServerPerformanceTipsAndTricksToolStripMenuItem.Click += new System.EventHandler(this.rUSTServerPerformanceHintsAndTipsToolStripMenuItem_Click);
+            // 
+            // programsToolStripMenuItem1
+            // 
+            this.programsToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.rustAdminRconControlPlayerManagmentServerStatsToolStripMenuItem,
+            this.rustEditCreateAndEditMapsToolStripMenuItem,
+            this.fortifyCreateAndDesignBasesToolStripMenuItem});
+            this.programsToolStripMenuItem1.Name = "programsToolStripMenuItem1";
+            this.programsToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.programsToolStripMenuItem1.Text = "Programs";
+            // 
+            // rustAdminRconControlPlayerManagmentServerStatsToolStripMenuItem
+            // 
+            this.rustAdminRconControlPlayerManagmentServerStatsToolStripMenuItem.Name = "rustAdminRconControlPlayerManagmentServerStatsToolStripMenuItem";
+            this.rustAdminRconControlPlayerManagmentServerStatsToolStripMenuItem.Size = new System.Drawing.Size(389, 22);
+            this.rustAdminRconControlPlayerManagmentServerStatsToolStripMenuItem.Text = "Rust admin - Rcon control | player managment | server stats";
+            this.rustAdminRconControlPlayerManagmentServerStatsToolStripMenuItem.Click += new System.EventHandler(this.rustAdminToolStripMenuItem_Click);
+            // 
+            // rustEditCreateAndEditMapsToolStripMenuItem
+            // 
+            this.rustEditCreateAndEditMapsToolStripMenuItem.Name = "rustEditCreateAndEditMapsToolStripMenuItem";
+            this.rustEditCreateAndEditMapsToolStripMenuItem.Size = new System.Drawing.Size(389, 22);
+            this.rustEditCreateAndEditMapsToolStripMenuItem.Text = "Rust edit - Create and edit maps";
+            this.rustEditCreateAndEditMapsToolStripMenuItem.Click += new System.EventHandler(this.rustEditToolStripMenuItem_Click);
+            // 
+            // fortifyCreateAndDesignBasesToolStripMenuItem
+            // 
+            this.fortifyCreateAndDesignBasesToolStripMenuItem.Name = "fortifyCreateAndDesignBasesToolStripMenuItem";
+            this.fortifyCreateAndDesignBasesToolStripMenuItem.Size = new System.Drawing.Size(389, 22);
+            this.fortifyCreateAndDesignBasesToolStripMenuItem.Text = "Fortify - Create and design bases";
+            this.fortifyCreateAndDesignBasesToolStripMenuItem.Click += new System.EventHandler(this.fortifyCreateAndDesignBaseCanBeCopiedFromOrPastedIntoRustToolStripMenuItem_Click);
+            // 
             // toolStripMenuItem13
             // 
             this.toolStripMenuItem13.Name = "toolStripMenuItem13";
@@ -524,52 +624,52 @@
             // addAdminToolStripMenuItem
             // 
             this.addAdminToolStripMenuItem.Name = "addAdminToolStripMenuItem";
-            this.addAdminToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.addAdminToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addAdminToolStripMenuItem.Text = "Add Admin";
             this.addAdminToolStripMenuItem.Click += new System.EventHandler(this.addAdminToolStripMenuItem_Click);
             // 
             // setRconIPToolStripMenuItem
             // 
             this.setRconIPToolStripMenuItem.Name = "setRconIPToolStripMenuItem";
-            this.setRconIPToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.setRconIPToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.setRconIPToolStripMenuItem.Text = "Set Rcon IP";
             this.setRconIPToolStripMenuItem.Click += new System.EventHandler(this.setRconIPToolStripMenuItem_Click);
             // 
             // updateServerToolStripMenuItem
             // 
             this.updateServerToolStripMenuItem.Name = "updateServerToolStripMenuItem";
-            this.updateServerToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.updateServerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.updateServerToolStripMenuItem.Text = "Update Server";
             this.updateServerToolStripMenuItem.Click += new System.EventHandler(this.UpdateServerToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(158, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
             // 
             // wipeMapOnlyToolStripMenuItem
             // 
             this.wipeMapOnlyToolStripMenuItem.Name = "wipeMapOnlyToolStripMenuItem";
-            this.wipeMapOnlyToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.wipeMapOnlyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.wipeMapOnlyToolStripMenuItem.Text = "Wipe Map Only";
             this.wipeMapOnlyToolStripMenuItem.Click += new System.EventHandler(this.wipeMapOnlyToolStripMenuItem_Click);
             // 
             // toolStripMenuItem6
             // 
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(158, 6);
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(177, 6);
             // 
             // wipeServerToolStripMenuItem
             // 
             this.wipeServerToolStripMenuItem.Name = "wipeServerToolStripMenuItem";
-            this.wipeServerToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.wipeServerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.wipeServerToolStripMenuItem.Text = "Full Wipe Server";
             this.wipeServerToolStripMenuItem.Click += new System.EventHandler(this.wipeServerToolStripMenuItem_Click);
             // 
             // toolStripMenuItem7
             // 
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(158, 6);
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(177, 6);
             // 
             // fILELOCATIONSToolStripMenuItem
             // 
@@ -582,7 +682,7 @@
             this.toolStripMenuItem9,
             this.steamCMDFolderToolStripMenuItem});
             this.fILELOCATIONSToolStripMenuItem.Name = "fILELOCATIONSToolStripMenuItem";
-            this.fILELOCATIONSToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.fILELOCATIONSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.fILELOCATIONSToolStripMenuItem.Text = "FILE LOCATIONS";
             // 
             // startFileToolStripMenuItem1
@@ -1133,7 +1233,8 @@
             "desiredaltitude",
             "stag.population",
             "wolf.population",
-            "zombie.population"});
+            "zombie.population",
+            "rcon.web"});
             this.SearchVar.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.SearchVar.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.SearchVar.Location = new System.Drawing.Point(2, 34);
@@ -3923,106 +4024,6 @@
             this.serverup.Enabled = true;
             this.serverup.Interval = 2000;
             this.serverup.Tick += new System.EventHandler(this.serverup_Tick);
-            // 
-            // writtenGuidesToolStripMenuItem
-            // 
-            this.writtenGuidesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.howToHostYourOwnRustDedicatedServerToolStripMenuItem,
-            this.howToHostARustServerInLinuxToolStripMenuItem,
-            this.toolStripMenuItem15,
-            this.hostARustDedicatedServerToolStripMenuItem1,
-            this.populateYourRustServerWithThese6TipsToolStripMenuItem1,
-            this.howToCreateAPrivateRustServerToolStripMenuItem1,
-            this.howToInstallUmodOxideToAServerToolStripMenuItem,
-            this.rustServerPerformanceTipsAndTricksToolStripMenuItem});
-            this.writtenGuidesToolStripMenuItem.Name = "writtenGuidesToolStripMenuItem";
-            this.writtenGuidesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.writtenGuidesToolStripMenuItem.Text = "Written Guides";
-            // 
-            // howToHostYourOwnRustDedicatedServerToolStripMenuItem
-            // 
-            this.howToHostYourOwnRustDedicatedServerToolStripMenuItem.Name = "howToHostYourOwnRustDedicatedServerToolStripMenuItem";
-            this.howToHostYourOwnRustDedicatedServerToolStripMenuItem.Size = new System.Drawing.Size(314, 22);
-            this.howToHostYourOwnRustDedicatedServerToolStripMenuItem.Text = "How to: Host your own Rust Dedicated Server";
-            this.howToHostYourOwnRustDedicatedServerToolStripMenuItem.Click += new System.EventHandler(this.howToolStripMenuItem_Click);
-            // 
-            // howToHostARustServerInLinuxToolStripMenuItem
-            // 
-            this.howToHostARustServerInLinuxToolStripMenuItem.Name = "howToHostARustServerInLinuxToolStripMenuItem";
-            this.howToHostARustServerInLinuxToolStripMenuItem.Size = new System.Drawing.Size(314, 22);
-            this.howToHostARustServerInLinuxToolStripMenuItem.Text = "How to host a Rust Server in Linux";
-            this.howToHostARustServerInLinuxToolStripMenuItem.Click += new System.EventHandler(this.httpswwwrustafiedcomhowtohostarustserverinlinuxToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem15
-            // 
-            this.toolStripMenuItem15.Name = "toolStripMenuItem15";
-            this.toolStripMenuItem15.Size = new System.Drawing.Size(311, 6);
-            // 
-            // hostARustDedicatedServerToolStripMenuItem1
-            // 
-            this.hostARustDedicatedServerToolStripMenuItem1.Name = "hostARustDedicatedServerToolStripMenuItem1";
-            this.hostARustDedicatedServerToolStripMenuItem1.Size = new System.Drawing.Size(314, 22);
-            this.hostARustDedicatedServerToolStripMenuItem1.Text = "Host A Rust Dedicated Server";
-            this.hostARustDedicatedServerToolStripMenuItem1.Click += new System.EventHandler(this.hostARUSTDedicatedServerToolStripMenuItem_Click);
-            // 
-            // populateYourRustServerWithThese6TipsToolStripMenuItem1
-            // 
-            this.populateYourRustServerWithThese6TipsToolStripMenuItem1.Name = "populateYourRustServerWithThese6TipsToolStripMenuItem1";
-            this.populateYourRustServerWithThese6TipsToolStripMenuItem1.Size = new System.Drawing.Size(314, 22);
-            this.populateYourRustServerWithThese6TipsToolStripMenuItem1.Text = "Populate Your Rust Server with these 6 tips";
-            this.populateYourRustServerWithThese6TipsToolStripMenuItem1.Click += new System.EventHandler(this.populateYourRUSTServerWithThese6TipsToolStripMenuItem_Click);
-            // 
-            // howToCreateAPrivateRustServerToolStripMenuItem1
-            // 
-            this.howToCreateAPrivateRustServerToolStripMenuItem1.Name = "howToCreateAPrivateRustServerToolStripMenuItem1";
-            this.howToCreateAPrivateRustServerToolStripMenuItem1.Size = new System.Drawing.Size(314, 22);
-            this.howToCreateAPrivateRustServerToolStripMenuItem1.Text = "How to create a private Rust server";
-            this.howToCreateAPrivateRustServerToolStripMenuItem1.Click += new System.EventHandler(this.howToCreateAPrivateRUSTServerToolStripMenuItem_Click);
-            // 
-            // howToInstallUmodOxideToAServerToolStripMenuItem
-            // 
-            this.howToInstallUmodOxideToAServerToolStripMenuItem.Name = "howToInstallUmodOxideToAServerToolStripMenuItem";
-            this.howToInstallUmodOxideToAServerToolStripMenuItem.Size = new System.Drawing.Size(314, 22);
-            this.howToInstallUmodOxideToAServerToolStripMenuItem.Text = "How to install Umod (Oxide) to a server";
-            this.howToInstallUmodOxideToAServerToolStripMenuItem.Click += new System.EventHandler(this.howToInstallUModOxideToARUSTServerToolStripMenuItem_Click);
-            // 
-            // rustServerPerformanceTipsAndTricksToolStripMenuItem
-            // 
-            this.rustServerPerformanceTipsAndTricksToolStripMenuItem.Name = "rustServerPerformanceTipsAndTricksToolStripMenuItem";
-            this.rustServerPerformanceTipsAndTricksToolStripMenuItem.Size = new System.Drawing.Size(314, 22);
-            this.rustServerPerformanceTipsAndTricksToolStripMenuItem.Text = "Rust Server performance, tips and tricks";
-            this.rustServerPerformanceTipsAndTricksToolStripMenuItem.Click += new System.EventHandler(this.rUSTServerPerformanceHintsAndTipsToolStripMenuItem_Click);
-            // 
-            // programsToolStripMenuItem1
-            // 
-            this.programsToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.rustAdminRconControlPlayerManagmentServerStatsToolStripMenuItem,
-            this.rustEditCreateAndEditMapsToolStripMenuItem,
-            this.fortifyCreateAndDesignBasesToolStripMenuItem});
-            this.programsToolStripMenuItem1.Name = "programsToolStripMenuItem1";
-            this.programsToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.programsToolStripMenuItem1.Text = "Programs";
-            // 
-            // rustAdminRconControlPlayerManagmentServerStatsToolStripMenuItem
-            // 
-            this.rustAdminRconControlPlayerManagmentServerStatsToolStripMenuItem.Name = "rustAdminRconControlPlayerManagmentServerStatsToolStripMenuItem";
-            this.rustAdminRconControlPlayerManagmentServerStatsToolStripMenuItem.Size = new System.Drawing.Size(389, 22);
-            this.rustAdminRconControlPlayerManagmentServerStatsToolStripMenuItem.Text = "Rust admin - Rcon control | player managment | server stats";
-            this.rustAdminRconControlPlayerManagmentServerStatsToolStripMenuItem.Click += new System.EventHandler(this.rustAdminToolStripMenuItem_Click);
-            // 
-            // rustEditCreateAndEditMapsToolStripMenuItem
-            // 
-            this.rustEditCreateAndEditMapsToolStripMenuItem.Name = "rustEditCreateAndEditMapsToolStripMenuItem";
-            this.rustEditCreateAndEditMapsToolStripMenuItem.Size = new System.Drawing.Size(389, 22);
-            this.rustEditCreateAndEditMapsToolStripMenuItem.Text = "Rust edit - Create and edit maps";
-            this.rustEditCreateAndEditMapsToolStripMenuItem.Click += new System.EventHandler(this.rustEditToolStripMenuItem_Click);
-            // 
-            // fortifyCreateAndDesignBasesToolStripMenuItem
-            // 
-            this.fortifyCreateAndDesignBasesToolStripMenuItem.Name = "fortifyCreateAndDesignBasesToolStripMenuItem";
-            this.fortifyCreateAndDesignBasesToolStripMenuItem.Size = new System.Drawing.Size(389, 22);
-            this.fortifyCreateAndDesignBasesToolStripMenuItem.Text = "Fortify - Create and design bases";
-            this.fortifyCreateAndDesignBasesToolStripMenuItem.Click += new System.EventHandler(this.fortifyCreateAndDesignBaseCanBeCopiedFromOrPastedIntoRustToolStripMenuItem_Click);
             // 
             // Form1
             // 

@@ -166,12 +166,18 @@ namespace batchgen
 				}
 				else
 				{
+					string setbranch = "";
+					if (RdioStaging.Checked)
+					{
+						setbranch = "-beta staging ";
+					}
+
 					Directory.CreateDirectory("steamcmd");
 					Form1.UnZipFile(filePath, "steamcmd");
 					this.infolabel.Text = "SteamCMD downloaded - Step 2 next";
 					Directory.CreateDirectory("RustServerFiles");
-					File.WriteAllText(this.cmdbatdir.Text, "steamcmd.exe +login anonymous +force_install_dir \"" + this.servfilesdirectory.Text + "\" +app_update 258550 +quit");
-					Process.Start(this.CMDDirectorybox.Text, "steamcmd.exe +login anonymous +force_install_dir " + this.servfilesdirectory.Text + " +app_update 258550 +quit");
+					File.WriteAllText(this.cmdbatdir.Text, "steamcmd.exe +login anonymous +force_install_dir \"" + this.servfilesdirectory.Text + "\" +app_update 258550 " + setbranch + "+quit");
+					Process.Start(this.CMDDirectorybox.Text, "steamcmd.exe +login anonymous +force_install_dir " + this.servfilesdirectory.Text + " +app_update 258550 " + setbranch + "+quit");
 					this.infolabel.Text = "Downloading Server Files, wait for SteamCMD";
 					Process[] processesByName = Process.GetProcessesByName("steamcmd");
 					for (int i = 1; i < processesByName.Length; i++)
@@ -217,6 +223,17 @@ namespace batchgen
             {
 
             }
+			if (RUSS.Properties.Settings.Default.branch)
+            {
+				RdioStaging.Checked = true;
+				RdioNormal.Checked = false;
+			}
+			else
+            {
+				RdioStaging.Checked = false;
+				RdioNormal.Checked = true;
+			}
+
 			whitelist = RUSS.Properties.Settings.Default.Whitelist;
             textBox3.Text = RUSS.Properties.Settings.Default.MapLocation;
 			textBox4.Text = RUSS.Properties.Settings.Default.MAPOUTPUTURL;
@@ -537,32 +554,7 @@ namespace batchgen
 			}
 		}
 
-
-		private void playRustIOToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			Process.Start("http://playrust.io/");
-		}
-
-
-		private void button6_Click(object sender, EventArgs e)
-		{
-			Directory.CreateDirectory("RustServerFiles");
-			File.WriteAllText(this.cmdbatdir.Text, "steamcmd.exe +login anonymous +force_install_dir " + this.servfilesdirectory.Text + " +app_update 258550 +quit");
-			Process.Start(this.CMDDirectorybox.Text, "steamcmd.exe +login anonymous +force_install_dir " + this.servfilesdirectory.Text + " +app_update 258550 +quit");
-			this.infolabel.Text = "Downloading Server Files, wait for SteamCMD";
-			Process[] processesByName = Process.GetProcessesByName("steamcmd");
-			bool flag = processesByName.Length == 0;
-			if (flag)
-			{
-				Process.Start(this.CMDDirectorybox.Text, "steamcmd.exe +login anonymous +force_install_dir " + this.servfilesdirectory.Text + " +app_update 258550 +quit");
-			}
-			else
-			{
-				this.checkrun.Enabled = true;
-			}
-		}
-
-		
+	
 		private void button7_Click(object sender, EventArgs e)
 		{
 			bool flag = this.ServerVarsFinal.Text == "";
@@ -720,6 +712,7 @@ namespace batchgen
 			RUSS.Properties.Settings.Default.RustCOMBOBOX = StartFileList.Text;
 			RUSS.Properties.Settings.Default.RCONIP = MyIP;
 			RUSS.Properties.Settings.Default.Whitelist = whitelist;
+			RUSS.Properties.Settings.Default.branch = RdioStaging.Checked;
 			RUSS.Properties.Settings.Default.Save();
 			Application.Exit();
 		}
@@ -904,9 +897,15 @@ namespace batchgen
 
 		private void Button11_Click(object sender, EventArgs e)
 		{
+			string setbranch = "";
+			if (RdioStaging.Checked)
+			{
+				setbranch = "-beta staging ";
+			}
+			//" + setbranch + "
 			Directory.CreateDirectory("RustServerFiles");
-			File.WriteAllText(this.cmdbatdir.Text, "steamcmd.exe +login anonymous +force_install_dir " + this.servfilesdirectory.Text + " +app_update 258550 +quit");
-			Process process = Process.Start(new ProcessStartInfo(this.CMDDirectorybox.Text, "+login anonymous +force_install_dir " + this.servfilesdirectory.Text + " +app_update 258550 +quit")
+			File.WriteAllText(this.cmdbatdir.Text, "steamcmd.exe +login anonymous +force_install_dir " + this.servfilesdirectory.Text + " +app_update 258550 " + setbranch + "+quit");
+			Process process = Process.Start(new ProcessStartInfo(this.CMDDirectorybox.Text, "+login anonymous +force_install_dir " + this.servfilesdirectory.Text + " +app_update 258550 " + setbranch + "+quit")
 			{
 				UseShellExecute = false,
 				RedirectStandardOutput = true
@@ -915,7 +914,7 @@ namespace batchgen
 			bool flag = processesByName.Length == 0;
 			if (flag)
 			{
-				Process.Start(this.CMDDirectorybox.Text, "steamcmd.exe +login anonymous +force_install_dir " + this.servfilesdirectory.Text + " +app_update 258550 +quit");
+				Process.Start(this.CMDDirectorybox.Text, "steamcmd.exe +login anonymous +force_install_dir " + this.servfilesdirectory.Text + " +app_update 258550 " + setbranch + "+quit");
 			}
 			else
 			{
@@ -1026,15 +1025,22 @@ namespace batchgen
 		{
 			try
 			{
+				string setbranch = "";
+				if (RdioStaging.Checked)
+                {
+					setbranch = "-beta staging ";
+				}
+				//" + setbranch + "
+
 				Directory.CreateDirectory("RustServerFiles");
-				File.WriteAllText(this.cmdbatdir.Text, "steamcmd.exe +login anonymous +force_install_dir " + this.servfilesdirectory.Text + " +app_update 258550 +quit");
-				Process.Start(this.CMDDirectorybox.Text, "steamcmd.exe +login anonymous +force_install_dir " + this.servfilesdirectory.Text + " +app_update 258550 +quit");
+				File.WriteAllText(this.cmdbatdir.Text, "steamcmd.exe +login anonymous +force_install_dir " + this.servfilesdirectory.Text + " +app_update 258550 " + setbranch + "+quit");
+				Process.Start(this.CMDDirectorybox.Text, "steamcmd.exe +login anonymous +force_install_dir " + this.servfilesdirectory.Text + " +app_update 258550 " + setbranch + "+quit");
 				this.infolabel.Text = "Downloading Server Files, wait for SteamCMD";
 				Process[] processesByName = Process.GetProcessesByName("steamcmd");
 				bool flag = processesByName.Length == 0;
 				if (flag)
 				{
-					Process.Start(this.CMDDirectorybox.Text, "steamcmd.exe +login anonymous +force_install_dir " + this.servfilesdirectory.Text + " +app_update 258550 +quit");
+					Process.Start(this.CMDDirectorybox.Text, "steamcmd.exe +login anonymous +force_install_dir " + this.servfilesdirectory.Text + " +app_update 258550 " + setbranch + "+quit");
 				}
 				else
 				{

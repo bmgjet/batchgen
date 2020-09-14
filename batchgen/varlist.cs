@@ -8,6 +8,10 @@
 			string varvalue = "";
 			switch(SearchVar)
             {
+				case "rcon.web":
+					varvar = "rcon.web";
+					varvalue = "1";
+					break;
 				case "aithinkmanager.framebudgetms":
 					varvar = "aithinkmanager.framebudgetms";
 					varvalue = "2.5";

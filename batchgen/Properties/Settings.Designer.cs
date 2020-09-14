@@ -118,5 +118,17 @@ namespace RUSS.Properties {
                 this["LimitWhite"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool branch {
+            get {
+                return ((bool)(this["branch"]));
+            }
+            set {
+                this["branch"] = value;
+            }
+        }
     }
 }
