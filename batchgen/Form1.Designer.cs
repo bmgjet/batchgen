@@ -624,52 +624,52 @@
             // addAdminToolStripMenuItem
             // 
             this.addAdminToolStripMenuItem.Name = "addAdminToolStripMenuItem";
-            this.addAdminToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addAdminToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.addAdminToolStripMenuItem.Text = "Add Admin";
             this.addAdminToolStripMenuItem.Click += new System.EventHandler(this.addAdminToolStripMenuItem_Click);
             // 
             // setRconIPToolStripMenuItem
             // 
             this.setRconIPToolStripMenuItem.Name = "setRconIPToolStripMenuItem";
-            this.setRconIPToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.setRconIPToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.setRconIPToolStripMenuItem.Text = "Set Rcon IP";
             this.setRconIPToolStripMenuItem.Click += new System.EventHandler(this.setRconIPToolStripMenuItem_Click);
             // 
             // updateServerToolStripMenuItem
             // 
             this.updateServerToolStripMenuItem.Name = "updateServerToolStripMenuItem";
-            this.updateServerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.updateServerToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.updateServerToolStripMenuItem.Text = "Update Server";
             this.updateServerToolStripMenuItem.Click += new System.EventHandler(this.UpdateServerToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(158, 6);
             // 
             // wipeMapOnlyToolStripMenuItem
             // 
             this.wipeMapOnlyToolStripMenuItem.Name = "wipeMapOnlyToolStripMenuItem";
-            this.wipeMapOnlyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.wipeMapOnlyToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.wipeMapOnlyToolStripMenuItem.Text = "Wipe Map Only";
             this.wipeMapOnlyToolStripMenuItem.Click += new System.EventHandler(this.wipeMapOnlyToolStripMenuItem_Click);
             // 
             // toolStripMenuItem6
             // 
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(158, 6);
             // 
             // wipeServerToolStripMenuItem
             // 
             this.wipeServerToolStripMenuItem.Name = "wipeServerToolStripMenuItem";
-            this.wipeServerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.wipeServerToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.wipeServerToolStripMenuItem.Text = "Full Wipe Server";
             this.wipeServerToolStripMenuItem.Click += new System.EventHandler(this.wipeServerToolStripMenuItem_Click);
             // 
             // toolStripMenuItem7
             // 
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(158, 6);
             // 
             // fILELOCATIONSToolStripMenuItem
             // 
@@ -682,7 +682,7 @@
             this.toolStripMenuItem9,
             this.steamCMDFolderToolStripMenuItem});
             this.fILELOCATIONSToolStripMenuItem.Name = "fILELOCATIONSToolStripMenuItem";
-            this.fILELOCATIONSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fILELOCATIONSToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.fILELOCATIONSToolStripMenuItem.Text = "FILE LOCATIONS";
             // 
             // startFileToolStripMenuItem1
@@ -3761,6 +3761,7 @@
             this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox2.ForeColor = System.Drawing.SystemColors.Window;
             this.textBox2.Location = new System.Drawing.Point(3, 3);
+            this.textBox2.MaxLength = 2000;
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Both;

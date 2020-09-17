@@ -214,6 +214,7 @@ namespace batchgen
 
 	private void Form1_Load(object sender, EventArgs e)
 		{
+			DoubleBuffered = true;
 			try
             {
 				EIP = RemoveSpecialCharacters(new WebClient().DownloadString("http://icanhazip.com"));
@@ -1828,17 +1829,20 @@ namespace batchgen
 					}
 					string[] lines = temp.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
 
-					textBox2.Text = "";
+					string swaptxt = "";
 					for (int i = lines.Length - 1; i > 0; i--)
 					{
-						textBox2.Text += lines[i].ToString() + Environment.NewLine;
+							swaptxt += lines[i].ToString() + Environment.NewLine;
 					}
-				}
+						textBox2.Text = swaptxt;
+					}
 			}
 			}
 
 			         catch { }
 		}
+
+	
 
 		private void serverup_Tick(object sender, EventArgs e)
         {
@@ -2029,5 +2033,7 @@ namespace batchgen
 				}
 			}
 		}
-    }
+	}
 }
+
+

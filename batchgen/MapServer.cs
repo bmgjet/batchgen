@@ -60,7 +60,7 @@ class MapServer
                 HttpListenerContext context = _listener.GetContext();
                 if (batchgen.Form1.lwhite)
                 {
-                    string connected = context.Request.UserHostAddress.Split(new string[] { ":" }, System.StringSplitOptions.RemoveEmptyEntries)[0];
+                    string connected = context.Request.RemoteEndPoint.ToString().Split(new string[] { ":" }, System.StringSplitOptions.RemoveEmptyEntries)[0];
                     if (batchgen.Form1.whitelist.Contains(connected))
                     {
                         Process(context);
@@ -86,7 +86,7 @@ class MapServer
     private void Process(HttpListenerContext context)
     {
         string filename = MapFile;
-        _form1.WriteTextSafe("User-Agent:"+context.Request.UserAgent + Environment.NewLine + "User-IP:"+context.Request.UserHostAddress+Environment.NewLine);
+        _form1.WriteTextSafe("Map Download Request:" + Environment.NewLine + "User-Agent:"+context.Request.UserAgent + Environment.NewLine + "User-IP:"+context.Request.RemoteEndPoint.ToString() +Environment.NewLine);
         Stream input = new FileStream(filename, FileMode.Open);
         context.Response.ContentType = "application/x-binary";
         context.Response.ContentLength64 = input.Length;
