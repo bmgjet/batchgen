@@ -22,6 +22,7 @@ namespace batchgen
 		public string lastModified;
 		string MyIP = "127.0.0.1";
 		string EIP = "127.0.0.1";
+		string bparm = "-beta staging";
 		public static string whitelist = "127.0.0.1";
 		bool loaded = false;
 		bool settingsloaded = false;
@@ -81,8 +82,8 @@ namespace batchgen
 			bool flag = this.ServerVarsFinal.Text == "";
 			if (flag)
 			{
-				this.Finaltext.Text = "RustDedicated.exe -batchmode +server.identity " +	@"""" + this.identitytext.Text + @"""" + 	" +server.hostname " + @"""" +	this.servernametext.Text + @""" +server.level ""Procedural Map""" + " +server.seed " + @"""" +	this.mapseedtext.Text + @"""" +	" +server.worldsize " + @"""" +	this.mapsizebox.Text + @"""" + " +server.maxplayers " + this.maxplayertext.Text + @" +rcon.ip " + MyIP + " +rcon.port " + this.rconporttext.Text + " +server.port " + this.serverporttext.Text + " +rcon.password " + @"""" + this.rconpasstext.Text +  @"""" + " +server.description " + @"""" + 	this.serverdisctext.Text + 	@"""" + " +server.url " + @"""" + 	this.serverurltext.Text + @"""" + 	" +server.headerimage " + @"""" + this.serverpicturetext.Text + @"""" +  " -logfile " + @"""" + this.LogLocation.Text +	".log" + @"""";
-				
+				this.Finaltext.Text = "RustDedicated.exe -batchmode +server.identity " + @"""" + this.identitytext.Text + @"""" + " +server.hostname " + @"""" + this.servernametext.Text + @""" +server.level ""Procedural Map""" + " +server.seed " + @"""" + this.mapseedtext.Text + @"""" + " +server.worldsize " + @"""" + this.mapsizebox.Text + @"""" + " +server.maxplayers " + this.maxplayertext.Text + @" +rcon.ip " + MyIP + " +rcon.port " + this.rconporttext.Text + " +server.port " + this.serverporttext.Text + " +rcon.password " + @"""" + this.rconpasstext.Text + @"""" + " +server.description " + @"""" + this.serverdisctext.Text + @"""" + " +server.url " + @"""" + this.serverurltext.Text + @"""" + " +server.headerimage " + @"""" + this.serverpicturetext.Text + @"""" + " -logfile " + @"""" + this.LogLocation.Text + ".log" + @"""";
+
 				this.serverdirectorytext.Text = string.Concat(new string[]
 				{
 					this.currentpath,
@@ -98,8 +99,8 @@ namespace batchgen
 			}
 			else
 			{
-				this.Finaltext.Text = this.Finaltext.Text = "RustDedicated.exe -batchmode +server.identity " + @"""" + this.identitytext.Text + @"""" + " +server.hostname " + @"""" + this.servernametext.Text + @""" +server.level ""Procedural Map""" + " +server.seed " + @"""" + this.mapseedtext.Text + @"""" + " +server.worldsize " + @"""" + this.mapsizebox.Text + @"""" + " +server.maxplayers "  + this.maxplayertext.Text + @" +rcon.ip " + MyIP + " +rcon.port " + this.rconporttext.Text + " +server.port " + this.serverporttext.Text + " +rcon.password " + @"""" + this.rconpasstext.Text + @"""" + " +server.description " + @"""" + this.serverdisctext.Text + @"""" + " +server.url " + @"""" + this.serverurltext.Text + @"""" + " +server.headerimage " + @"""" + this.serverpicturetext.Text + @"""" + " " + this.ServerVarsFinal.Text + "-logfile " + @"""" + this.LogLocation.Text + ".log" + @"""";
-				
+				this.Finaltext.Text = this.Finaltext.Text = "RustDedicated.exe -batchmode +server.identity " + @"""" + this.identitytext.Text + @"""" + " +server.hostname " + @"""" + this.servernametext.Text + @""" +server.level ""Procedural Map""" + " +server.seed " + @"""" + this.mapseedtext.Text + @"""" + " +server.worldsize " + @"""" + this.mapsizebox.Text + @"""" + " +server.maxplayers " + this.maxplayertext.Text + @" +rcon.ip " + MyIP + " +rcon.port " + this.rconporttext.Text + " +server.port " + this.serverporttext.Text + " +rcon.password " + @"""" + this.rconpasstext.Text + @"""" + " +server.description " + @"""" + this.serverdisctext.Text + @"""" + " +server.url " + @"""" + this.serverurltext.Text + @"""" + " +server.headerimage " + @"""" + this.serverpicturetext.Text + @"""" + " " + this.ServerVarsFinal.Text + "-logfile " + @"""" + this.LogLocation.Text + ".log" + @"""";
+
 				this.serverdirectorytext.Text = string.Concat(new string[]
 				{
 					this.currentpath,
@@ -119,7 +120,7 @@ namespace batchgen
 		{
 			using (WebClient webClient = new WebClient())
 			{
-				webClient.DownloadProgressChanged += delegate(object sender, DownloadProgressChangedEventArgs e)
+				webClient.DownloadProgressChanged += delegate (object sender, DownloadProgressChangedEventArgs e)
 				{
 					this.DownloadProgress(sender, e, downloadPath);
 				};
@@ -127,7 +128,7 @@ namespace batchgen
 			}
 		}
 
-			private void DownloadProgress(object sender, DownloadProgressChangedEventArgs downloadArgs, string downloadPath)
+		private void DownloadProgress(object sender, DownloadProgressChangedEventArgs downloadArgs, string downloadPath)
 		{
 			if (downloadPath != null)
 			{
@@ -169,15 +170,15 @@ namespace batchgen
 					string setbranch = "";
 					if (RdioStaging.Checked)
 					{
-						setbranch = "-beta staging ";
+						setbranch = bparm;
 					}
 
 					Directory.CreateDirectory("steamcmd");
 					Form1.UnZipFile(filePath, "steamcmd");
 					this.infolabel.Text = "SteamCMD downloaded - Step 2 next";
 					Directory.CreateDirectory("RustServerFiles");
-					File.WriteAllText(this.cmdbatdir.Text, "steamcmd.exe +login anonymous +force_install_dir \"" + this.servfilesdirectory.Text + "\" +app_update 258550 " + setbranch + "+quit");
-					Process.Start(this.CMDDirectorybox.Text, "steamcmd.exe +login anonymous +force_install_dir " + this.servfilesdirectory.Text + " +app_update 258550 " + setbranch + "+quit");
+					File.WriteAllText(this.cmdbatdir.Text, "steamcmd.exe +login anonymous +force_install_dir \"" + this.servfilesdirectory.Text + "\" +app_update 258550 " + setbranch + " +quit");
+					Process.Start(this.CMDDirectorybox.Text, "steamcmd.exe +login anonymous +force_install_dir " + this.servfilesdirectory.Text + " +app_update 258550 " + setbranch + " +quit");
 					this.infolabel.Text = "Downloading Server Files, wait for SteamCMD";
 					Process[] processesByName = Process.GetProcessesByName("steamcmd");
 					for (int i = 1; i < processesByName.Length; i++)
@@ -199,7 +200,7 @@ namespace batchgen
 					{
 						zipEntry.Extract(extractFolder, ExtractExistingFileAction.OverwriteSilently);
 					}
-                    catch { }
+					catch { }
 				}
 			}
 		}
@@ -212,31 +213,31 @@ namespace batchgen
 
 
 
-	private void Form1_Load(object sender, EventArgs e)
+		private void Form1_Load(object sender, EventArgs e)
 		{
 			DoubleBuffered = true;
 			try
-            {
+			{
 				EIP = RemoveSpecialCharacters(new WebClient().DownloadString("http://icanhazip.com"));
 
 			}
 			catch
-            {
+			{
 
-            }
+			}
 			if (RUSS.Properties.Settings.Default.branch)
-            {
+			{
 				RdioStaging.Checked = true;
 				RdioNormal.Checked = false;
 			}
 			else
-            {
+			{
 				RdioStaging.Checked = false;
 				RdioNormal.Checked = true;
 			}
 
 			whitelist = RUSS.Properties.Settings.Default.Whitelist;
-            textBox3.Text = RUSS.Properties.Settings.Default.MapLocation;
+			textBox3.Text = RUSS.Properties.Settings.Default.MapLocation;
 			textBox4.Text = RUSS.Properties.Settings.Default.MAPOUTPUTURL;
 			maskedTextBox1.Text = RUSS.Properties.Settings.Default.MAPPort;
 			checkBox1.Checked = RUSS.Properties.Settings.Default.MAPServer;
@@ -246,9 +247,9 @@ namespace batchgen
 
 			string mylocation = Application.ExecutablePath;
 			if (mylocation.Contains(" "))
-            {
+			{
 				MessageBox.Show("SteamCMD will have issues if you have spaces in your file path." + Environment.NewLine + mylocation + Environment.NewLine + Environment.NewLine + "Please create a file structure with no spaces!" + Environment.NewLine + "Such as:" + Environment.NewLine + mylocation.Replace(" ", ""));
-            }
+			}
 			this.mapsizebox.Text = (RandomNumber(2, 7) * 500).ToString();
 			this.mapseedtext.Text = RandomNumber(1, 10).ToString();
 
@@ -263,37 +264,37 @@ namespace batchgen
 					this.identitytext.Text,
 					".bat"
 				});
-				this.CMDDirectorybox.Text = this.currentpath + this.steamcmdbox.Text + this.slashbox.Text + "steamcmd.exe";
-				this.servfilesdirectory.Text = this.currentpath + this.slashbox.Text + "RustServerFiles";
-				this.cmdbatdir.Text = this.currentpath + this.steamcmdbox.Text + this.slashbox.Text + "update server.bat";
-				this.cmdbatdirstaging.Text = this.currentpath + this.steamcmdbox.Text + this.slashbox.Text + "update staging server.bat";
-				this.dedicateddirectory.Text = string.Concat(new string[]
-				{
+			this.CMDDirectorybox.Text = this.currentpath + this.steamcmdbox.Text + this.slashbox.Text + "steamcmd.exe";
+			this.servfilesdirectory.Text = this.currentpath + this.slashbox.Text + "RustServerFiles";
+			this.cmdbatdir.Text = this.currentpath + this.steamcmdbox.Text + this.slashbox.Text + "update server.bat";
+			this.cmdbatdirstaging.Text = this.currentpath + this.steamcmdbox.Text + this.slashbox.Text + "update staging server.bat";
+			this.dedicateddirectory.Text = string.Concat(new string[]
+			{
 					this.currentpath,
 					this.slashbox.Text,
 					"RustServerFiles",
 					this.slashbox.Text,
 					"RustDedicated.exe"
-				});
-				this.LogLocation.Text = string.Concat(new string[]
-				{
+			});
+			this.LogLocation.Text = string.Concat(new string[]
+			{
 					this.currentpath,
 					this.slashbox.Text,
 					"RustServerFiles",
 					this.slashbox.Text,
 					"logs"
-				});
-				this.LockedLbl2.Visible = false;
-				this.LockedLbl.Visible = false;
-				this.LockedLbl2.Parent = this.ServerVars;
-				this.LockedLbl.Parent = this.ServerVars;
-				this.PreviewDesc.Parent = this.BannerServer;
-				this.serverTitle.Parent = this.BannerServer;
-				this.label38.Parent = this.BannerServer;
-				this.label42.Parent = this.BannerServer;
-				this.mapTypeprev.Parent = this.BannerServer;
-				this.MaxPlayersPrev.Parent = this.BannerServer;
-				this.FakeMS.Parent = this.BannerServer;
+			});
+			this.LockedLbl2.Visible = false;
+			this.LockedLbl.Visible = false;
+			this.LockedLbl2.Parent = this.ServerVars;
+			this.LockedLbl.Parent = this.ServerVars;
+			this.PreviewDesc.Parent = this.BannerServer;
+			this.serverTitle.Parent = this.BannerServer;
+			this.label38.Parent = this.BannerServer;
+			this.label42.Parent = this.BannerServer;
+			this.mapTypeprev.Parent = this.BannerServer;
+			this.MaxPlayersPrev.Parent = this.BannerServer;
+			this.FakeMS.Parent = this.BannerServer;
 
 			servernametext.Text = Environment.UserName;
 			CMservernametext.Text = Environment.UserName;
@@ -332,16 +333,16 @@ namespace batchgen
 			KOserverurltext.Text = CMserverurltext.Text;
 			serverurltext.Text = CMserverurltext.Text;
 
-            try
-            {
+			try
+			{
 				StartFileList.Items.Add(RUSS.Properties.Settings.Default.RustCOMBOBOX);
 				int index = StartFileList.FindString(RUSS.Properties.Settings.Default.RustCOMBOBOX);
 				StartFileList.SelectedIndex = index;
 			}
 			catch
-            {
+			{
 
-            }
+			}
 			settingsloaded = true;
 
 			if (StartFileList.Text != "")
@@ -351,18 +352,18 @@ namespace batchgen
 
 		}
 
-		
+
 		private void button2_Click(object sender, EventArgs e)
 		{
 			if (!mapurlbox.Text.Contains(".map"))
-            {
+			{
 				MessageBox.Show("No map file selected please fill in MAP URL!");
 				return;
-            }
+			}
 
 			if (mapurlbox.Text.Contains(".map?dl=0"))
 			{
-				DialogResult dialogResult = MessageBox.Show("?dl=0 url detected!" +Environment.NewLine + "Do you want to change this to dl=1", "URL WARNING", MessageBoxButtons.YesNo);
+				DialogResult dialogResult = MessageBox.Show("?dl=0 url detected!" + Environment.NewLine + "Do you want to change this to dl=1", "URL WARNING", MessageBoxButtons.YesNo);
 				if (dialogResult == DialogResult.Yes)
 				{
 					mapurlbox.Text = mapurlbox.Text.Replace(".map?dl=0", ".map?dl=1");
@@ -390,7 +391,7 @@ namespace batchgen
 			}
 			else
 			{
-				this.Finaltext.Text = "RustDedicated.exe -batchmode +server.identity " + @"""" + this.CMidentitytext.Text + @"""" + " +server.hostname " + @"""" + this.CMservernametext.Text + @""" +levelurl " + @"""" + this.mapurlbox.Text + @"""" + " +server.maxplayers " + this.CMmaxplayertext.Text + @" +rcon.ip " + MyIP + " +rcon.port " + this.CMrconporttext.Text + " +server.port " + this.CMserverportext.Text + " +rcon.password " + @"""" + this.CMrconpasstext.Text + @"""" + " +server.description " + @"""" + this.CMserverdisctext.Text + @"""" + " +server.url " + @"""" + this.CMserverurltext.Text + @"""" + " +server.headerimage " + @"""" + this.CMserverpicturetext.Text + @""" " + this.ServerVarsFinal.Text +"-logfile " + @"""" + this.LogLocation.Text + ".log" + @"""";
+				this.Finaltext.Text = "RustDedicated.exe -batchmode +server.identity " + @"""" + this.CMidentitytext.Text + @"""" + " +server.hostname " + @"""" + this.CMservernametext.Text + @""" +levelurl " + @"""" + this.mapurlbox.Text + @"""" + " +server.maxplayers " + this.CMmaxplayertext.Text + @" +rcon.ip " + MyIP + " +rcon.port " + this.CMrconporttext.Text + " +server.port " + this.CMserverportext.Text + " +rcon.password " + @"""" + this.CMrconpasstext.Text + @"""" + " +server.description " + @"""" + this.CMserverdisctext.Text + @"""" + " +server.url " + @"""" + this.CMserverurltext.Text + @"""" + " +server.headerimage " + @"""" + this.CMserverpicturetext.Text + @""" " + this.ServerVarsFinal.Text + "-logfile " + @"""" + this.LogLocation.Text + ".log" + @"""";
 				this.serverdirectorytext.Text = string.Concat(new string[]
 				{
 					this.currentpath,
@@ -406,7 +407,7 @@ namespace batchgen
 			}
 		}
 
-	
+
 		private void DownloadSteamCMD_Click(object sender, EventArgs e)
 		{
 			bool flag = !Form1.downloadingSteamCMD;
@@ -446,7 +447,7 @@ namespace batchgen
 			}
 		}
 
-		
+
 		private void checkrun_Tick(object sender, EventArgs e)
 		{
 			Process[] processesByName = Process.GetProcessesByName("steamcmd");
@@ -458,13 +459,13 @@ namespace batchgen
 			}
 		}
 
-		
+
 		private void timer1_Tick(object sender, EventArgs e)
 		{
 			updatelog();
 		}
 
-				
+
 		private void button2_Click_1(object sender, EventArgs e)
 		{
 			Process process = Process.Start(new ProcessStartInfo("steamcmd")
@@ -555,7 +556,7 @@ namespace batchgen
 			}
 		}
 
-	
+
 		private void button7_Click(object sender, EventArgs e)
 		{
 			bool flag = this.ServerVarsFinal.Text == "";
@@ -699,7 +700,7 @@ namespace batchgen
 		private void Form1_FormClosed(object sender, FormClosedEventArgs e)
 		{
 			if (MapServer.Running)
-            {
+			{
 				myServer.Stop();
 				myServer = null;
 			}
@@ -785,15 +786,15 @@ namespace batchgen
 			this.serverTitle.Text = this.servernametext.Text;
 		}
 
-		
+
 		private void BtnStart_Click(object sender, EventArgs e)
 		{
 
 			if (BtnStart.Text == "START")
 			{
-                try
-                {
-                    string fileName = this.StartFileList.Items[this.StartFileList.SelectedIndex].ToString();
+				try
+				{
+					string fileName = this.StartFileList.Items[this.StartFileList.SelectedIndex].ToString();
 					Process.Start(new ProcessStartInfo(fileName)
 					{
 						WorkingDirectory = this.currentpath + "\\RustServerFiles"
@@ -802,14 +803,14 @@ namespace batchgen
 					StartFileList.Enabled = false;
 					serverup.Enabled = true;
 					BtnStart.Enabled = false;
-                }
-                catch
-                {
-                }
-            }
+				}
+				catch
+				{
+				}
+			}
 
-            else
-            {
+			else
+			{
 				try
 				{
 					BtnStart.Enabled = false;
@@ -819,9 +820,9 @@ namespace batchgen
 				catch
 				{ }
 			}
-        }
+		}
 
-		
+
 		private void BtnRefreshbrowser_Click(object sender, EventArgs e)
 		{
 			this.BannerServer.ImageLocation = this.serverpicturetext.Text;
@@ -901,12 +902,12 @@ namespace batchgen
 			string setbranch = "";
 			if (RdioStaging.Checked)
 			{
-				setbranch = "-beta staging ";
+				setbranch = bparm;
 			}
 			//" + setbranch + "
 			Directory.CreateDirectory("RustServerFiles");
-			File.WriteAllText(this.cmdbatdir.Text, "steamcmd.exe +login anonymous +force_install_dir " + this.servfilesdirectory.Text + " +app_update 258550 " + setbranch + "+quit");
-			Process process = Process.Start(new ProcessStartInfo(this.CMDDirectorybox.Text, "+login anonymous +force_install_dir " + this.servfilesdirectory.Text + " +app_update 258550 " + setbranch + "+quit")
+			File.WriteAllText(this.cmdbatdir.Text, "steamcmd.exe +login anonymous +force_install_dir " + this.servfilesdirectory.Text + " +app_update 258550 " + setbranch + " +quit");
+			Process process = Process.Start(new ProcessStartInfo(this.CMDDirectorybox.Text, "+login anonymous +force_install_dir " + this.servfilesdirectory.Text + " +app_update 258550 " + setbranch + " +quit")
 			{
 				UseShellExecute = false,
 				RedirectStandardOutput = true
@@ -915,7 +916,7 @@ namespace batchgen
 			bool flag = processesByName.Length == 0;
 			if (flag)
 			{
-				Process.Start(this.CMDDirectorybox.Text, "steamcmd.exe +login anonymous +force_install_dir " + this.servfilesdirectory.Text + " +app_update 258550 " + setbranch + "+quit");
+				Process.Start(this.CMDDirectorybox.Text, "steamcmd.exe +login anonymous +force_install_dir " + this.servfilesdirectory.Text + " +app_update 258550 " + setbranch + " +quit");
 			}
 			else
 			{
@@ -925,7 +926,7 @@ namespace batchgen
 			this.textBox1.Text = text;
 		}
 
-		
+
 		private void RefreshSmall_Click(object sender, EventArgs e)
 		{
 			bool flag = this.da.SelectedTab == this.da.TabPages["procgen"];
@@ -997,7 +998,7 @@ namespace batchgen
 			}
 		}
 
-		
+
 		private void DownloadInstallToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			bool flag = !Form1.downloadingOxide;
@@ -1009,13 +1010,13 @@ namespace batchgen
 			}
 		}
 
-		
+
 		private void UpdateFIleToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start(this.currentpath + this.slashbox.Text + "steamcmd");
 		}
 
-		
+
 		private void StartFileToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Process.Start("Explorer.exe", this.servfilesdirectory.Text);
@@ -1028,20 +1029,20 @@ namespace batchgen
 			{
 				string setbranch = "";
 				if (RdioStaging.Checked)
-                {
-					setbranch = "-beta staging ";
+				{
+					setbranch = bparm;
 				}
 				//" + setbranch + "
 
 				Directory.CreateDirectory("RustServerFiles");
-				File.WriteAllText(this.cmdbatdir.Text, "steamcmd.exe +login anonymous +force_install_dir " + this.servfilesdirectory.Text + " +app_update 258550 " + setbranch + "+quit");
-				Process.Start(this.CMDDirectorybox.Text, "steamcmd.exe +login anonymous +force_install_dir " + this.servfilesdirectory.Text + " +app_update 258550 " + setbranch + "+quit");
+				File.WriteAllText(this.cmdbatdir.Text, "steamcmd.exe +login anonymous +force_install_dir " + this.servfilesdirectory.Text + " +app_update 258550 " + setbranch + " +quit");
+				Process.Start(this.CMDDirectorybox.Text, "steamcmd.exe +login anonymous +force_install_dir " + this.servfilesdirectory.Text + " +app_update 258550 " + setbranch + " +quit");
 				this.infolabel.Text = "Downloading Server Files, wait for SteamCMD";
 				Process[] processesByName = Process.GetProcessesByName("steamcmd");
 				bool flag = processesByName.Length == 0;
 				if (flag)
 				{
-					Process.Start(this.CMDDirectorybox.Text, "steamcmd.exe +login anonymous +force_install_dir " + this.servfilesdirectory.Text + " +app_update 258550 " + setbranch + "+quit");
+					Process.Start(this.CMDDirectorybox.Text, "steamcmd.exe +login anonymous +force_install_dir " + this.servfilesdirectory.Text + " +app_update 258550 " + setbranch + " +quit");
 				}
 				else
 				{
@@ -1049,12 +1050,12 @@ namespace batchgen
 				}
 			}
 			catch
-            {
+			{
 				MessageBox.Show("Error Updating, Missing files." + Environment.NewLine + "Please use the download server files button to update!");
-            }
+			}
 		}
 
-		
+
 		private void Button6_Click_1(object sender, EventArgs e)
 		{
 			string[] output = RUSS.varlist.servervars(this.SearchVar.Text);
@@ -1145,10 +1146,10 @@ namespace batchgen
 					}
 				}
 			}
-            catch
-            {
+			catch
+			{
 				MessageBox.Show("Could not find Rust Server Files!");
-            }
+			}
 		}
 
 
@@ -1170,11 +1171,11 @@ namespace batchgen
 		}
 
 		private string Cleanupbat(string data)
-        {
+		{
 			data = data.Replace(@"""", "");
 			data = data.TrimEnd().TrimStart();
 			return data;
-        }
+		}
 
 
 
@@ -1456,17 +1457,17 @@ namespace batchgen
 		private string currentpath = Directory.GetCurrentDirectory();
 		public string SetValueForVar = "";
 
-        
-        private void addAdminToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-				try
+
+		private void addAdminToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				string[] subdirectoryEntries = Directory.GetDirectories("RustServerFiles\\server\\");
+				foreach (string serverfolder in subdirectoryEntries)
 				{
-					string[] subdirectoryEntries = Directory.GetDirectories("RustServerFiles\\server\\");
-					foreach (string serverfolder in subdirectoryEntries)
+					DialogResult dialogResult2 = MessageBox.Show("Found " + serverfolder.Substring(23) + " do you want to add a admin to this server?", "Add Admin", MessageBoxButtons.YesNo);
+					if (dialogResult2 == DialogResult.Yes)
 					{
-						DialogResult dialogResult2 = MessageBox.Show("Found " + serverfolder.Substring(23) + " do you want to add a admin to this server?", "Add Admin", MessageBoxButtons.YesNo);
-						if (dialogResult2 == DialogResult.Yes)
-						{
 						string streamid = "";
 						string input = "76000000000000000";
 						if (ShowInputDialog(ref input, "Steam ID:") == DialogResult.OK)
@@ -1477,11 +1478,11 @@ namespace batchgen
 							{
 
 								string subPath = "cfg";
-                                bool exists = System.IO.Directory.Exists(serverfolder + "\\" + (subPath));
+								bool exists = System.IO.Directory.Exists(serverfolder + "\\" + (subPath));
 
 
 								if (!exists)
-								{ 
+								{
 									System.IO.Directory.CreateDirectory(serverfolder + "\\" + (subPath));
 								}
 
@@ -1492,23 +1493,23 @@ namespace batchgen
 								MessageBox.Show("Restart server for it to take effect!");
 							}
 							else
-                            {
+							{
 								MessageBox.Show("Steam ID needs to be 17 digits in length");
-                            }
+							}
 						}
 					}
-					}
-				 }
-				catch
-				{
-                MessageBox.Show("Error finding server folder!");
-                return;
 				}
-        }
+			}
+			catch
+			{
+				MessageBox.Show("Error finding server folder!");
+				return;
+			}
+		}
 
 
-        private void button4_Click_1(object sender, EventArgs e)
-        {
+		private void button4_Click_1(object sender, EventArgs e)
+		{
 			bool flag = this.ServerVarsFinal.Text == "";
 			if (flag)
 			{
@@ -1545,8 +1546,8 @@ namespace batchgen
 			}
 		}
 
-        private void serverporttext_KeyPress(object sender, KeyPressEventArgs e)
-        {
+		private void serverporttext_KeyPress(object sender, KeyPressEventArgs e)
+		{
 			if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
 			(e.KeyChar != '.'))
 			{
@@ -1554,8 +1555,8 @@ namespace batchgen
 			}
 		}
 
-        private void rconporttext_KeyPress(object sender, KeyPressEventArgs e)
-        {
+		private void rconporttext_KeyPress(object sender, KeyPressEventArgs e)
+		{
 			if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
 			(e.KeyChar != '.'))
 			{
@@ -1563,8 +1564,8 @@ namespace batchgen
 			}
 		}
 
-        private void maxplayertext_KeyPress(object sender, KeyPressEventArgs e)
-        {
+		private void maxplayertext_KeyPress(object sender, KeyPressEventArgs e)
+		{
 			if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
 			(e.KeyChar != '.'))
 			{
@@ -1572,8 +1573,8 @@ namespace batchgen
 			}
 		}
 
-        private void mapsizebox_KeyPress(object sender, KeyPressEventArgs e)
-        {
+		private void mapsizebox_KeyPress(object sender, KeyPressEventArgs e)
+		{
 			if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
 			(e.KeyChar != '.'))
 			{
@@ -1581,8 +1582,8 @@ namespace batchgen
 			}
 		}
 
-        private void mapseedtext_KeyPress(object sender, KeyPressEventArgs e)
-        {
+		private void mapseedtext_KeyPress(object sender, KeyPressEventArgs e)
+		{
 			if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
 			(e.KeyChar != '.'))
 			{
@@ -1591,8 +1592,8 @@ namespace batchgen
 		}
 
 
-        private void BAmapsizebox_Validating(object sender, CancelEventArgs e)
-        {
+		private void BAmapsizebox_Validating(object sender, CancelEventArgs e)
+		{
 			try
 			{
 				if (int.Parse(BAmapsizebox.Text) < 1000 || int.Parse(BAmapsizebox.Text) > 8000)
@@ -1609,8 +1610,8 @@ namespace batchgen
 			{ }
 		}
 
-        private void setRconIPToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+		private void setRconIPToolStripMenuItem_Click(object sender, EventArgs e)
+		{
 			string input = MyIP;
 			if (ShowInputDialog(ref input, "Rcon IP:") == DialogResult.OK)
 			{
@@ -1618,8 +1619,8 @@ namespace batchgen
 			}
 		}
 
-        private void wipeMapOnlyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+		private void wipeMapOnlyToolStripMenuItem_Click(object sender, EventArgs e)
+		{
 			DialogResult dialogResult = MessageBox.Show("Do you want to wipe the Map only?", "Wipe Map", MessageBoxButtons.YesNo);
 			if (dialogResult == DialogResult.Yes)
 			{
@@ -1638,9 +1639,9 @@ namespace batchgen
 									File.Delete(file);
 								}
 								catch
-                                {
+								{
 									MessageBox.Show("Failed to delete " + file);
-                                }
+								}
 							}
 							foreach (string file in Directory.GetFiles(serverfolder, "*.map").Where(item => item.EndsWith(".map")))
 							{
@@ -1669,16 +1670,16 @@ namespace batchgen
 				}
 				catch
 				{
-						MessageBox.Show("Error finding server folder!");
-						return;
+					MessageBox.Show("Error finding server folder!");
+					return;
 				}
 
 			}
 
 		}
 
-        private void wipeServerToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+		private void wipeServerToolStripMenuItem_Click(object sender, EventArgs e)
+		{
 			DialogResult dialogResult = MessageBox.Show("Do you want to wipe the server", "Wipe server", MessageBoxButtons.YesNo);
 			if (dialogResult == DialogResult.Yes)
 			{
@@ -1757,16 +1758,16 @@ namespace batchgen
 			}
 		}
 
-        private void pluginManagerToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-			Form2 plugins = new Form2(); 
+		private void pluginManagerToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Form2 plugins = new Form2();
 			plugins.StartPosition = FormStartPosition.CenterScreen;
-			plugins.ShowDialog(); 
+			plugins.ShowDialog();
 		}
 
 
-        private void button14_Click(object sender, EventArgs e)
-        {
+		private void button14_Click(object sender, EventArgs e)
+		{
 			try
 			{
 				File.Delete("RustServerFiles\\logs.log");
@@ -1775,26 +1776,26 @@ namespace batchgen
 			textBox2.Text = "";
 		}
 
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
+		private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+		{
 			if (tabControl1.SelectedIndex == 1)
-            {
+			{
 				this.delay.Enabled = true;
 			}
 			else if (tabControl1.SelectedIndex == 2)
-            {
+			{
 				loaded = true;
 			}
 			else
-            {
+			{
 				loaded = false;
 				this.delay.Enabled = false;
 			}
 
 		}
 
-        private void button13_Click_1(object sender, EventArgs e)
-        {
+		private void button13_Click_1(object sender, EventArgs e)
+		{
 			updatelog();
 		}
 
@@ -1810,49 +1811,49 @@ namespace batchgen
 		static extern int GetScrollPos(IntPtr hWnd, int nBar);
 
 		private void updatelog()
-        {
+		{
 			try
 			{
-			if (GetScrollPos(textBox2.Handle, 1) == 0)
-			{
-				var checkchange = System.IO.File.GetLastWriteTime("RustServerFiles\\logs.log");
-				if (lastModified != checkchange.ToString())
+				if (GetScrollPos(textBox2.Handle, 1) == 0)
 				{
-					lastModified = checkchange.ToString();
-					string temp = "";
-					using (FileStream stream = File.Open("RustServerFiles\\logs.log", FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+					var checkchange = System.IO.File.GetLastWriteTime("RustServerFiles\\logs.log");
+					if (lastModified != checkchange.ToString())
 					{
-						using (StreamReader reader = new StreamReader(stream))
+						lastModified = checkchange.ToString();
+						string temp = "";
+						using (FileStream stream = File.Open("RustServerFiles\\logs.log", FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
 						{
-							temp = reader.ReadToEnd();
+							using (StreamReader reader = new StreamReader(stream))
+							{
+								temp = reader.ReadToEnd();
+							}
 						}
-					}
-					string[] lines = temp.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
+						string[] lines = temp.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
 
-					string swaptxt = "";
-					for (int i = lines.Length - 1; i > 0; i--)
-					{
+						string swaptxt = "";
+						for (int i = lines.Length - 1; i > 0; i--)
+						{
 							swaptxt += lines[i].ToString() + Environment.NewLine;
-					}
+						}
 						textBox2.Text = swaptxt;
 					}
-			}
+				}
 			}
 
-			         catch { }
+			catch { }
 		}
 
-	
+
 
 		private void serverup_Tick(object sender, EventArgs e)
-        {
+		{
 			if (BtnStart.Enabled == false)
-            {
+			{
 				BtnStart.Enabled = true;
 			}
 
 			if (MapServer.Running)
-            {
+			{
 				label32.Text = "Status: Online";
 				button16.Enabled = false;
 				button18.Enabled = true;
@@ -1860,7 +1861,7 @@ namespace batchgen
 				button17.Enabled = false;
 			}
 			else
-            {
+			{
 				label32.Text = "Status: Offline";
 				button16.Enabled = true;
 				button18.Enabled = false;
@@ -1888,16 +1889,16 @@ namespace batchgen
 					StartFileList.Enabled = false;
 					label68.Text = "SERVER RUNNING";
 
-					if(checkBox1.Checked) //map server
-                    {
+					if (checkBox1.Checked) //map server
+					{
 						button16_Click_1(null, null);
 					}
 				}
 			}
 		}
 
-        private void button15_Click(object sender, EventArgs e)
-        {
+		private void button15_Click(object sender, EventArgs e)
+		{
 			OpenFileDialog theDialog = new OpenFileDialog();
 			theDialog.Title = "Open Map File";
 			theDialog.Filter = "Map|*.map";
@@ -1907,28 +1908,28 @@ namespace batchgen
 			}
 		}
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
+		private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
 			System.Diagnostics.Process.Start("https://www.yougetsignal.com/tools/open-ports/");
 		}
 
-        private void button16_Click_1(object sender, EventArgs e)
-        {
+		private void button16_Click_1(object sender, EventArgs e)
+		{
 			if (textBox3.Text.Contains(".map"))
 			{
 				if (myServer != null)
-                {
+				{
 					myServer.Stop();
 					myServer = null;
 				}
 				button16.Enabled = false;
-				myServer = new MapServer(textBox3.Text, int.Parse(maskedTextBox1.Text),ref gui);
+				myServer = new MapServer(textBox3.Text, int.Parse(maskedTextBox1.Text), ref gui);
 				serverup.Enabled = true;
 			}
 			else
-            {
+			{
 				MessageBox.Show("No Map file selected!");
-            }
+			}
 		}
 
 		public void WriteTextSafe(string text)
@@ -1945,11 +1946,11 @@ namespace batchgen
 					textBox5.Text += text;
 				}
 			}
-            catch { }
+			catch { }
 		}
 
 		private void button18_Click_1(object sender, EventArgs e)
-        {
+		{
 			if (myServer != null)
 			{
 				myServer.Stop();
@@ -1957,25 +1958,25 @@ namespace batchgen
 			}
 		}
 
-        private void button17_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog theDialog = new OpenFileDialog();
-            theDialog.Title = "Open Map File";
-            theDialog.Filter = "Map|*.map";
-            if (theDialog.ShowDialog() == DialogResult.OK)
-            {
-                textBox3.Text = theDialog.FileName;
-            }
+		private void button17_Click(object sender, EventArgs e)
+		{
+			OpenFileDialog theDialog = new OpenFileDialog();
+			theDialog.Title = "Open Map File";
+			theDialog.Filter = "Map|*.map";
+			if (theDialog.ShowDialog() == DialogResult.OK)
+			{
+				textBox3.Text = theDialog.FileName;
+			}
 
 			if (textBox3.Text != theDialog.FileName)
-            {
+			{
 				textBox3.Text = theDialog.FileName;
 
 			}
-        }
+		}
 
-        private void resetSettingsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+		private void resetSettingsToolStripMenuItem_Click(object sender, EventArgs e)
+		{
 			DialogResult dialogResult = MessageBox.Show("This will reset the settings back to default, Do you want to proceed?", "Reset Settings", MessageBoxButtons.YesNo);
 			if (dialogResult == DialogResult.Yes)
 			{
@@ -2006,7 +2007,7 @@ namespace batchgen
 		}
 
 		private void textBox3_TextChanged(object sender, EventArgs e)
-        {
+		{
 			string[] temp = textBox3.Text.Split('\\');
 			string externalip = EIP + ":" + maskedTextBox1.Text;
 			textBox4.Text = RemoveSpecialCharacters("http://" + externalip + "/" + temp[temp.Length - 1]);
@@ -2019,7 +2020,7 @@ namespace batchgen
 			if (checkBox2.Checked && loaded)
 			{
 				if (!whitelist.Contains(EIP))
-                {
+				{
 					whitelist += EIP + " ";
 				}
 				if (!whitelist.Contains(localip))
@@ -2031,6 +2032,15 @@ namespace batchgen
 				{
 					whitelist = input;
 				}
+			}
+		}
+
+		private void betaParamsToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			string input = bparm;
+			if (ShowInputDialog(ref input, "Beta Download Parms:") == DialogResult.OK)
+			{
+				bparm = input;
 			}
 		}
 	}

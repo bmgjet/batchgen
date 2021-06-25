@@ -21,3 +21,15 @@ I:\batchgen\batchgen\obj\x86\Release\batchgen.csproj.CoreCompileInputs.cache
 I:\batchgen\batchgen\obj\x86\Release\RUSS.exe
 I:\batchgen\batchgen\obj\x86\Release\RUSS.pdb
 I:\batchgen\batchgen\bin\Release\RUSS.exe.config
+E:\batchgen\batchgen\obj\x86\Release\batchgen.csprojAssemblyReference.cache
+E:\batchgen\batchgen\obj\x86\Release\batchgen.Form1.resources
+E:\batchgen\batchgen\obj\x86\Release\batchgen.Form2.resources
+E:\batchgen\batchgen\obj\x86\Release\batchgen.Form3.resources
+E:\batchgen\batchgen\obj\x86\Release\RUSS.Properties.Resources.resources
+E:\batchgen\batchgen\obj\x86\Release\batchgen.csproj.GenerateResource.cache
+E:\batchgen\batchgen\obj\x86\Release\batchgen.csproj.CoreCompileInputs.cache
+E:\batchgen\batchgen\obj\x86\Release\RUSS.exe
+E:\batchgen\batchgen\obj\x86\Release\RUSS.pdb
+E:\batchgen\batchgen\bin\Release\RUSS.exe.config
+E:\batchgen\batchgen\bin\Release\RUSS.exe
+E:\batchgen\batchgen\bin\Release\RUSS.pdb
